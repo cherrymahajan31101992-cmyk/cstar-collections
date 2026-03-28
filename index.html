@@ -3,109 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSTAR COLLECTIONS | Premium Luxury</title>
-    /* Paste this inside the <style> section */
-.product-card {
-    background: #111;
-    border: 1px solid #333;
-    border-radius: 15px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 400px;
-    text-align: left;
-}
-
-.watch-name {
-    color: #d4af37; /* Royal Gold */
-    font-size: 1.5rem;
-    margin: 10px 0 5px 0;
-}
-
-.description {
-    color: #888;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-}
-
-.price {
-    color: #fff;
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-        :root { --gold: #d4af37; --bg: #050505; --card: #121212; }
-        body { background: var(--bg); color: white; font-family: 'Inter', sans-serif; margin: 0; scroll-behavior: smooth; }
+    <title>CSTAR COLLECTIONS | Luxury Boutique</title>
+    <style>
+        :root { --gold: #d4af37; --black: #000; --gray: #111; }
+        body { background: var(--black); color: white; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; scroll-behavior: smooth; }
         
-        /* Glassmorphism Nav */
-        nav { background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); padding: 15px; position: sticky; top: 0; border-bottom: 1px solid var(--gold); z-index: 1000; display: flex; justify-content: space-around; }
-        nav a { color: var(--gold); text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; }
+        /* Navigation Bar */
+        nav { background: rgba(0,0,0,0.95); padding: 20px; position: sticky; top: 0; border-bottom: 1px solid var(--gold); z-index: 1000; display: flex; justify-content: center; gap: 30px; }
+        nav a { color: var(--gold); text-decoration: none; text-transform: uppercase; font-weight: bold; letter-spacing: 2px; font-size: 0.9rem; }
 
-        header { height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=1000'); background-size: cover; text-align: center; }
-        header h1 { font-size: 4rem; letter-spacing: 10px; color: var(--gold); margin: 0; }
-        header p { font-size: 1.2rem; color: #888; letter-spacing: 3px; }
+        header { padding: 60px 20px; text-align: center; border-bottom: 1px solid #222; }
+        header h1 { color: var(--gold); font-size: 3rem; letter-spacing: 8px; margin: 0; }
+        header p { color: #888; letter-spacing: 3px; }
 
-        section { padding: 80px 5%; }
-        .category-title { color: var(--gold); border-left: 4px solid var(--gold); padding-left: 15px; margin-bottom: 40px; font-size: 2rem; }
+        section { padding: 60px 20px; max-width: 1200px; margin: auto; }
+        h2 { color: var(--gold); text-align: center; letter-spacing: 4px; font-size: 2rem; margin-bottom: 40px; }
 
-        /* Dynamic Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--card); border-radius: 20px; border: 1px solid #222; overflow: hidden; transition: 0.5s; position: relative; }
-        .card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2); }
+        /* Product Grid */
+        .product-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+        .product-card { background: var(--gray); border-radius: 20px; border: 1px solid #333; width: 350px; overflow: hidden; transition: 0.3s; }
+        .product-card:hover { border-color: var(--gold); transform: translateY(-10px); }
         
-        .card img { width: 100%; height: 350px; object-fit: cover; }
-        .card-info { padding: 25px; }
-        .price { font-size: 1.5rem; color: var(--gold); font-weight: 800; margin: 10px 0; }
+        .product-card img { width: 100%; height: 350px; object-fit: cover; }
         
-        .wa-btn { background: #25D366; color: white; display: block; text-align: center; padding: 15px; text-decoration: none; border-radius: 12px; font-weight: 700; margin-top: 15px; transition: 0.3s; }
-        .wa-btn:hover { background: #128C7E; }
+        .details { padding: 25px; text-align: left; }
+        .product-name { color: var(--gold); font-size: 1.4rem; margin: 0; font-weight: bold; }
+        .price { color: #fff; font-size: 1.7rem; font-weight: bold; margin: 10px 0; }
+        .desc { color: #888; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px; }
+
+        /* WhatsApp Button */
+        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 12px; font-weight: bold; }
+        .buy-btn:hover { background: #1eb954; }
+
+        footer { padding: 40px; text-align: center; color: #444; border-top: 1px solid #222; }
     </style>
 </head>
 <body>
 
-<nav>
-    <a href="#watches">Watches</a>
-    <a href="#footwear">Footwear</a>
-    <a href="#apparel">Apparel</a>
-</nav>
+    <nav>
+        <a href="#watches">Watches</a>
+        <a href="#footwear">Footwear</a>
+        <a href="#clothing">Clothing</a>
+    </nav>
 
-<header>
-    <h1>CSTAR</h1>
-    <p>DEFINING LUXURY COPIES</p>
-</header>
+    <header>
+        <h1>CSTAR</h1>
+        <p>PREMIUM QUALITY COLLECTIONS</p>
+    </header>
 
-<section id="watches">
-    <h2 class="category-title">WATCHES</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="watch1-jpg.jpg" alt="Luxury Watch 1">
+    <section id="watches">
+        <h2>PREMIUM WATCHES</h2>
+        <div class="product-grid">
 
-<img src="watch2-jpg.jpg" alt="Luxury Watch 2">
-
-<img src="watch3-jpg.jpg" alt="Luxury Watch 3">
-            <div class="card-info">
-                <h3>Skeleton Automatic</h3>
-                <p>7A Master Quality | Sapphire Glass</p>
-                <div class="price">₹4,999</div>
-                <a href="https://wa.me/91XXXXXXXXXX?text=Hi, I want to buy the Skeleton Watch" class="wa-btn">BUY ON WHATSAPP</a>
+            <div class="product-card">
+                <img src="watch1-jpg.jpg" alt="Diesel Watch">
+                <div class="details">
+                    <p class="product-name">Diesel Mega Chief - Red Dial</p>
+                    <div class="price">₹2,499</div>
+                    <p class="desc">7A Master Quality. Chronograph Working. Premium Stainless Steel Chain with Matte Finish.</p>
+                    <a href="https://wa.me/91XXXXXXXXXX?text=Order+Diesel+Red+Dial" class="buy-btn">Order on WhatsApp</a>
+                </div>
             </div>
-        </div>
-        </div>
-</section>
 
-<section id="footwear">
-    <h2 class="category-title">FOOTWEAR</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="shoe1.jpg" alt="Designer Shoes">
-            <div class="card-info">
-                <h3>Master Sneakers</h3>
-                <p>Premium Leather | Original Box</p>
-                <div class="price">₹2,999</div>
-                <a href="https://wa.me/91XXXXXXXXXX?text=Hi, I want to buy the Sneakers" class="wa-btn">BUY ON WHATSAPP</a>
+            <div class="product-card">
+                <img src="watch2-jpg.jpg" alt="Watch 2">
+                <div class="details">
+                    <p class="product-name">Luxury Gold Skeleton</p>
+                    <div class="price">₹4,999</div>
+                    <p class="desc">Automatic Mechanical Movement. Sapphire Crystal Glass. Master Quality Finish.</p>
+                    <a href="https://wa.me/91XXXXXXXXXX?text=Order+Skeleton+Watch" class="buy-btn">Order on WhatsApp</a>
+                </div>
             </div>
+
         </div>
-    </div>
-</section>
+    </section>
+
+    <footer>
+        &copy; 2026 CSTAR COLLECTIONS. 100% Quality Satisfaction.
+    </footer>
 
 </body>
 </html>
