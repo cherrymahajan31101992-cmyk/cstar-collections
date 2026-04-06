@@ -3,21 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSTAR COLLECTIONS | Premium Watches</title>
+    <title>CSTAR COLLECTIONS | Luxury Boutique</title>
     <style>
-        :root { --gold: #d4af37; --black: #000; --gray: #111; }
-        body { background: var(--black); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
-        nav { background: #000; padding: 20px; position: sticky; top: 0; border-bottom: 1px solid var(--gold); z-index: 1000; text-align: center; }
-        nav a { color: var(--gold); text-decoration: none; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
-        .container { padding: 40px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .product-card { background: var(--gray); border-radius: 15px; border: 1px solid #333; overflow: hidden; transition: 0.3s; }
-        .product-card:hover { border-color: var(--gold); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2); }
-        .product-card img { width: 100%; height: 320px; object-fit: cover; }
-        .details { padding: 20px; }
-        .name { color: var(--gold); font-size: 1.3rem; font-weight: bold; margin: 0; }
-        .price { font-size: 1.6rem; margin: 10px 0; font-weight: 800; }
-        .desc { color: #888; font-size: 0.85rem; line-height: 1.4; margin-bottom: 15px; }
-        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 12px; text-decoration: none; border-radius: 8px; font-weight: bold; }
+        :root { --gold: #d4af37; --black: #000; --gray: #111; --white: #ffffff; }
+        body { background: var(--black); color: var(--white); font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+        
+        /* Navigation */
+        nav { background: rgba(0,0,0,0.9); padding: 20px; position: sticky; top: 0; border-bottom: 1px solid var(--gold); z-index: 1000; text-align: center; backdrop-filter: blur(5px); }
+        nav a { color: var(--gold); text-decoration: none; font-weight: bold; letter-spacing: 3px; text-transform: uppercase; font-size: 1.2rem; }
+
+        /* Catalog Grid */
+        .container { padding: 40px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1400px; margin: auto; }
+        
+        .product-card { background: var(--gray); border-radius: 20px; border: 1px solid #222; overflow: hidden; transition: 0.4s ease; display: flex; flex-direction: column; }
+        .product-card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2); }
+        
+        .product-card img { width: 100%; height: 380px; object-fit: cover; border-bottom: 1px solid #222; }
+        
+        .details { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .name { color: var(--gold); font-size: 1.4rem; font-weight: bold; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
+        .price { font-size: 1.8rem; margin: 15px 0; font-weight: 800; color: var(--white); }
+        .desc { color: #aaaaaa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; min-height: 60px; }
+        
+        /* Action Button */
+        .buy-btn { background: #25D366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 12px; font-weight: bold; transition: 0.3s; margin-top: auto; display: block; }
+        .buy-btn:hover { background: #128C7E; transform: scale(1.02); }
+
+        footer { text-align: center; padding: 50px; color: #444; border-top: 1px solid #222; margin-top: 40px; font-size: 0.8rem; letter-spacing: 2px; }
     </style>
 </head>
 <body>
@@ -27,56 +39,60 @@
 <div class="container">
 
     <div class="product-card">
-        <img src="watch1.jpg" alt="Watch 1">
+        <img src="watch1-jpg.jpg" alt="Omega Seamaster">
         <div class="details">
-            <p class="name">Diesel Mega Chief Black</p>
-            <p class="desc">7A Master Quality. Working Chronograph. Premium Stainless Steel.</p>
+            <p class="name">Omega Seamaster Professional</p>
+            <div class="price">₹5,450</div>
+            <p class="desc">Master Chronometer finish. Iconic wave-pattern dial with working chronograph and rotating bezel.</p>
+            <a href="https://wa.me/91XXXXXXXXXX?text=I+want+to+buy+the+Omega+Seamaster+for+5450" class="buy-btn">ORDER ON WHATSAPP</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="watch2-jpg.jpg" alt="Rolex Submariner">
+        <div class="details">
+            <p class="name">Rolex Submariner Two-Tone</p>
+            <div class="price">₹3,895</div>
+            <p class="desc">Premium Oystersteel and Gold finish. Green sunray dial with luminous markers and ceramic bezel.</p>
+            <a href="https://wa.me/91XXXXXXXXXX?text=I+want+to+buy+the+Rolex+Submariner+for+3895" class="buy-btn">ORDER ON WHATSAPP</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="watch3-jpg.jpg" alt="Rado Jubile">
+        <div class="details">
+            <p class="name">Rado Ceramica Jubilé</p>
+            <div class="price">₹3,490</div>
+            <p class="desc">High-tech scratch-resistant ceramic. Minimalist rectangle dial with gold accents and date function.</p>
+            <a href="https://wa.me/91XXXXXXXXXX?text=I+want+to+buy+the+Rado+Jubile+for+3490" class="buy-btn">ORDER ON WHATSAPP</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="watch4-jpg.jpg" alt="Fossil Chronograph">
+        <div class="details">
+            <p class="name">Fossil Machine Chronograph</p>
+            <div class="price">₹3,730</div>
+            <p class="desc">Rugged black silicone strap. Textured bezel with a heavy-duty stainless steel build and multi-dial display.</p>
+            <a href="https://wa.me/91XXXXXXXXXX?text=I+want+to+buy+the+Fossil+Watch+for+3730" class="buy-btn">ORDER ON WHATSAPP</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="watch5-jpg.jpg" alt="Richard Mille">
+        <div class="details">
+            <p class="name">Richard Mille Skeleton</p>
             <div class="price">₹2,499</div>
-            <a href="https://wa.me/917696969628?text=Order+Watch+1" class="buy-btn">Order on WhatsApp</a>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <img src="watch2.jpg" alt="Watch 2">
-        <div class="details">
-            <p class="name">Rolex Daytona Gold</p>
-            <p class="desc">Automatic Movement. Sapphire Glass. Ceramic Bezel.</p>
-            <div class="price">₹4,999</div>
-            <a href="https://wa.me/917696969628?text=Order+Watch+2" class="buy-btn">Order on WhatsApp</a>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <img src="watch3.jpg" alt="Watch 3">
-        <div class="details">
-            <p class="name">Patek Philippe Nautilus</p>
-            <p class="desc">Slim Profile. Blue Textured Dial. Working Date Display.</p>
-            <div class="price">₹3,200</div>
-            <a href="https://wa.me/917696969628?text=Order+Watch+3" class="buy-btn">Order on WhatsApp</a>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <img src="watch4.jpg" alt="Watch 4">
-        <div class="details">
-            <p class="name">Hublot Big Bang</p>
-            <p class="desc">Rubber Strap. Sporty Design. High Precision Quartz.</p>
-            <div class="price">₹2,800</div>
-            <a href="https://wa.me/917696969628?text=Order+Watch+4" class="buy-btn">Order on WhatsApp</a>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <img src="watch5.jpg" alt="Watch 5">
-        <div class="details">
-            <p class="name">Audemars Piguet Royal Oak</p>
-            <p class="desc">Octagonal Bezel. Tapisserie Dial. Luxury Steel Finish.</p>
-            <div class="price">₹4,500</div>
-            <a href="https://wa.me/917696969628?text=Order+Watch+5" class="buy-btn">Order on WhatsApp</a>
+            <p class="desc">Breathtaking skeletonized tourbillon dial. Ultra-lightweight casing with premium industrial rubber strap.</p>
+            <a href="https://wa.me/91XXXXXXXXXX?text=I+want+to+buy+the+Richard+Mille+for+2499" class="buy-btn">ORDER ON WHATSAPP</a>
         </div>
     </div>
 
 </div>
+
+<footer>
+    &copy; 2026 CSTAR COLLECTIONS | PREMIUM QUALITY REPLICAS
+</footer>
 
 </body>
 </html>
