@@ -3,96 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSTAR COLLECTIONS | Luxury Boutique</title>
+    <title>CSTAR COLLECTIONS | Luxury Mall</title>
     <style>
-        :root { --gold: #d4af37; --black: #000; --gray: #111; --white: #ffffff; }
-        body { background: var(--black); color: var(--white); font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+        :root { --gold: #d4af37; --black: #050505; --gray: #121212; --white: #ffffff; }
+        body { background: var(--black); color: var(--white); font-family: 'Segoe UI', Arial, sans-serif; margin: 0; scroll-behavior: smooth; }
         
-        /* Navigation */
-        nav { background: rgba(0,0,0,0.9); padding: 20px; position: sticky; top: 0; border-bottom: 1px solid var(--gold); z-index: 1000; text-align: center; backdrop-filter: blur(5px); }
-        nav a { color: var(--gold); text-decoration: none; font-weight: bold; letter-spacing: 3px; text-transform: uppercase; font-size: 1.2rem; }
+        /* Premium Navigation */
+        nav { background: rgba(0,0,0,0.95); padding: 15px 5%; position: sticky; top: 0; border-bottom: 1px solid var(--gold); z-index: 1000; display: flex; justify-content: center; gap: 25px; backdrop-filter: blur(10px); }
+        .nav-item { position: relative; }
+        .nav-item a { color: var(--gold); text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; padding: 10px; font-size: 14px; }
+        
+        /* Dropdown Menu */
+        .dropdown { display: none; position: absolute; background: var(--gray); min-width: 180px; border: 1px solid var(--gold); top: 35px; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        .dropdown a { color: white; padding: 12px 16px; display: block; font-size: 13px; text-transform: none; border-bottom: 1px solid #222; }
+        .nav-item:hover .dropdown { display: block; }
+        .dropdown a:hover { background: #222; color: var(--gold); }
 
-        /* Catalog Grid */
-        .container { padding: 40px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1400px; margin: auto; }
-        
-        .product-card { background: var(--gray); border-radius: 20px; border: 1px solid #222; overflow: hidden; transition: 0.4s ease; display: flex; flex-direction: column; }
-        .product-card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2); }
-        
-        .product-card img { width: 100%; height: 380px; object-fit: cover; border-bottom: 1px solid #222; }
-        
-        .details { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-        .name { color: var(--gold); font-size: 1.4rem; font-weight: bold; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
-        .price { font-size: 1.8rem; margin: 15px 0; font-weight: 800; color: var(--white); }
-        .desc { color: #aaaaaa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; min-height: 60px; }
-        
-        /* Action Button */
-        .buy-btn { background: #25D366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 12px; font-weight: bold; transition: 0.3s; margin-top: auto; display: block; }
-        .buy-btn:hover { background: #128C7E; transform: scale(1.02); }
+        /* Section Styling */
+        section { padding: 80px 5%; border-bottom: 1px solid #222; max-width: 1300px; margin: auto; }
+        .cat-title { text-align: center; margin-bottom: 50px; }
+        .cat-title h2 { color: var(--gold); font-size: 2.5rem; letter-spacing: 5px; text-transform: uppercase; margin: 0; }
+        .cat-title p { color: #666; letter-spacing: 2px; margin-top: 10px; }
 
-        footer { text-align: center; padding: 50px; color: #444; border-top: 1px solid #222; margin-top: 40px; font-size: 0.8rem; letter-spacing: 2px; }
+        /* Product Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--gray); border-radius: 20px; border: 1px solid #222; overflow: hidden; transition: 0.4s ease; display: flex; flex-direction: column; }
+        .card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15); }
+        .card img { width: 100%; height: 380px; object-fit: cover; }
+        
+        .info { padding: 25px; flex-grow: 1; }
+        .name { color: var(--gold); font-size: 1.3rem; font-weight: bold; margin: 0; text-transform: uppercase; }
+        .price { font-size: 1.7rem; margin: 15px 0; font-weight: 800; }
+        .desc { color: #888; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px; }
+        
+        /* WhatsApp Button */
+        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 12px; font-weight: bold; transition: 0.3s; }
+        .buy-btn:hover { background: #128C7E; transform: scale(1.03); }
+
+        footer { text-align: center; padding: 60px; color: #444; border-top: 1px solid #222; margin-top: 50px; letter-spacing: 2px; }
     </style>
 </head>
 <body>
 
-<nav><a href="#">CSTAR COLLECTIONS</a></nav>
-
-<div class="container">
-
-    <div class="product-card">
-        <img src="watch1-jpg.jpg" alt="Omega Seamaster">
-        <div class="details">
-            <p class="name">Omega Seamaster Professional</p>
-            <div class="price">₹5,450</div>
-            <p class="desc">Master Chronometer finish. Iconic wave-pattern dial with working chronograph and rotating bezel.</p>
-            <a href="https://wa.me/91XXXXXXXXXX?text=I+want+to+buy+the+Omega+Seamaster+for+5450" class="buy-btn">ORDER ON WHATSAPP</a>
+<nav>
+    <div class="nav-item">
+        <a href="#gents-watches">Watches ▾</a>
+        <div class="dropdown">
+            <a href="#gents-watches">Gents Collection</a>
+            <a href="#ladies-watches">Ladies Collection</a>
         </div>
     </div>
-
-    <div class="product-card">
-        <img src="watch2-jpg.jpg" alt="Rolex Submariner">
-        <div class="details">
-            <p class="name">Rolex Submariner Two-Tone</p>
-            <div class="price">₹3,895</div>
-            <p class="desc">Premium Oystersteel and Gold finish. Green sunray dial with luminous markers and ceramic bezel.</p>
-            <a href="https://wa.me/91XXXXXXXXXX?text=I+want+to+buy+the+Rolex+Submariner+for+3895" class="buy-btn">ORDER ON WHATSAPP</a>
+    <div class="nav-item">
+        <a href="#shoes">Shoes ▾</a>
+        <div class="dropdown">
+            <a href="#formal-shoes">Formal Shoes</a>
+            <a href="#casual-shoes">Casual Shoes</a>
+            <a href="#sports-shoes">Sports Shoes</a>
         </div>
     </div>
-
-    <div class="product-card">
-        <img src="watch3-jpg.jpg" alt="Rado Jubile">
-        <div class="details">
-            <p class="name">Rado Ceramica Jubilé</p>
-            <div class="price">₹3,490</div>
-            <p class="desc">High-tech scratch-resistant ceramic. Minimalist rectangle dial with gold accents and date function.</p>
-            <a href="https://wa.me/91XXXXXXXXXX?text=I+want+to+buy+the+Rado+Jubile+for+3490" class="buy-btn">ORDER ON WHATSAPP</a>
+    <div class="nav-item">
+        <a href="#fashion">Fashion ▾</a>
+        <div class="dropdown">
+            <a href="#tshirts">T-Shirts</a>
+            <a href="#shirts">Shirts</a>
+            <a href="#coord-sets">Co-ord Sets</a>
         </div>
     </div>
+</nav>
 
-    <div class="product-card">
-        <img src="watch4-jpg.jpg" alt="Fossil Chronograph">
-        <div class="details">
-            <p class="name">Fossil Machine Chronograph</p>
-            <div class="price">₹3,730</div>
-            <p class="desc">Rugged black silicone strap. Textured bezel with a heavy-duty stainless steel build and multi-dial display.</p>
-            <a href="https://wa.me/91XXXXXXXXXX?text=I+want+to+buy+the+Fossil+Watch+for+3730" class="buy-btn">ORDER ON WHATSAPP</a>
-        </div>
+<section id="gents-watches">
+    <div class="cat-title">
+        <h2>Gents Watches</h2>
+        <p>Premium Master Quality Timepieces</p>
     </div>
-
-    <div class="product-card">
-        <img src="watch5-jpg.jpg" alt="Richard Mille">
-        <div class="details">
-            <p class="name">Richard Mille Skeleton</p>
-            <div class="price">₹2,499</div>
-            <p class="desc">Breathtaking skeletonized tourbillon dial. Ultra-lightweight casing with premium industrial rubber strap.</p>
-            <a href="https://wa.me/91XXXXXXXXXX?text=I+want+to+buy+the+Richard+Mille+for+2499" class="buy-btn">ORDER ON WHATSAPP</a>
+    <div class="grid">
+        <div class="card">
+            <img src="watch1-jpg.jpg" alt="Omega">
+            <div class="info">
+                <p class="name">Omega Seamaster Professional</p>
+                <div class="price">₹5,450</div>
+                <p class="desc">Master Chronometer finish. Iconic wave dial with working chronograph and rotating bezel.</p>
+                <a href="https://wa.me/917696969628?text=I+want+to+buy+the+Omega+Seamaster+for+5450" class="buy-btn">ORDER ON WHATSAPP</a>
+            </div>
         </div>
-    </div>
 
-</div>
+        <div class="card">
+            <img src="watch2-jpg.jpg" alt="Rolex">
+            <div class="info">
+                <p class="name">Rolex Submariner Two-Tone</p>
+                <div class="price">₹3,895</div>
+                <p class="desc">Premium Oystersteel finish. Green sunray dial with ceramic bezel and luminous markers.</p>
+                <a href="https://wa.me/917696969628?text=I+want+to+buy+the+Rolex+Submariner+for+3895" class="buy-btn">ORDER ON WHATSAPP</a>
+            </div>
+        </div>
 
-<footer>
-    &copy; 2026 CSTAR COLLECTIONS | PREMIUM QUALITY REPLICAS
-</footer>
+        <div class="card">
+            <img src="watch3-jpg.jpg" alt="Rado">
+            <div class="info">
+                <p class="name">Rado Ceramica Jubilé</p>
+                <div class="price">₹3,490</div>
+                <p class="desc">Scratch-resistant high-tech ceramic. Minimalist rectangle dial with gold accents.</p>
+                <a href="https://wa.me/917696969628?text=I+want+to+buy+the+Rado+Jubile+for+3490" class="buy-btn">ORDER ON WHATSAPP</a>
+            </div>
+        </div>
 
-</body>
-</html>
+        <div class="card">
+            <img
