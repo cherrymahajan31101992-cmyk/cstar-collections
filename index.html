@@ -3,84 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSTAR COLLECTIONS | Luxury Boutique</title>
+    <title>CSTAR COLLECTIONS | Premium Watches</title>
     <style>
         :root { --gold: #d4af37; --black: #000; --gray: #111; }
-        body { background: var(--black); color: white; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; scroll-behavior: smooth; }
+        body { background: var(--black); color: white; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; }
         
-        /* Navigation Bar */
-        nav { background: rgba(0,0,0,0.95); padding: 20px; position: sticky; top: 0; border-bottom: 1px solid var(--gold); z-index: 1000; display: flex; justify-content: center; gap: 30px; }
-        nav a { color: var(--gold); text-decoration: none; text-transform: uppercase; font-weight: bold; letter-spacing: 2px; font-size: 0.9rem; }
+        nav { background: #000; padding: 20px; position: sticky; top: 0; border-bottom: 1px solid var(--gold); z-index: 1000; text-align: center; }
+        nav a { color: var(--gold); text-decoration: none; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
 
-        header { padding: 60px 20px; text-align: center; border-bottom: 1px solid #222; }
-        header h1 { color: var(--gold); font-size: 3rem; letter-spacing: 8px; margin: 0; }
-        header p { color: #888; letter-spacing: 3px; }
-
-        section { padding: 60px 20px; max-width: 1200px; margin: auto; }
-        h2 { color: var(--gold); text-align: center; letter-spacing: 4px; font-size: 2rem; margin-bottom: 40px; }
-
-        /* Product Grid */
-        .product-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
-        .product-card { background: var(--gray); border-radius: 20px; border: 1px solid #333; width: 350px; overflow: hidden; transition: 0.3s; }
-        .product-card:hover { border-color: var(--gold); transform: translateY(-10px); }
+        .container { padding: 40px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         
-        .product-card img { width: 100%; height: 350px; object-fit: cover; }
+        .product-card { background: var(--gray); border-radius: 15px; border: 1px solid #333; overflow: hidden; transition: 0.3s; }
+        .product-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        .product-card img { width: 100%; height: 300px; object-fit: cover; }
         
-        .details { padding: 25px; text-align: left; }
-        .product-name { color: var(--gold); font-size: 1.4rem; margin: 0; font-weight: bold; }
-        .price { color: #fff; font-size: 1.7rem; font-weight: bold; margin: 10px 0; }
-        .desc { color: #888; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px; }
-
-        /* WhatsApp Button */
-        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 12px; font-weight: bold; }
-        .buy-btn:hover { background: #1eb954; }
-
-        footer { padding: 40px; text-align: center; color: #444; border-top: 1px solid #222; }
+        .details { padding: 20px; }
+        .name { color: var(--gold); font-size: 1.3rem; font-weight: bold; margin: 0; }
+        .price { font-size: 1.5rem; margin: 10px 0; font-weight: 800; }
+        .desc { color: #888; font-size: 0.85rem; line-height: 1.5; height: 60px; overflow: hidden; }
+        
+        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 12px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 15px; }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#watches">Watches</a>
-        <a href="#footwear">Footwear</a>
-        <a href="#clothing">Clothing</a>
-    </nav>
+<nav><a href="#">CSTAR COLLECTIONS</a></nav>
 
-    <header>
-        <h1>CSTAR</h1>
-        <p>PREMIUM QUALITY COLLECTIONS</p>
-    </header>
+<div class="container">
 
-    <section id="watches">
-        <h2>PREMIUM WATCHES</h2>
-        <div class="product-grid">
-
-            <div class="product-card">
-                <img src="watch1-jpg.jpg" alt="Diesel Watch">
-                <div class="details">
-                    <p class="product-name">Diesel Mega Chief - Red Dial</p>
-                    <div class="price">₹3,495</div>
-                    <p class="desc">7A Master Quality. Chronograph Working. Premium Stainless Steel Chain with Matte Finish.</p>
-                    <a href="https://wa.me/91XXXXXXXXXX?text=Order+Diesel+Red+Dial" class="buy-btn">Order on WhatsApp</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="watch2-jpg.jpg" alt="Watch 2">
-                <div class="details">
-                    <p class="product-name">Luxury Gold Skeleton</p>
-                    <div class="price">₹4,999</div>
-                    <p class="desc">Automatic Mechanical Movement. Sapphire Crystal Glass. Master Quality Finish.</p>
-                    <a href="https://wa.me/91XXXXXXXXXX?text=Order+Skeleton+Watch" class="buy-btn">Order on WhatsApp</a>
-                </div>
-            </div>
-
+    <div class="product-card">
+        <img src="watch1-jpg.jpg" alt="Watch 1">
+        <div class="details">
+            <p class="name">Diesel Mega Chief Black</p>
+            <p class="desc">7A Master Quality. Chronograph Working. Premium Stainless Steel Chain with Matte Finish.</p>
+            <div class="price">₹2,499</div>
+            <a href="https://wa.me/91XXXXXXXXXX?text=I+want+to+order+Diesel+Mega+Chief" class="buy-btn">Order on WhatsApp</a>
         </div>
-    </section>
+    </div>
 
-    <footer>
-        &copy; 2026 CSTAR COLLECTIONS. 100% Quality Satisfaction.
-    </footer>
+    <div class="product-card">
+        <img src="watch2-jpg.jpg" alt="Watch 2">
+        <div class="details">
+            <p class="name">Rolex Daytona Gold</p>
+            <p class="desc">Automatic Mechanical Movement. Sapphire Crystal Glass. Triple Lock Clasp. Master Quality.</p>
+            <div class="price">₹4,999</div>
+            <a href="https://wa.me/91XXXXXXXXXX?text=I+want+to+order+Rolex+Daytona" class="buy-btn">Order on WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="watch3-jpg.jpg" alt="Watch 3">
+        <div class="details">
+            <p class="name">Patek Philippe Nautilus</p>
+            <p class="desc">Slim Profile. Blue Textured Dial. Working Date Display. High-Grade Steel Polish.</p>
+            <div class="price">₹3,200</div>
+            <a href="https://wa.me/91XXXXXXXXXX?text=I+want+to+order+Patek+Nautilus" class="buy-btn">Order on WhatsApp</a>
+        </div>
+    </div>
+
+</div>
 
 </body>
 </html>
