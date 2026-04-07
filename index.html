@@ -8,45 +8,45 @@
         :root { --gold: #d4af37; --black: #050505; --gray: #121212; --white: #ffffff; }
         body { background: var(--black); color: var(--white); font-family: 'Segoe UI', Arial, sans-serif; margin: 0; scroll-behavior: smooth; }
         
-        /* Attractive Premium Header with SVG Logo */
+        /* Premium Header & Logo */
         header { background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; padding: 15px 0; box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
-        
-        /* BRAND LOGO AREA */
         .brand-header { text-align: center; margin-bottom: 15px; }
         .logo-wrapper { display: inline-block; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4)); }
         
-        nav { display: flex; justify-content: center; gap: 35px; }
+        nav { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
         .nav-item { position: relative; padding: 5px 0; }
-        .nav-item > a { color: var(--white); text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; transition: 0.3s; }
+        .nav-item > a { color: var(--white); text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; transition: 0.3s; }
         .nav-item:hover > a { color: var(--gold); }
 
-        .dropdown { display: none; position: absolute; background: var(--gray); min-width: 220px; top: 30px; left: 50%; transform: translateX(-50%); border: 1px solid var(--gold); box-shadow: 0 10px 40px rgba(0,0,0,0.9); padding: 10px 0; }
+        /* Elegant Dropdowns */
+        .dropdown { display: none; position: absolute; background: var(--gray); min-width: 220px; top: 30px; left: 50%; transform: translateX(-50%); border: 1px solid var(--gold); box-shadow: 0 10px 40px rgba(0,0,0,0.9); padding: 10px 0; border-radius: 0 0 10px 10px; }
         .nav-item:hover .dropdown { display: block; }
-        .dropdown a { color: white; padding: 12px 25px; display: block; text-decoration: none; font-size: 13px; border-bottom: 1px solid #222; }
+        .dropdown a { color: white; padding: 12px 25px; display: block; text-decoration: none; font-size: 12px; border-bottom: 1px solid #222; transition: 0.3s; }
         .dropdown a:hover { background: #1a1a1a; color: var(--gold); padding-left: 30px; }
 
-        section { padding: 100px 5%; border-bottom: 1px solid #222; max-width: 1500px; margin: auto; }
-        .cat-title { text-align: center; margin-bottom: 60px; }
-        .cat-title h2 { color: var(--gold); font-size: 2.5rem; letter-spacing: 8px; text-transform: uppercase; margin: 0; display: inline-block; border-bottom: 2px solid var(--gold); padding-bottom: 15px; }
+        /* Grid System */
+        section { padding: 80px 5%; border-bottom: 1px solid #222; max-width: 1500px; margin: auto; }
+        .cat-title { text-align: center; margin-bottom: 50px; }
+        .cat-title h2 { color: var(--gold); font-size: 2.2rem; letter-spacing: 6px; text-transform: uppercase; margin: 0; display: inline-block; border-bottom: 2px solid var(--gold); padding-bottom: 10px; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .card { background: var(--gray); border-radius: 15px; border: 1px solid #222; overflow: hidden; transition: 0.5s ease; display: flex; flex-direction: column; }
-        .card:hover { border-color: var(--gold); transform: translateY(-15px); box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2); }
-        .card img { width: 100%; height: 400px; object-fit: cover; border-bottom: 1px solid #222; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--gray); border-radius: 15px; border: 1px solid #222; overflow: hidden; transition: 0.5s ease; display: flex; flex-direction: column; position: relative; }
+        .card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.15); }
+        .card img { width: 100%; height: 380px; object-fit: cover; border-bottom: 1px solid #222; }
         
-        .info { padding: 30px; flex-grow: 1; }
-        .name { color: var(--gold); font-size: 1.2rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; min-height: 40px; }
-        .price { font-size: 1.8rem; margin: 15px 0; font-weight: 800; color: #fff; }
+        .info { padding: 25px; flex-grow: 1; text-align: center; }
+        .name { color: var(--gold); font-size: 1.1rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; min-height: 40px; }
+        .price { font-size: 1.7rem; margin: 15px 0; font-weight: 800; color: #fff; }
         
-        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 18px; text-decoration: none; border-radius: 10px; font-weight: bold; transition: 0.3s; font-size: 1rem; }
+        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 10px; font-weight: bold; transition: 0.3s; }
         .buy-btn:hover { background: #128C7E; transform: scale(1.02); }
 
-        .support-widget { position: fixed; bottom: 35px; right: 35px; z-index: 9999; display: flex; align-items: center; text-decoration: none; transition: 0.4s; }
-        .support-widget:hover { transform: scale(1.1); }
-        .support-text { background: var(--white); color: #000; padding: 12px 25px; border-radius: 30px; font-weight: bold; margin-right: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); font-size: 14px; border: 1px solid var(--gold); }
-        .support-icon { background: #25D366; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5); }
+        /* Floating Support */
+        .support-widget { position: fixed; bottom: 35px; right: 35px; z-index: 9999; display: flex; align-items: center; text-decoration: none; }
+        .support-text { background: var(--white); color: #000; padding: 10px 20px; border-radius: 30px; font-weight: bold; margin-right: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); font-size: 13px; border: 1px solid var(--gold); }
+        .support-icon { background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); }
 
-        footer { text-align: center; padding: 60px; color: #555; border-top: 1px solid #222; font-size: 14px; letter-spacing: 3px; }
+        footer { text-align: center; padding: 50px; color: #444; border-top: 1px solid #222; font-size: 12px; letter-spacing: 3px; }
     </style>
 </head>
 <body>
@@ -64,9 +64,8 @@
                 </defs>
                 <path d="M 50 15 a 20 20 0 1 0 0 40 a 20 20 0 0 0 2 -3 m 5 -10 a 15 15 0 1 1 -7 -27 m -5 32 Z" fill="url(#goldGradient)" stroke="#d4af37" stroke-width="0.5" />
                 <polygon points="52,35 55,30 58,35 63,35 59,39 61,44 52,41 43,44 45,39 41,35" fill="#000000"/>
-                
-                <text x="75" y="42" fill="url(#goldGradient)" font-family="'Arial Black', Helvetica, sans-serif" font-size="28" font-weight="bold" letter-spacing="2">CSTAR</text>
-                <text x="75" y="60" fill="#aaaaaa" font-family="'Segoe UI', Helvetica, sans-serif" font-size="10" font-weight="normal" letter-spacing="5">COLLECTIONS</text>
+                <text x="75" y="42" fill="url(#goldGradient)" font-family="Arial, sans-serif" font-size="28" font-weight="bold" letter-spacing="2">CSTAR</text>
+                <text x="75" y="60" fill="#888" font-family="Arial, sans-serif" font-size="10" letter-spacing="5">COLLECTIONS</text>
             </svg>
         </div>
     </div>
@@ -75,7 +74,8 @@
         <div class="nav-item">
             <a href="#mens-watches">Watches ▾</a>
             <div class="dropdown">
-                <a href="#mens-watches">Men's Premium Collection</a>
+                <a href="gshock.html">G-Shock Master Collection</a>
+                <a href="#mens-watches">Men's Premium Watches</a>
                 <a href="#ladies-watches">Women's Luxury Segment</a>
             </div>
         </div>
@@ -83,7 +83,8 @@
             <a href="#formal-shoes">Footwear ▾</a>
             <div class="dropdown">
                 <a href="#formal-shoes">Formal Excellence</a>
-                <a href="gshock.html">G-Shock Hub</a>
+                <a href="#casual-shoes">Casual Collection</a>
+                <a href="#sports-shoes">Sports Edition</a>
             </div>
         </div>
         <div class="nav-item">
@@ -98,55 +99,49 @@
 </header>
 
 <section id="mens-watches">
-    <div class="cat-title"><h2>Men's Watches</h2></div>
+    <div class="cat-title"><h2>Men's Master Watches</h2></div>
     <div class="grid">
-        <div class="card"><img src="watch1-jpg%20(1).jpg"><div class="info"><p class="name">Hublot Classic Fusion</p><div class="price">₹2,999</div><a href="https://wa.me/917696969628?text=Order+Hublot+Fusion" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(2).jpg"><div class="info"><p class="name">G-Shock Casioak Metal</p><div class="price">₹2,450</div><a href="https://wa.me/917696969628?text=Order+GShock+Metal" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(3).jpg"><div class="info"><p class="name">G-Shock Neon Limited</p><div class="price">₹2,450</div><a href="https://wa.me/917696969628?text=Order+GShock+Neon" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(4).jpg"><div class="info"><p class="name">Rado Jubile Ceramic</p><div class="price">₹3,490</div><a href="https://wa.me/917696969628?text=Order+Rado+Black" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(6).jpg"><div class="info"><p class="name">Movado Bold Two-Tone</p><div class="price">₹4,400</div><a href="https://wa.me/917696969628?text=Order+Movado" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(7).jpg"><div class="info"><p class="name">Rado DiaStar Golden</p><div class="price">₹4,850</div><a href="https://wa.me/917696969628?text=Order+Rado+Golden" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(8).jpg"><div class="info"><p class="name">Hublot Skeleton Green</p><div class="price">₹3,200</div><a href="https://wa.me/917696969628?text=Order+Hublot+Green" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(9).jpg"><div class="info"><p class="name">Omega Seamaster Pro</p><div class="price">₹4,500</div><a href="https://wa.me/917696969628?text=Order+Omega" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(10).jpg"><div class="info"><p class="name">Rolex Hulk Submariner</p><div class="price">₹3,895</div><a href="https://wa.me/917696969628?text=Order+Rolex" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(11).jpg"><div class="info"><p class="name">Master Copy Watch 11</p><div class="price">₹3,150</div><a href="https://wa.me/917696969628?text=Order+Watch11" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(12).jpg"><div class="info"><p class="name">Master Copy Watch 12</p><div class="price">₹2,800</div><a href="https://wa.me/917696969628?text=Order+Watch12" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(13).jpg"><div class="info"><p class="name">Master Copy Watch 13</p><div class="price">₹3,400</div><a href="https://wa.me/917696969628?text=Order+Watch13" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(14).jpg"><div class="info"><p class="name">Master Copy Watch 14</p><div class="price">₹4,200</div><a href="https://wa.me/917696969628?text=Order+Watch14" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(15).jpg"><div class="info"><p class="name">Master Copy Watch 15</p><div class="price">₹2,990</div><a href="https://wa.me/917696969628?text=Order+Watch15" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-    </div>
-</section>
-
-<section id="ladies-watches">
-    <div class="cat-title"><h2>Women's Luxury</h2></div>
-    <div class="grid">
-        <div class="card"><img src="watch1-jpg%20(5).jpg"><div class="info"><p class="name">Rado Jubile White Pearl</p><div class="price">₹3,490</div><a href="https://wa.me/917696969628?text=Order+Rado+White" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
+        <div class="card"><img src="watch1-jpg%20(1).jpg"><div class="info"><p class="name">Hublot Classic Fusion</p><div class="price">₹2,999</div><a href="https://wa.me/917696969628?text=Order+Watch1" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="watch1-jpg%20(2).jpg"><div class="info"><p class="name">G-Shock Metal Silver</p><div class="price">₹2,450</div><a href="https://wa.me/917696969628?text=Order+Watch2" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="watch1-jpg%20(3).jpg"><div class="info"><p class="name">G-Shock Neon Limited</p><div class="price">₹2,450</div><a href="https://wa.me/917696969628?text=Order+Watch3" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="watch1-jpg%20(4).jpg"><div class="info"><p class="name">Rado Jubile Ceramic</p><div class="price">₹3,490</div><a href="https://wa.me/917696969628?text=Order+Watch4" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="watch1-jpg%20(5).jpg"><div class="info"><p class="name">Rado White Ceramic</p><div class="price">₹3,490</div><a href="https://wa.me/917696969628?text=Order+Watch5" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="watch1-jpg%20(6).jpg"><div class="info"><p class="name">Movado Bold Two-Tone</p><div class="price">₹4,400</div><a href="https://wa.me/917696969628?text=Order+Watch6" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="watch1-jpg%20(7).jpg"><div class="info"><p class="name">Rado DiaStar Golden</p><div class="price">₹4,850</div><a href="https://wa.me/917696969628?text=Order+Watch7" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="watch1-jpg%20(8).jpg"><div class="info"><p class="name">Hublot Skeleton Green</p><div class="price">₹3,200</div><a href="https://wa.me/917696969628?text=Order+Watch8" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="watch1-jpg%20(9).jpg"><div class="info"><p class="name">Omega Seamaster Pro</p><div class="price">₹4,500</div><a href="https://wa.me/917696969628?text=Order+Watch9" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="watch1-jpg%20(10).jpg"><div class="info"><p class="name">Rolex Hulk Submariner</p><div class="price">₹3,895</div><a href="https://wa.me/917696969628?text=Order+Watch10" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="watch1-jpg%20(11).jpg"><div class="info"><p class="name">Premium Watch 11</p><div class="price">₹2,999</div><a href="https://wa.me/917696969628?text=Order+Watch11" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="watch1-jpg%20(12).jpg"><div class="info"><p class="name">Premium Watch 12</p><div class="price">₹3,150</div><a href="https://wa.me/917696969628?text=Order+Watch12" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="watch1-jpg%20(13).jpg"><div class="info"><p class="name">Premium Watch 13</p><div class="price">₹2,800</div><a href="https://wa.me/917696969628?text=Order+Watch13" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="watch1-jpg%20(14).jpg"><div class="info"><p class="name">Premium Watch 14</p><div class="price">₹4,200</div><a href="https://wa.me/917696969628?text=Order+Watch14" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="watch1-jpg%20(15).jpg"><div class="info"><p class="name">Premium Watch 15</p><div class="price">₹3,600</div><a href="https://wa.me/917696969628?text=Order+Watch15" class="buy-btn">ORDER WHATSAPP</a></div></div>
     </div>
 </section>
 
 <section id="formal-shoes">
-    <div class="cat-title"><h2>Premium Footwear</h2></div>
+    <div class="cat-title"><h2>Formal Footwear</h2></div>
     <div class="grid">
-        <div class="card"><img src="formal1-jpg%20(1).jpg"><div class="info"><p class="name">Cole Haan Tan Loafer</p><div class="price">₹2,450</div><a href="https://wa.me/917696969628?text=Order+Tan+Loafer" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="formal1-jpg%20(2).jpg"><div class="info"><p class="name">Hugo Boss Black Slip-on</p><div class="price">₹2,650</div><a href="https://wa.me/917696969628?text=Order+Hugo+Boss" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="formal1-jpg%20(3).jpg"><div class="info"><p class="name">Versace Brogue Classic</p><div class="price">₹2,700</div><a href="https://wa.me/917696969628?text=Order+Versace" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="formal1-jpg%20(4).jpg"><div class="info"><p class="name">Cole Haan Black Executive</p><div class="price">₹2,400</div><a href="https://wa.me/917696969628?text=Order+Black+Loafer" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="formal1-jpg%20(5).jpg"><div class="info"><p class="name">Cole Haan Wine Luxury</p><div class="price">₹2,550</div><a href="https://wa.me/917696969628?text=Order+Wine+Loafer" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="formal1-jpg%20(6).jpg"><div class="info"><p class="name">Tan Wingtip Brogue</p><div class="price">₹2,300</div><a href="https://wa.me/917696969628?text=Order+Tan+Brogue" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="formal1-jpg%20(7).jpg"><div class="info"><p class="name">Dark Brown Oxford</p><div class="price">₹2,300</div><a href="https://wa.me/917696969628?text=Order+Brown+Oxford" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="formal1-jpg%20(8).jpg"><div class="info"><p class="name">Classic Black Oxford</p><div class="price">₹2,200</div><a href="https://wa.me/917696969628?text=Order+Black+Oxford" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="formal1-jpg%20(9).jpg"><div class="info"><p class="name">Stag Embroidered Loafer</p><div class="price">₹2,500</div><a href="https://wa.me/917696969628?text=Order+Stag+Loafer" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
+        <div class="card"><img src="formal1-jpg%20(1).jpg"><div class="info"><p class="name">Cole Haan Tan Loafer</p><div class="price">₹2,450</div><a href="https://wa.me/917696969628?text=Order+Shoe1" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="formal1-jpg%20(2).jpg"><div class="info"><p class="name">Hugo Boss Black</p><div class="price">₹2,650</div><a href="https://wa.me/917696969628?text=Order+Shoe2" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="formal1-jpg%20(3).jpg"><div class="info"><p class="name">Versace Brogue</p><div class="price">₹2,700</div><a href="https://wa.me/917696969628?text=Order+Shoe3" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="formal1-jpg%20(4).jpg"><div class="info"><p class="name">Cole Haan Black Loafer</p><div class="price">₹2,400</div><a href="https://wa.me/917696969628?text=Order+Shoe4" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="formal1-jpg%20(5).jpg"><div class="info"><p class="name">Cole Haan Wine Loafer</p><div class="price">₹2,550</div><a href="https://wa.me/917696969628?text=Order+Shoe5" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="formal1-jpg%20(6).jpg"><div class="info"><p class="name">Tan Wingtip Brogue</p><div class="price">₹2,300</div><a href="https://wa.me/917696969628?text=Order+Shoe6" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="formal1-jpg%20(7).jpg"><div class="info"><p class="name">Dark Brown Oxford</p><div class="price">₹2,300</div><a href="https://wa.me/917696969628?text=Order+Shoe7" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="formal1-jpg%20(8).jpg"><div class="info"><p class="name">Classic Black Oxford</p><div class="price">₹2,200</div><a href="https://wa.me/917696969628?text=Order+Shoe8" class="buy-btn">ORDER WHATSAPP</a></div></div>
+        <div class="card"><img src="formal1-jpg%20(9).jpg"><div class="info"><p class="name">Stag Embroidered Loafer</p><div class="price">₹2,500</div><a href="https://wa.me/917696969628?text=Order+Shoe9" class="buy-btn">ORDER WHATSAPP</a></div></div>
     </div>
 </section>
 
-<a href="https://wa.me/917696969628?text=Hello+CSTAR+Support" class="support-widget" target="_blank">
+<a href="https://wa.me/917696969628" class="support-widget" target="_blank">
     <div class="support-text">Customer Support Online</div>
     <div class="support-icon">
-        <svg width="35" height="35" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.237 3.483 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.499-5.688-1.447l-6.308 1.65zm6.357-3.963c1.577.933 3.136 1.392 4.696 1.393 5.403 0 9.807-4.405 9.81-9.81.002-2.618-1.02-5.08-2.879-6.941-1.857-1.86-4.321-2.88-6.939-2.881-5.404 0-9.81 4.404-9.813 9.81-.001 1.741.469 3.441 1.357 4.934l-.997 3.646 3.765-.988z"/></svg>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.237 3.483 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.499-5.688-1.447l-6.308 1.65zm6.357-3.963c1.577.933 3.136 1.392 4.696 1.393 5.403 0 9.807-4.405 9.81-9.81.002-2.618-1.02-5.08-2.879-6.941-1.857-1.86-4.321-2.88-6.939-2.881-5.404 0-9.81 4.404-9.813 9.81-.001 1.741.469 3.441 1.357 4.934l-.997 3.646 3.765-.988z"/></svg>
     </div>
 </a>
 
-<footer>&copy; 2026 CSTAR COLLECTIONS | QUALITY & TRUST | +91 7696969628</footer>
+<footer>&copy; 2026 CSTAR COLLECTIONS | +91 7696969628</footer>
 
 </body>
 </html>
