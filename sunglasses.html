@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUNGLASSES COLLECTION | CSTAR</title>
+    <style>
+        :root { --gold: #d4af37; --black: #050505; --gray: #121212; --white: #ffffff; }
+        body { background: var(--black); color: var(--white); font-family: 'Segoe UI', Arial, sans-serif; margin: 0; }
+        
+        header { background: #000; border-bottom: 2px solid var(--gold); padding: 20px; text-align: center; position: sticky; top: 0; z-index: 1000; }
+        .back-btn { position: absolute; left: 20px; top: 25px; color: var(--gold); text-decoration: none; font-weight: bold; font-size: 14px; }
+        .logo { color: var(--gold); font-size: 1.5rem; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; }
+
+        section { padding: 60px 5%; max-width: 1400px; margin: auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--gray); border-radius: 15px; border: 1px solid #222; overflow: hidden; transition: 0.4s; }
+        .card:hover { border-color: var(--gold); transform: translateY(-10px); }
+        .card img { width: 100%; height: 300px; object-fit: cover; }
+        
+        .info { padding: 20px; text-align: center; }
+        .brand { color: var(--gold); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px; }
+        .name { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; }
+        .price { font-size: 1.6rem; font-weight: 800; margin-bottom: 20px; color: #fff; }
+        
+        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="back-btn">← HOME</a>
+    <div class="logo">LUXURY EYEWEAR</div>
+</header>
+
+<section>
+    <div class="grid">
+        <div class="card">
+            <img src="sun1.jpg" alt="Sunglasses">
+            <div class="info">
+                <p class="brand">Ray-Ban</p>
+                <p class="name">Classic Aviator Gold</p>
+                <div class="price">₹1,899</div>
+                <a href="https://wa.me/917696969628?text=I+want+to+buy+Rayban+Aviator" class="buy-btn">ORDER ON WHATSAPP</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="sun2.jpg" alt="Sunglasses">
+            <div class="info">
+                <p class="brand">Louis Vuitton</p>
+                <p class="name">Millionaire Black Z1165E</p>
+                <div class="price">₹2,499</div>
+                <a href="https://wa.me/917696969628?text=I+want+to+buy+LV+Millionaire" class="buy-btn">ORDER ON WHATSAPP</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
