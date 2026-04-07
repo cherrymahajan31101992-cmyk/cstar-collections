@@ -18,13 +18,13 @@
         .card:hover { border-color: var(--gold); transform: translateY(-12px); box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2); }
         
         .badge { position: absolute; top: 15px; right: 15px; background: var(--gold); color: black; padding: 5px 12px; font-size: 10px; font-weight: bold; border-radius: 5px; z-index: 10; }
-
         .card img { width: 100%; height: 320px; object-fit: cover; border-bottom: 1px solid #222; background: #1a1a1a; }
         
         .info { padding: 25px; text-align: center; flex-grow: 1; }
         .brand { color: var(--gold); font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+        .product-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
         .price { font-size: 1.8rem; margin: 15px 0; font-weight: 800; color: #fff; }
-        .desc { color: #777; font-size: 0.85rem; margin-bottom: 20px; line-height: 1.4; }
+        .desc { color: #888; font-size: 0.85rem; margin-bottom: 20px; line-height: 1.5; min-height: 45px; }
         
         .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 16px; text-decoration: none; border-radius: 10px; font-weight: bold; transition: 0.3s; }
         .buy-btn:hover { background: #128C7E; }
@@ -40,33 +40,84 @@
 </header>
 
 <section>
-    <div class="grid" id="eyewear-grid">
-        <script>
-            const grid = document.getElementById('eyewear-grid');
-            const brands = ["Ray-Ban", "Louis Vuitton", "Cartier", "Gucci", "Prada"];
-            
-            for (let i = 1; i <= 25; i++) {
-                const currentBrand = brands[i % brands.length];
-                const price = (i % 2 === 0) ? "₹1,999" : "₹2,499";
-                
-                grid.innerHTML += `
-                    <div class="card">
-                        <div class="badge">ORIGINAL BOX</div>
-                        <img src="sun${i}.jpg" alt="Luxury Shade">
-                        <div class="info">
-                            <p class="brand">${currentBrand} Premium</p>
-                            <div class="price">${price}</div>
-                            <p class="desc">7A Master Quality. Includes Brand Hard Case, Cloth & Certificate.</p>
-                            <a href="https://wa.me/917696969628?text=Order+Sunglasses+Item+${i}" class="buy-btn">ORDER ON WHATSAPP</a>
-                        </div>
-                    </div>
-                `;
-            }
-        </script>
-    </div>
+    <div class="grid">
+        
+        <div class="card">
+            <div class="badge">FULL KIT</div>
+            <img src="sun1.jpg">
+            <div class="info">
+                <p class="brand">RAY-BAN</p>
+                <p class="product-name">Classic Aviator Gold</p>
+                <div class="price">₹1,999</div>
+                <p class="desc">Iconic teardrop shape with G-15 polarized lenses. Perfect for driving.</p>
+                <a href="https://wa.me/917696969628?text=Order+Sun1+Rayban" class="buy-btn">ORDER WHATSAPP</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="badge">PREMIUM</div>
+            <img src="sun2.jpg">
+            <div class="info">
+                <p class="brand">LOUIS VUITTON</p>
+                <p class="product-name">Millionaire Black Z1165E</p>
+                <div class="price">₹2,499</div>
+                <p class="desc">Deep beveled front with gold trunk-inspired S-lock hinges. High fashion.</p>
+                <a href="https://wa.me/917696969628?text=Order+Sun2+LV" class="buy-btn">ORDER WHATSAPP</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="badge">MASTER COPY</div>
+            <img src="sun3.jpg">
+            <div class="info">
+                <p class="brand">GUCCI</p>
+                <p class="product-name">Double G Oversized</p>
+                <div class="price">₹2,150</div>
+                <p class="desc">Bold black frames with signature green-red temple details. UV400.</p>
+                <a href="https://wa.me/917696969628?text=Order+Sun3+Gucci" class="buy-btn">ORDER WHATSAPP</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="badge">FULL KIT</div>
+            <img src="sun4.jpg">
+            <div class="info">
+                <p class="brand">CARTIER</p>
+                <p class="product-name">Santos de Cartier Silver</p>
+                <div class="price">₹2,500</div>
+                <p class="desc">Rimless design with iconic screw motifs. Includes hard case & kit.</p>
+                <a href="https://wa.me/917696969628?text=Order+Sun4+Cartier" class="buy-btn">ORDER WHATSAPP</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="badge">TOP QUALITY</div>
+            <img src="sun5.jpg">
+            <div class="info">
+                <p class="brand">PRADA</p>
+                <p class="product-name">PR 17WS Black Runway</p>
+                <div class="price">₹2,299</div>
+                <p class="desc">Geometric chunky frame seen on celebrities. 7A Master Quality.</p>
+                <a href="https://wa.me/917696969628?text=Order+Sun5+Prada" class="buy-btn">ORDER WHATSAPP</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="badge">7A QUALITY</div>
+            <img src="sun6.jpg">
+            <div class="info">
+                <p class="brand">VERSACE</p>
+                <p class="product-name">Medusa Biggie Black</p>
+                <div class="price">₹2,350</div>
+                <div class="desc">Hip-hop style wide temples with gold Medusa coin. Luxury feel.</div>
+                <a href="https://wa.me/917696969628?text=Order+Sun6+Versace" class="buy-btn">ORDER WHATSAPP</a>
+            </div>
+        </div>
+
+        </div>
 </section>
 
-<footer>&copy; 2026 CSTAR COLLECTIONS</footer>
+<footer>&copy; 2026 CSTAR COLLECTIONS | QUALITY & TRUST</footer>
 
 </body>
 </html>
