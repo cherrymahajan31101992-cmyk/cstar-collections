@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECURE PAYMENT | CSTAR</title>
+    <style>
+        :root { --gold: #d4af37; --black: #050505; --white: #ffffff; }
+        body { background: var(--black); color: var(--white); font-family: 'Segoe UI', sans-serif; text-align: center; padding: 50px 20px; }
+        
+        .pay-container { max-width: 400px; margin: auto; background: #121212; padding: 30px; border: 2px solid var(--gold); border-radius: 20px; }
+        .logo { color: var(--gold); font-size: 1.5rem; font-weight: 800; letter-spacing: 3px; margin-bottom: 20px; }
+        
+        .qr-box img { width: 100%; max-width: 250px; border-radius: 10px; border: 5px solid white; margin: 20px 0; }
+        
+        .instruction { color: #888; font-size: 14px; margin-bottom: 20px; }
+        .upi-id { background: #1a1a1a; padding: 10px; border-radius: 5px; color: var(--gold); font-weight: bold; margin-bottom: 30px; border: 1px dashed var(--gold); }
+        
+        .done-btn { display: block; background: #25D366; color: white; padding: 15px; text-decoration: none; border-radius: 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="pay-container">
+    <div class="logo">CSTAR PAY</div>
+    <p>Scan the QR Code to pay via GPay, PhonePe, or Paytm</p>
+    
+    <div class="qr-box">
+        <img src="myqr.png" alt="Payment QR">
+    </div>
+
+    <p class="instruction">Or Pay to UPI ID:</p>
+    <div class="upi-id">YOUR_ID@ybl</div>
+
+    <p style="font-size: 12px; color: #555;">After payment, please send the screenshot on WhatsApp for order confirmation.</p>
+    
+    <a href="https://wa.me/917696969628?text=I+have+made+the+payment" class="done-btn">I HAVE PAID</a>
+</div>
+
+</body>
+</html>
