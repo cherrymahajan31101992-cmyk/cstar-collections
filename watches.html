@@ -8,17 +8,13 @@
         :root { --gold: #d4af37; --black: #050505; --gray: #121212; --white: #ffffff; }
         body { background: var(--black); color: var(--white); font-family: 'Segoe UI', sans-serif; margin: 0; scroll-behavior: smooth; }
         
-        /* --- PREMIUM HEADER --- */
-        header { background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; padding: 15px 0; }
-        .logo-wrapper { text-align: center; margin-bottom: 15px; }
+        header { background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; padding: 15px 0; text-align: center;}
         .back-btn { position: absolute; left: 20px; top: 25px; color: var(--gold); text-decoration: none; font-size: 12px; border: 1px solid var(--gold); padding: 5px 10px; border-radius: 5px; }
+        .logo { color: var(--gold); font-size: 1.8rem; font-weight: 800; letter-spacing: 5px; text-transform: uppercase; margin: 0 0 10px 0; }
         
-        /* --- SUB-NAV FOR WATCHES --- */
         nav { display: flex; justify-content: center; gap: 25px; background: #000; padding: 10px 0; border-bottom: 1px solid #222; }
-        nav a { color: #888; text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
-        nav a:hover { color: var(--gold); }
+        nav a { color: #888; text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; }
 
-        /* --- PRODUCT GRID SYSTEM --- */
         section { padding: 60px 5%; max-width: 1400px; margin: auto; }
         .section-title { text-align: center; margin-bottom: 40px; }
         .section-title h2 { color: var(--gold); font-size: 2rem; letter-spacing: 5px; text-transform: uppercase; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 10px; }
@@ -26,35 +22,25 @@
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .card { background: var(--gray); border-radius: 15px; border: 1px solid #222; overflow: hidden; transition: 0.5s; display: flex; flex-direction: column; }
         .card:hover { border-color: var(--gold); transform: translateY(-10px); }
-        .card img { width: 100%; height: 380px; object-fit: cover; background: #1a1a1a; }
+        .card img { width: 100%; height: 400px; object-fit: cover; background: #1a1a1a; }
         
         .info { padding: 20px; text-align: center; flex-grow: 1; }
         .series { color: var(--gold); font-size: 0.8rem; letter-spacing: 2px; font-weight: bold; text-transform: uppercase; }
-        .name { color: #fff; font-size: 1rem; font-weight: bold; margin: 10px 0; min-height: 40px; }
+        .name { color: #fff; font-size: 1rem; font-weight: bold; margin: 10px 0; }
         .price { font-size: 1.5rem; color: #fff; font-weight: 800; margin-bottom: 15px; }
         
-        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 14px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s; }
-        .buy-btn:hover { background: #128C7E; }
-
-        /* --- FLOATING WHATSAPP --- */
-        .support-btn { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 55px; height: 55px; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
-
-        footer { text-align: center; padding: 40px; color: #444; border-top: 1px solid #222; margin-top: 50px; font-size: 12px; }
+        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 14px; text-decoration: none; border-radius: 8px; font-weight: bold; }
+        footer { text-align: center; padding: 40px; color: #444; border-top: 1px solid #222; margin-top: 50px; }
     </style>
 </head>
 <body>
 
 <header>
     <a href="index.html" class="back-btn">← BACK</a>
-    <div class="logo-wrapper">
-        <svg width="180" height="50" viewBox="0 0 220 70">
-            <text x="30" y="45" fill="#d4af37" font-family="Arial" font-size="32" font-weight="bold">CSTAR</text>
-        </svg>
-    </div>
+    <p class="logo">CSTAR TIMEPIECES</p>
     <nav>
         <a href="#mens">Men's Premium</a>
         <a href="#women">Women's Elite</a>
-        <a href="#smart">Smart Watches</a>
     </nav>
 </header>
 
@@ -71,7 +57,7 @@
 </section>
 
 <script>
-    // DATA FOR 15 PREVIOUS WATCHES (MEN'S)
+    // MENS DATA (15 Products)
     const mensData = [
         { id: 1, name: "Model CS-W01 Aero", price: "2,999", series: "AERO SERIES" },
         { id: 2, name: "Model CS-W02 Stealth", price: "2,450", series: "STEALTH" },
@@ -90,7 +76,7 @@
         { id: 15, name: "Model CS-W15 Phantom", price: "4,740", series: "PHANTOM" }
     ];
 
-    // DATA FOR 10 NEW WATCHES (WOMEN'S)
+    // WOMENS DATA (10 Products)
     const womenData = [
         { id: 1, name: "CS-L01 Pearl Rose", price: "3,450", series: "Ceramic Elite" },
         { id: 2, name: "CS-L02 Silver Sunray", price: "2,850", series: "Oyster Luxe" },
@@ -104,12 +90,14 @@
         { id: 10, name: "CS-L10 Emerald Sky", price: "3,350", series: "Jewelry Line" }
     ];
 
-    function loadProducts(data, gridId, imgPrefix) {
-        const grid = document.getElementById(gridId);
+    function loadGrid(data, containerId) {
+        const container = document.getElementById(containerId);
         data.forEach(item => {
-            grid.innerHTML += `
+            // This line fixes the space issue in the file name automatically
+            const fileName = `watch1-jpg (${item.id}).jpg`;
+            container.innerHTML += `
                 <div class="card">
-                    <img src="${imgPrefix} (${item.id}).jpg">
+                    <img src="${fileName}" alt="${item.name}">
                     <div class="info">
                         <p class="series">${item.series}</p>
                         <p class="name">${item.name}</p>
@@ -120,18 +108,9 @@
         });
     }
 
-    // Load Men's watches (Prefix is watch1-jpg)
-    loadProducts(mensData, 'mens-grid', 'watch1-jpg');
-    // Load Women's watches (Prefix is also watch1-jpg because your files use the same name)
-    loadProducts(womenData, 'women-grid', 'watch1-jpg');
-
+    loadGrid(mensData, 'mens-grid');
+    loadGrid(womenData, 'women-grid');
 </script>
-
-<a href="https://wa.me/917696969628" class="support-btn" target="_blank">
-    <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.237 3.483 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.499-5.688-1.447l-6.308 1.65zm6.357-3.963c1.577.933 3.136 1.392 4.696 1.393 5.403 0 9.807-4.405 9.81-9.81.002-2.618-1.02-5.08-2.879-6.941-1.857-1.857-4.321-2.88-6.939-2.881-5.404 0-9.81 4.404-9.813 9.81-.001 1.741.469 3.441 1.357 4.934l-.997 3.646 3.765-.988z"/></svg>
-</a>
-
-<footer>&copy; 2026 CSTAR COLLECTIONS | QUALITY SINCE 2014</footer>
 
 </body>
 </html>
