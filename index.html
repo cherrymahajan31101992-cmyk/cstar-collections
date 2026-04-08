@@ -3,137 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSTAR COLLECTIONS | Elite Private Boutique</title>
+    <title>CSTAR COLLECTIONS | Luxury Boutique</title>
     <style>
         :root { --gold: #d4af37; --black: #050505; --gray: #121212; --white: #ffffff; }
-        body { background: var(--black); color: var(--white); font-family: 'Segoe UI', Arial, sans-serif; margin: 0; scroll-behavior: smooth; }
+        body { background: var(--black); color: var(--white); font-family: 'Segoe UI', Arial, sans-serif; margin: 0; }
         
-        /* Header & Logo */
-        header { background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; padding: 15px 0; }
-        .brand-header { text-align: center; margin-bottom: 15px; }
+        header { background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--gold); padding: 25px 0; text-align: center; position: sticky; top: 0; z-index: 1000; }
         .logo-wrapper { display: inline-block; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4)); }
-        
-        /* Categories Navigation */
-        nav { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-        .nav-item { position: relative; padding: 5px 0; }
-        .nav-item > a { color: var(--white); text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; transition: 0.3s; }
-        .nav-item:hover > a { color: var(--gold); }
 
-        .dropdown { display: none; position: absolute; background: var(--gray); min-width: 220px; top: 30px; left: 50%; transform: translateX(-50%); border: 1px solid var(--gold); padding: 10px 0; border-radius: 0 0 10px 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
-        .nav-item:hover .dropdown { display: block; }
-        .dropdown a { color: white; padding: 12px 25px; display: block; text-decoration: none; font-size: 12px; border-bottom: 1px solid #222; }
-        .dropdown a:hover { background: #1a1a1a; color: var(--gold); }
+        nav { display: flex; justify-content: center; gap: 40px; padding-top: 20px; }
+        nav a { color: var(--white); text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; transition: 0.3s; }
+        nav a:hover { color: var(--gold); }
 
-        /* Grid & Cards */
-        section { padding: 80px 5%; border-bottom: 1px solid #222; max-width: 1500px; margin: auto; }
-        .cat-title { text-align: center; margin-bottom: 50px; }
-        .cat-title h2 { color: var(--gold); font-size: 2.2rem; letter-spacing: 6px; text-transform: uppercase; margin: 0; display: inline-block; border-bottom: 2px solid var(--gold); padding-bottom: 10px; }
+        /* Banner */
+        .hero { height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; border-bottom: 1px solid #222; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('watch1-jpg%20(7).jpg'); background-size: cover; background-position: center; }
+        .hero h1 { font-size: 3rem; letter-spacing: 10px; color: var(--gold); text-transform: uppercase; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--gray); border-radius: 15px; border: 1px solid #222; overflow: hidden; transition: 0.5s ease; display: flex; flex-direction: column; }
-        .card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.15); }
-        .card img { width: 100%; height: 380px; object-fit: cover; border-bottom: 1px solid #222; background: #1a1a1a; }
-        
-        .info { padding: 25px; flex-grow: 1; text-align: center; }
-        .series { color: var(--gold); font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; margin-bottom: 5px; }
-        .name { color: #fff; font-size: 1.1rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; min-height: 40px; }
-        .price { font-size: 1.7rem; margin: 15px 0; font-weight: 800; color: #fff; }
-        
-        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 10px; font-weight: bold; }
+        /* Category Grid on Home */
+        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 60px 5%; }
+        .cat-card { background: var(--gray); border: 1px solid #222; border-radius: 15px; overflow: hidden; text-align: center; transition: 0.4s; text-decoration: none; }
+        .cat-card:hover { border-color: var(--gold); transform: translateY(-10px); }
+        .cat-card img { width: 100%; height: 400px; object-fit: cover; }
+        .cat-card h3 { color: var(--gold); padding: 20px; font-size: 1.5rem; margin: 0; text-transform: uppercase; letter-spacing: 4px; }
 
-        /* Floating Support */
-        .support-widget { position: fixed; bottom: 35px; right: 35px; z-index: 9999; display: flex; align-items: center; text-decoration: none; }
-        .support-text { background: var(--white); color: #000; padding: 10px 20px; border-radius: 30px; font-weight: bold; margin-right: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); font-size: 13px; border: 1px solid var(--gold); }
-        .support-icon { background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); }
-
-        footer { text-align: center; padding: 50px; color: #444; border-top: 1px solid #222; font-size: 12px; }
+        footer { text-align: center; padding: 50px; color: #444; border-top: 1px solid #222; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="brand-header">
-        <div class="logo-wrapper">
-            <svg width="220" height="70" viewBox="0 0 220 70" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#b8860b;stop-opacity:1" />
-                        <stop offset="50%" style="stop-color:#d4af37;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#b8860b;stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-                <path d="M 50 15 a 20 20 0 1 0 0 40 a 20 20 0 0 0 2 -3 m 5 -10 a 15 15 0 1 1 -7 -27 m -5 32 Z" fill="url(#goldGradient)" stroke="#d4af37" stroke-width="0.5" />
-                <polygon points="52,35 55,30 58,35 63,35 59,39 61,44 52,41 43,44 45,39 41,35" fill="#000000"/>
-                <text x="75" y="42" fill="url(#goldGradient)" font-family="Arial, sans-serif" font-size="28" font-weight="bold" letter-spacing="2">CSTAR</text>
-                <text x="75" y="60" fill="#888" font-family="Arial, sans-serif" font-size="10" letter-spacing="5">COLLECTIONS</text>
-            </svg>
-        </div>
+    <div class="logo-wrapper">
+        <svg width="220" height="70" viewBox="0 0 220 70">
+            <text x="30" y="42" fill="#d4af37" font-family="Arial, sans-serif" font-size="28" font-weight="bold" letter-spacing="2">CSTAR</text>
+            <text x="30" y="60" fill="#888" font-family="Arial, sans-serif" font-size="10" letter-spacing="5">COLLECTIONS</text>
+        </svg>
     </div>
     <nav>
-        <div class="nav-item">
-            <a href="#timepieces">Watches ▾</a>
-            <div class="dropdown">
-                <a href="#timepieces">Master Collection</a>
-                <a href="gshock.html">G-Shock Series</a>
-            </div>
-        </div>
-        <div class="nav-item">
-            <a href="#footwear">Footwear ▾</a>
-            <div class="dropdown">
-                <a href="#footwear">Formal Excellence</a>
-                <a href="#footwear">Casual Series</a>
-                <a href="#footwear">Sports Performance</a>
-            </div>
-        </div>
-        <div class="nav-item"><a href="sunglasses.html">Eyewear</a></div>
-        <div class="nav-item"><a href="#electronics">Electronics</a></div>
+        <a href="watches.html">Watches</a>
+        <a href="footwear.html">Footwear</a>
+        <a href="sunglasses.html">Eyewear</a>
     </nav>
 </header>
 
-<section id="timepieces">
-    <div class="cat-title"><h2>Elite Timepieces</h2></div>
-    <div class="grid">
-        <div class="card"><img src="watch1-jpg%20(1).jpg"><div class="info"><p class="series">AERO SERIES</p><p class="name">Model CS-W01</p><div class="price">₹2,999</div><a href="https://wa.me/917696969628?text=Order+Watch+01" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(2).jpg"><div class="info"><p class="series">STEALTH</p><p class="name">Model CS-W02</p><div class="price">₹2,450</div><a href="https://wa.me/917696969628?text=Order+Watch+02" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(3).jpg"><div class="info"><p class="series">NEON LINE</p><p class="name">Model CS-W03</p><div class="price">₹2,450</div><a href="https://wa.me/917696969628?text=Order+Watch+03" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(4).jpg"><div class="info"><p class="series">CERAMIC</p><p class="name">Model CS-W04</p><div class="price">₹3,490</div><a href="https://wa.me/917696969628?text=Order+Watch+04" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(5).jpg"><div class="info"><p class="series">PURE WHITE</p><p class="name">Model CS-W05</p><div class="price">₹3,490</div><a href="https://wa.me/917696969628?text=Order+Watch+05" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(6).jpg"><div class="info"><p class="series">TWO-TONE</p><p class="name">Model CS-W06</p><div class="price">₹4,400</div><a href="https://wa.me/917696969628?text=Order+Watch+06" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(7).jpg"><div class="info"><p class="series">GRAND TOURER</p><p class="name">Model CS-W07</p><div class="price">₹4,850</div><a href="https://wa.me/917696969628?text=Order+Watch+07" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(8).jpg"><div class="info"><p class="series">SKELETON</p><p class="name">Model CS-W08</p><div class="price">₹3,200</div><a href="https://wa.me/917696969628?text=Order+Watch+08" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(9).jpg"><div class="info"><p class="series">OCEAN PRO</p><p class="name">Model CS-W09</p><div class="price">₹4,500</div><a href="https://wa.me/917696969628?text=Order+Watch+09" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(10).jpg"><div class="info"><p class="series">HERITAGE</p><p class="name">Model CS-W10</p><div class="price">₹3,895</div><a href="https://wa.me/917696969628?text=Order+Watch+10" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(11).jpg"><div class="info"><p class="series">ELITE</p><p class="name">Model CS-W11</p><div class="price">₹2,999</div><a href="https://wa.me/917696969628?text=Order+Watch+11" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(12).jpg"><div class="info"><p class="series">APEX</p><p class="name">Model CS-W12</p><div class="price">₹3,890</div><a href="https://wa.me/917696969628?text=Order+Watch+12" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(13).jpg"><div class="info"><p class="series">CHRONO LUX</p><p class="name">Model CS-W13</p><div class="price">₹2,800</div><a href="https://wa.me/917696969628?text=Order+Watch+13" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(14).jpg"><div class="info"><p class="series">VINTAGE</p><p class="name">Model CS-W14</p><div class="price">₹4,900</div><a href="https://wa.me/917696969628?text=Order+Watch+14" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="watch1-jpg%20(15).jpg"><div class="info"><p class="series">PHANTOM</p><p class="name">Model CS-W15</p><div class="price">₹4,740</div><a href="https://wa.me/917696969628?text=Order+Watch+15" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-    </div>
-</section>
+<div class="hero">
+    <h1>PRIVATE LUXURY</h1>
+</div>
 
-<section id="footwear">
-    <div class="cat-title"><h2>Elite Footwear</h2></div>
-    <div class="grid">
-        <div class="card"><img src="formal1-jpg%20(1).jpg"><div class="info"><p class="series">EXECUTIVE</p><p class="name">Model CS-F01</p><div class="price">₹2,450</div><a href="https://wa.me/917696969628?text=Order+Shoe+01" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="formal1-jpg%20(2).jpg"><div class="info"><p class="series">ONYX</p><p class="name">Model CS-F02</p><div class="price">₹2,650</div><a href="https://wa.me/917696969628?text=Order+Shoe+02" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="formal1-jpg%20(3).jpg"><div class="info"><p class="series">MONARCH</p><p class="name">Model CS-F03</p><div class="price">₹2,700</div><a href="https://wa.me/917696969628?text=Order+Shoe+03" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="formal1-jpg%20(4).jpg"><div class="info"><p class="series">LEGACY</p><p class="name">Model CS-F04</p><div class="price">₹2,400</div><a href="https://wa.me/917696969628?text=Order+Shoe+04" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="formal1-jpg%20(5).jpg"><div class="info"><p class="series">WINE LUXE</p><p class="name">Model CS-F05</p><div class="price">₹2,550</div><a href="https://wa.me/917696969628?text=Order+Shoe+05" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="formal1-jpg%20(6).jpg"><div class="info"><p class="series">WINGTIP</p><p class="name">Model CS-F06</p><div class="price">₹2,300</div><a href="https://wa.me/917696969628?text=Order+Shoe+06" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="formal1-jpg%20(7).jpg"><div class="info"><p class="series">OXFORD</p><p class="name">Model CS-F07</p><div class="price">₹2,300</div><a href="https://wa.me/917696969628?text=Order+Shoe+07" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="formal1-jpg%20(8).jpg"><div class="info"><p class="series">CLASSIC</p><p class="name">Model CS-F08</p><div class="price">₹2,200</div><a href="https://wa.me/917696969628?text=Order+Shoe+08" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-        <div class="card"><img src="formal1-jpg%20(9).jpg"><div class="info"><p class="series">EMBROIDERED</p><p class="name">Model CS-F09</p><div class="price">₹2,500</div><a href="https://wa.me/917696969628?text=Order+Shoe+09" class="buy-btn">ORDER ON WHATSAPP</a></div></div>
-    </div>
-</section>
+<div class="category-grid">
+    <a href="watches.html" class="cat-card">
+        <img src="watch1-jpg%20(1).jpg">
+        <h3>Timepieces</h3>
+    </a>
+    <a href="footwear.html" class="cat-card">
+        <img src="formal1-jpg%20(1).jpg">
+        <h3>Footwear</h3>
+    </a>
+    <a href="sunglasses.html" class="cat-card">
+        <img src="sun1-jpg(1).jpg">
+        <h3>Sunglasses</h3>
+    </a>
+</div>
 
-<a href="https://wa.me/917696969628?text=Hello+CSTAR+Collections" class="support-widget" target="_blank">
-    <div class="support-text">Chat with Support</div>
-    <div class="support-icon">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.237 3.483 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.499-5.688-1.447l-6.308 1.65zm6.357-3.963c1.577.933 3.136 1.392 4.696 1.393 5.403 0 9.807-4.405 9.81-9.81.002-2.618-1.02-5.08-2.879-6.941-1.857-1.86-4.321-2.88-6.939-2.881-5.404 0-9.81 4.404-9.813 9.81-.001 1.741.469 3.441 1.357 4.934l-.997 3.646 3.765-.988z"/></svg>
-    </div>
-</a>
-
-<footer>&copy; 2026 CSTAR COLLECTIONS | MASTER QUALITY</footer>
+<footer>&copy; 2026 CSTAR COLLECTIONS</footer>
 
 </body>
 </html>
