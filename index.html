@@ -6,28 +6,44 @@
     <title>CSTAR COLLECTIONS | Elite Private Boutique</title>
     <style>
         :root { --gold: #d4af37; --black: #050505; --gray: #121212; --white: #ffffff; }
-        body { background: var(--black); color: var(--white); font-family: 'Segoe UI', sans-serif; margin: 0; }
-
-        /* --- PREMIUM HEADER & NAVIGATION --- */
-        header { background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; padding: 15px 0; }
-        .logo-wrapper { text-align: center; margin-bottom: 15px; }
+        body { background: var(--black); color: var(--white); font-family: 'Segoe UI', sans-serif; margin: 0; scroll-behavior: smooth; }
         
+        /* --- PREMIUM HEADER --- */
+        header { background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; padding: 15px 0; }
+        .logo-wrapper { text-align: center; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4)); }
+        
+        /* --- DROPDOWN NAVIGATION --- */
         nav { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
         .nav-item { position: relative; padding: 10px 0; }
         .nav-item > a { color: var(--white); text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; transition: 0.3s; }
         .nav-item:hover > a { color: var(--gold); }
 
-        /* --- SUB-CATEGORY DROPDOWNS --- */
-        .dropdown { display: none; position: absolute; background: var(--gray); min-width: 200px; top: 35px; left: 50%; transform: translateX(-50%); border: 1px solid var(--gold); padding: 10px 0; border-radius: 0 0 10px 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+        .dropdown { display: none; position: absolute; background: var(--gray); min-width: 200px; top: 40px; left: 50%; transform: translateX(-50%); border: 1px solid var(--gold); padding: 10px 0; border-radius: 0 0 10px 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
         .nav-item:hover .dropdown { display: block; }
         .dropdown a { color: white; padding: 12px 20px; display: block; text-decoration: none; font-size: 12px; border-bottom: 1px solid #222; text-align: left; }
-        .dropdown a:hover { background: #1a1a1a; color: var(--gold); padding-left: 25px; transition: 0.3s; }
+        .dropdown a:hover { background: #1a1a1a; color: var(--gold); padding-left: 25px; }
 
-        /* --- FLOATING SUPPORT BUTTON --- */
-        .support-btn { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 9999; transition: 0.3s; }
-        .support-btn:hover { transform: scale(1.1); }
+        /* --- HERO LEGACY SECTION --- */
+        .hero { height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('watch1-jpg%20(7).jpg'); background-size: cover; background-position: center; border-bottom: 1px solid #222; }
+        .hero h1 { font-size: 3rem; letter-spacing: 10px; color: var(--gold); text-transform: uppercase; margin: 0; }
+        .hero p { font-size: 1rem; letter-spacing: 4px; color: #888; margin-top: 10px; }
 
-        footer { text-align: center; padding: 50px; color: #444; border-top: 1px solid #222; font-size: 12px; }
+        /* --- CATEGORY GATEWAY GRID --- */
+        .gateway-section { padding: 80px 5%; text-align: center; }
+        .gateway-section h2 { color: var(--gold); text-transform: uppercase; letter-spacing: 5px; margin-bottom: 50px; }
+        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1400px; margin: auto; }
+        
+        .cat-card { background: var(--gray); border: 1px solid #222; border-radius: 15px; overflow: hidden; transition: 0.4s; text-decoration: none; position: relative; }
+        .cat-card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2); }
+        .cat-card img { width: 100%; height: 450px; object-fit: cover; opacity: 0.7; transition: 0.4s; }
+        .cat-card:hover img { opacity: 1; }
+        .cat-info { position: absolute; bottom: 0; width: 100%; padding: 30px 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); }
+        .cat-info h3 { color: var(--gold); font-size: 1.8rem; text-transform: uppercase; letter-spacing: 4px; margin: 0; }
+
+        /* --- FLOATING SUPPORT --- */
+        .support-btn { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 9999; }
+
+        footer { text-align: center; padding: 60px; color: #444; border-top: 1px solid #222; font-size: 12px; }
     </style>
 </head>
 <body>
@@ -38,7 +54,6 @@
             <text x="30" y="45" fill="#d4af37" font-family="Arial" font-size="32" font-weight="bold" letter-spacing="2">CSTAR</text>
         </svg>
     </div>
-    
     <nav>
         <div class="nav-item">
             <a href="watches.html">Watches ▾</a>
@@ -48,7 +63,6 @@
                 <a href="watches.html#smart">Smart Watches</a>
             </div>
         </div>
-
         <div class="nav-item">
             <a href="footwear.html">Footwear ▾</a>
             <div class="dropdown">
@@ -58,7 +72,6 @@
                 <a href="footwear.html#crocs">Luxury Crocs</a>
             </div>
         </div>
-
         <div class="nav-item">
             <a href="electronics.html">Electronics ▾</a>
             <div class="dropdown">
@@ -66,17 +79,44 @@
                 <a href="electronics.html#speakers">Sound Systems</a>
             </div>
         </div>
-
         <div class="nav-item"><a href="sunglasses.html">Eyewear</a></div>
-        <div class="nav-item"><a href="payment.html">Payments</a></div>
+        <div class="nav-item"><a href="about.html">About Us</a></div>
     </nav>
 </header>
 
+<div class="hero">
+    <div class="hero-content">
+        <h1>ESTABLISHED 2014</h1>
+        <p>12 YEARS OF UNCOMPROMISED QUALITY</p>
+    </div>
+</div>
+
+<section class="gateway-section">
+    <h2>Explore Collections</h2>
+    <div class="category-grid">
+        <a href="watches.html" class="cat-card">
+            <img src="watch1-jpg%20(7).jpg">
+            <div class="cat-info"><h3>Timepieces</h3></div>
+        </a>
+        <a href="footwear.html" class="cat-card">
+            <img src="formal1-jpg%20(1).jpg">
+            <div class="cat-info"><h3>Footwear</h3></div>
+        </a>
+        <a href="sunglasses.html" class="cat-card">
+            <img src="sun1-jpg(1).jpg">
+            <div class="cat-info"><h3>Eyewear</h3></div>
+        </a>
+        <a href="electronics.html" class="cat-card">
+            <img src="watch1-jpg%20(3).jpg"> <div class="cat-info"><h3>Electronics</h3></div>
+        </a>
+    </div>
+</section>
+
 <a href="https://wa.me/917696969628" class="support-btn" target="_blank">
-    <svg width="35" height="35" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.237 3.483 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.499-5.688-1.447l-6.308 1.65zm6.357-3.963c1.577.933 3.136 1.392 4.696 1.393 5.403 0 9.807-4.405 9.81-9.81.002-2.618-1.02-5.08-2.879-6.941-1.857-1.86-4.321-2.88-6.939-2.881-5.404 0-9.81 4.404-9.813 9.81-.001 1.741.469 3.441 1.357 4.934l-.997 3.646 3.765-.988z"/></svg>
+    <svg width="35" height="35" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.237 3.483 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.499-5.688-1.447l-6.308 1.65zm6.357-3.963c1.577.933 3.136 1.392 4.696 1.393 5.403 0 9.807-4.405 9.81-9.81.002-2.618-1.02-5.08-2.879-6.941-1.857-1.857-4.321-2.88-6.939-2.881-5.404 0-9.81 4.404-9.813 9.81-.001 1.741.469 3.441 1.357 4.934l-.997 3.646 3.765-.988z"/></svg>
 </a>
 
-<footer>&copy; 2026 CSTAR COLLECTIONS</footer>
+<footer>&copy; 2026 CSTAR COLLECTIONS | SINCE 2014</footer>
 
 </body>
 </html>
