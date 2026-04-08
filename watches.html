@@ -6,62 +6,132 @@
     <title>TIMEPIECES | CSTAR COLLECTIONS</title>
     <style>
         :root { --gold: #d4af37; --black: #050505; --gray: #121212; --white: #ffffff; }
-        body { background: var(--black); color: var(--white); font-family: 'Segoe UI', Arial, sans-serif; margin: 0; scroll-behavior: smooth; }
-        header { background: #000; border-bottom: 2px solid var(--gold); padding: 25px; text-align: center; position: sticky; top: 0; z-index: 1000; }
-        .back-btn { position: absolute; left: 25px; top: 30px; color: var(--gold); text-decoration: none; font-weight: bold; border: 1px solid var(--gold); padding: 5px 15px; border-radius: 5px; font-size: 12px; }
-        .logo { color: var(--gold); font-size: 1.8rem; font-weight: 800; letter-spacing: 5px; text-transform: uppercase; margin: 0; }
+        body { background: var(--black); color: var(--white); font-family: 'Segoe UI', sans-serif; margin: 0; scroll-behavior: smooth; }
+        
+        /* --- PREMIUM HEADER --- */
+        header { background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; padding: 15px 0; }
+        .logo-wrapper { text-align: center; margin-bottom: 15px; }
+        .back-btn { position: absolute; left: 20px; top: 25px; color: var(--gold); text-decoration: none; font-size: 12px; border: 1px solid var(--gold); padding: 5px 10px; border-radius: 5px; }
+        
+        /* --- SUB-NAV FOR WATCHES --- */
+        nav { display: flex; justify-content: center; gap: 25px; background: #000; padding: 10px 0; border-bottom: 1px solid #222; }
+        nav a { color: #888; text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
+        nav a:hover { color: var(--gold); }
+
+        /* --- PRODUCT GRID SYSTEM --- */
         section { padding: 60px 5%; max-width: 1400px; margin: auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .card { background: var(--gray); border-radius: 20px; border: 1px solid #222; overflow: hidden; transition: 0.5s ease; position: relative; display: flex; flex-direction: column; }
-        .card:hover { border-color: var(--gold); transform: translateY(-12px); box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3); }
-        .card img { width: 100%; height: 380px; object-fit: cover; border-bottom: 1px solid #222; background: #1a1a1a; }
-        .info { padding: 25px; text-align: center; flex-grow: 1; }
-        .series { color: var(--gold); font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; margin-bottom: 5px; }
-        .p-name { font-size: 1.2rem; margin-bottom: 10px; color: #eee; font-weight: bold; }
-        .price { font-size: 1.8rem; margin: 15px 0; font-weight: 800; color: #fff; }
-        .pay-btn { display: block; background: var(--gold); color: #000; text-align: center; padding: 16px; text-decoration: none; border-radius: 10px; font-weight: bold; transition: 0.3s; }
-        .pay-btn:hover { background: #fff; transform: scale(1.02); }
-        footer { text-align: center; padding: 40px; color: #444; border-top: 1px solid #222; margin-top: 50px; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { color: var(--gold); font-size: 2rem; letter-spacing: 5px; text-transform: uppercase; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 10px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--gray); border-radius: 15px; border: 1px solid #222; overflow: hidden; transition: 0.5s; display: flex; flex-direction: column; }
+        .card:hover { border-color: var(--gold); transform: translateY(-10px); }
+        .card img { width: 100%; height: 380px; object-fit: cover; background: #1a1a1a; }
+        
+        .info { padding: 20px; text-align: center; flex-grow: 1; }
+        .series { color: var(--gold); font-size: 0.8rem; letter-spacing: 2px; font-weight: bold; text-transform: uppercase; }
+        .name { color: #fff; font-size: 1rem; font-weight: bold; margin: 10px 0; min-height: 40px; }
+        .price { font-size: 1.5rem; color: #fff; font-weight: 800; margin-bottom: 15px; }
+        
+        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 14px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s; }
+        .buy-btn:hover { background: #128C7E; }
+
+        /* --- FLOATING WHATSAPP --- */
+        .support-btn { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 55px; height: 55px; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+
+        footer { text-align: center; padding: 40px; color: #444; border-top: 1px solid #222; margin-top: 50px; font-size: 12px; }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="index.html" class="back-btn">← HOME</a>
-    <p class="logo">ELITE TIMEPIECES</p>
+    <a href="index.html" class="back-btn">← BACK</a>
+    <div class="logo-wrapper">
+        <svg width="180" height="50" viewBox="0 0 220 70">
+            <text x="30" y="45" fill="#d4af37" font-family="Arial" font-size="32" font-weight="bold">CSTAR</text>
+        </svg>
+    </div>
+    <nav>
+        <a href="#mens">Men's Premium</a>
+        <a href="#women">Women's Elite</a>
+        <a href="#smart">Smart Watches</a>
+    </nav>
 </header>
 
-<section>
-    <div class="grid">
-        <script>
-            const watchData = [
-                { s: "AERO", n: "Model CS-W01", p: "2,999" }, { s: "STEALTH", n: "Model CS-W02", p: "2,450" },
-                { s: "NEON", n: "Model CS-W03", p: "2,450" }, { s: "CERAMIC", n: "Model CS-W04", p: "3,490" },
-                { s: "PURE", n: "Model CS-W05", p: "3,490" }, { s: "TWO-TONE", n: "Model CS-W06", p: "4,400" },
-                { s: "GRAND", n: "Model CS-W07", p: "4,850" }, { s: "SKELETON", n: "Model CS-W08", p: "3,200" },
-                { s: "OCEAN", n: "Model CS-W09", p: "4,500" }, { s: "HERITAGE", n: "Model CS-W10", p: "3,895" },
-                { s: "ELITE", n: "Model CS-W11", p: "2,999" }, { s: "APEX", n: "Model CS-W12", p: "3,890" },
-                { s: "CHRONO", n: "Model CS-W13", p: "2,800" }, { s: "VINTAGE", n: "Model CS-W14", p: "4,900" },
-                { s: "PHANTOM", n: "Model CS-W15", p: "4,740" }
-            ];
-
-            const grid = document.querySelector('.grid');
-            watchData.forEach((w, i) => {
-                grid.innerHTML += `
-                    <div class="card">
-                        <img src="watch1-jpg%20(${i+1}).jpg">
-                        <div class="info">
-                            <p class="series">${w.s} SERIES</p>
-                            <p class="p-name">${w.n}</p>
-                            <div class="price">₹${w.p}</div>
-                            <a href="payment.html" class="pay-btn">PAY SECURELY</a>
-                        </div>
-                    </div>`;
-            });
-        </script>
-    </div>
+<section id="mens">
+    <div class="section-title"><h2>Men's Premium</h2></div>
+    <div class="grid" id="mens-grid">
+        </div>
 </section>
 
-<footer>&copy; 2026 CSTAR COLLECTIONS</footer>
+<section id="women">
+    <div class="section-title"><h2>Women's Elite</h2></div>
+    <div class="grid" id="women-grid">
+        </div>
+</section>
+
+<script>
+    // DATA FOR 15 PREVIOUS WATCHES (MEN'S)
+    const mensData = [
+        { id: 1, name: "Model CS-W01 Aero", price: "2,999", series: "AERO SERIES" },
+        { id: 2, name: "Model CS-W02 Stealth", price: "2,450", series: "STEALTH" },
+        { id: 3, name: "Model CS-W03 Neon", price: "2,450", series: "NEON LINE" },
+        { id: 4, name: "Model CS-W04 Black-Gold", price: "3,490", series: "CERAMIC" },
+        { id: 5, name: "Model CS-W05 Pearl", price: "3,490", series: "PURE WHITE" },
+        { id: 6, name: "Model CS-W06 Dual", price: "4,400", series: "TWO-TONE" },
+        { id: 7, name: "Model CS-W07 Grand", price: "4,850", series: "GRAND TOURER" },
+        { id: 8, name: "Model CS-W08 Bone", price: "3,200", series: "SKELETON" },
+        { id: 9, name: "Model CS-W09 Diver", price: "4,500", series: "OCEAN PRO" },
+        { id: 10, name: "Model CS-W10 Classic", price: "3,895", series: "HERITAGE" },
+        { id: 11, name: "Model CS-W11 Executive", price: "2,999", series: "ELITE" },
+        { id: 12, name: "Model CS-W12 Royal", price: "3,890", series: "APEX" },
+        { id: 13, name: "Model CS-W13 Chrono", price: "2,800", series: "CHRONO LUX" },
+        { id: 14, name: "Model CS-W14 Antique", price: "4,900", series: "VINTAGE" },
+        { id: 15, name: "Model CS-W15 Phantom", price: "4,740", series: "PHANTOM" }
+    ];
+
+    // DATA FOR 10 NEW WATCHES (WOMEN'S)
+    const womenData = [
+        { id: 1, name: "CS-L01 Pearl Rose", price: "3,450", series: "Ceramic Elite" },
+        { id: 2, name: "CS-L02 Silver Sunray", price: "2,850", series: "Oyster Luxe" },
+        { id: 3, name: "CS-L03 Midnight Gold", price: "2,950", series: "Oyster Luxe" },
+        { id: 4, name: "CS-L04 Champagne Duo", price: "2,750", series: "Two-Tone" },
+        { id: 5, name: "CS-L05 Black Mesh", price: "2,550", series: "Minimalist" },
+        { id: 6, name: "CS-L06 Golden Mesh", price: "2,600", series: "Minimalist" },
+        { id: 7, name: "CS-L07 Bracelet Rose", price: "3,100", series: "Jewelry Line" },
+        { id: 8, name: "CS-L08 Aqua Charm", price: "3,250", series: "Jewelry Line" },
+        { id: 9, name: "CS-L09 Pure Crystal", price: "3,200", series: "Jewelry Line" },
+        { id: 10, name: "CS-L10 Emerald Sky", price: "3,350", series: "Jewelry Line" }
+    ];
+
+    function loadProducts(data, gridId, imgPrefix) {
+        const grid = document.getElementById(gridId);
+        data.forEach(item => {
+            grid.innerHTML += `
+                <div class="card">
+                    <img src="${imgPrefix} (${item.id}).jpg">
+                    <div class="info">
+                        <p class="series">${item.series}</p>
+                        <p class="name">${item.name}</p>
+                        <div class="price">₹${item.price}</div>
+                        <a href="payment.html" class="buy-btn">PAY SECURELY</a>
+                    </div>
+                </div>`;
+        });
+    }
+
+    // Load Men's watches (Prefix is watch1-jpg)
+    loadProducts(mensData, 'mens-grid', 'watch1-jpg');
+    // Load Women's watches (Prefix is also watch1-jpg because your files use the same name)
+    loadProducts(womenData, 'women-grid', 'watch1-jpg');
+
+</script>
+
+<a href="https://wa.me/917696969628" class="support-btn" target="_blank">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.237 3.483 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.499-5.688-1.447l-6.308 1.65zm6.357-3.963c1.577.933 3.136 1.392 4.696 1.393 5.403 0 9.807-4.405 9.81-9.81.002-2.618-1.02-5.08-2.879-6.941-1.857-1.857-4.321-2.88-6.939-2.881-5.404 0-9.81 4.404-9.813 9.81-.001 1.741.469 3.441 1.357 4.934l-.997 3.646 3.765-.988z"/></svg>
+</a>
+
+<footer>&copy; 2026 CSTAR COLLECTIONS | QUALITY SINCE 2014</footer>
+
 </body>
 </html>
