@@ -17,7 +17,7 @@
         .badge { position: absolute; top: 15px; right: 15px; background: var(--gold); color: black; padding: 5px 12px; font-size: 10px; font-weight: bold; border-radius: 5px; z-index: 10; }
         .card img { width: 100%; height: 350px; object-fit: cover; border-bottom: 1px solid #222; background: #1a1a1a; }
         .info { padding: 25px; text-align: center; flex-grow: 1; }
-        .brand { color: var(--gold); font-size: 1.1rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; font-weight: bold; }
+        .series { color: var(--gold); font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; font-weight: bold; }
         .p-name { font-size: 1.2rem; margin-bottom: 10px; color: #eee; min-height: 40px; }
         .price { font-size: 1.8rem; margin: 15px 0; font-weight: 800; color: #fff; }
         .desc { color: #777; font-size: 0.85rem; margin-bottom: 20px; line-height: 1.5; min-height: 60px; }
@@ -33,39 +33,43 @@
 </header>
 
 <section>
-    <div class="grid">
-        
-        <div class="card"><div class="badge">MASTER COPY</div><img src="sun1-jpg(1).jpg" onerror="this.src='sun1-jpg(1).JPG'"><div class="info"><p class="brand">PHILIPP PLEIN</p><p class="p-name">No Limit$ Grey Crystal</p><div class="price">₹2,499</div><p class="desc">Bold transparent grey frame with signature PLEIN metal hinges. Premium kit included.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">FULL KIT</div><img src="sun1-jpg(2).jpg" onerror="this.src='sun1-jpg(2).JPG'"><div class="info"><p class="brand">PHILIPP PLEIN</p><p class="p-name">Matte Black Luxury</p><div class="price">₹2,499</div><p class="desc">Signature matte black finish with silver-tone hardware. Luxury white box kit.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">TECH</div><img src="sun1-jpg(3).jpg" onerror="this.src='sun1-jpg(3).JPG'"><div class="info"><p class="brand">RAY-BAN</p><p class="p-name">Unbreakable Glass Aviator</p><div class="price">₹1,999</div><p class="desc">99% Unbreakable glass technology. Silver frame with crystal clear vision.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">7A QUALITY</div><img src="sun1-jpg(4).jpg" onerror="this.src='sun1-jpg(4).JPG'"><div class="info"><p class="brand">RAY-BAN</p><p class="p-name">Tafan Glass Classic</p><div class="price">₹1,999</div><p class="desc">Hardened dark green lenses with classic silver frame. Includes red leather case.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">MODEL 3024</div><img src="sun1-jpg(5).jpg" onerror="this.src='sun1-jpg(5).JPG'"><div class="info"><p class="brand">RAY-BAN</p><p class="p-name">Full Black G-15 Aviator</p><div class="price">₹2,100</div><p class="desc">Matte black frame with iconic G-15 lenses. Professional original white-box packaging.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">GOLD LINE</div><img src="sun1-jpg(6).jpg" onerror="this.src='sun1-jpg(6).JPG'"><div class="info"><p class="brand">RAY-BAN</p><p class="p-name">Golden Luxury Frame</p><div class="price">₹2,250</div><p class="desc">Polished gold frame with dark lenses. Premium quality with full brand kit.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">PREMIUM</div><img src="sun1-jpg(7).jpg" onerror="this.src='sun1-jpg(7).JPG'"><div class="info"><p class="brand">RAY-BAN</p><p class="p-name">Emerald Vision Gold</p><div class="price">₹2,250</div><p class="desc">Luxury gold frame featuring high-clarity emerald green lenses. Full kit included.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">CLASSIC</div><img src="sun1-jpg(8).jpg" onerror="this.src='sun1-jpg(8).JPG'"><div class="info"><p class="brand">RAY-BAN</p><p class="p-name">Coffee Brown Shade</p><div class="price">₹2,100</div><p class="desc">Dark chocolate lenses with gunmetal frame. Perfect for daytime luxury driving.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">FULL KIT</div><img src="sun1-jpg(9).jpg" onerror="this.src='sun1-jpg(9).JPG'"><div class="info"><p class="brand">RAY-BAN</p><p class="p-name">Chrome Silver Series</p><div class="price">₹2,100</div><p class="desc">High-shine chrome frame with G-15 lenses. Original case and cloth included.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">EXCLUSIVE</div><img src="sun1-jpg(10).jpg" onerror="this.src='sun1-jpg(10).JPG'"><div class="info"><p class="brand">RAY-BAN</p><p class="p-name">Tea-Tinted Gold Shade</p><div class="price">₹2,250</div><p class="desc">Amber tea lenses with slim gold frame. Master quality for high-end fashion.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
+    <div class="grid" id="sunglass-grid">
+        <script>
+            const grid = document.getElementById('sunglass-grid');
+            
+            // Random Luxury Model Data
+            const models = [
+                { series: "Phantom Series", name: "Model CS-Alpha 01", desc: "Sleek aerodynamic frame with smoke-gradient lenses. Engineered for a lightweight premium feel." },
+                { series: "Aura Collection", name: "Model CS-Vogue 22", desc: "Bold geometric silhouette featuring polished gold accents and high-definition clarity lenses." },
+                { series: "Titan Edition", name: "Model CS-Force 99", desc: "Industrial-strength frame with matte finish. Impact-resistant glass designed for durability." },
+                { series: "Elysian Luxe", name: "Model CS-Royal 77", desc: "Rimless masterpiece with hand-crafted detailing. High-fashion aesthetics for exclusive events." },
+                { series: "Urban Shield", name: "Model CS-Matrix 05", desc: "Full-coverage wraparound design with polarized technology to eliminate glare in bright light." },
+                { series: "Onyx Black", name: "Model CS-Midnight 10", desc: "Deep black acetate finish with silver-tone hinges. The essential daily wear for any professional." }
+            ];
 
-        <div class="card"><div class="badge">MASTER COPY</div><img src="sun1-jpg(11).jpg" onerror="this.src='sun1-jpg(11).JPG'"><div class="info"><p class="brand">CARTIER</p><p class="p-name">Panthère de Cartier</p><div class="price">₹2,499</div><p class="desc">Rimless gold finish with panther motif on hinges. The ultimate luxury statement.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">PREMIUM</div><img src="sun1-jpg(12).jpg" onerror="this.src='sun1-jpg(12).JPG'"><div class="info"><p class="brand">LOUIS VUITTON</p><p class="p-name">Cyclone Black Gold</p><div class="price">₹2,499</div><p class="desc">Bold oversized frame with LV flower crystal hinges. Includes original box kit.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">EXECUTIVE</div><img src="sun1-jpg(13).jpg" onerror="this.src='sun1-jpg(13).JPG'"><div class="info"><p class="brand">GUCCI</p><p class="p-name">GG Web Stripe Square</p><div class="price">₹2,150</div><p class="desc">Black acetate frame featuring the iconic red and green web stripe on temples.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">MODEL 2026</div><img src="sun1-jpg(14).jpg" onerror="this.src='sun1-jpg(14).JPG'"><div class="info"><p class="brand">PRADA</p><p class="p-name">Symbole Geometric</p><div class="price">₹2,200</div><p class="desc">Sharp lines and high-fashion aesthetic. Thick frame with Prada triangle logo.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">7A QUALITY</div><img src="sun1-jpg(15).jpg" onerror="this.src='sun1-jpg(15).JPG'"><div class="info"><p class="brand">DIOR</p><p class="p-name">CD Diamond Shield</p><div class="price">₹2,350</div><p class="desc">Sleek techno-shield design with monogram etched lenses. Original packaging.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">FULL KIT</div><img src="sun1-jpg(16).jpg" onerror="this.src='sun1-jpg(16).JPG'"><div class="info"><p class="brand">VERSACE</p><p class="p-name">Medusa Biggie Gold</p><div class="price">₹2,499</div><p class="desc">90s hip-hop icon. Gold Medusa medallions on wide black temples.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">LUXURY</div><img src="sun1-jpg(17).jpg" onerror="this.src='sun1-jpg(17).JPG'"><div class="info"><p class="brand">FENDI</p><p class="p-name">Baguette Square</p><div class="price">₹2,100</div><p class="desc">FF logo motif on the metal temples. Classic black oversized square frame.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">COLLECTOR</div><img src="sun1-jpg(18).jpg" onerror="this.src='sun1-jpg(18).JPG'"><div class="info"><p class="brand">OFF-WHITE</p><p class="p-name">Virgil Square Acetate</p><div class="price">₹2,200</div><p class="desc">Thick chunky white frame with iconic arrow logo. Modern streetwear masterpiece.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">PREMIUM</div><img src="sun1-jpg(19).jpg" onerror="this.src='sun1-jpg(19).JPG'"><div class="info"><p class="brand">TOM FORD</p><p class="p-name">Snowdon Matte Black</p><div class="price">₹1,999</div><p class="desc">Elegant soft-square frame with signature gold T-logo at the hinges.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">7A QUALITY</div><img src="sun1-jpg(20).jpg" onerror="this.src='sun1-jpg(20).JPG'"><div class="info"><p class="brand">BURBERRY</p><p class="p-name">Check Print Wayfarer</p><div class="price">₹2,100</div><p class="desc">Classic wayfarer shape with signature check print on the interior temples.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">FULL KIT</div><img src="sun1-jpg(21).jpg" onerror="this.src='sun1-jpg(21).JPG'"><div class="info"><p class="brand">VALENTINO</p><p class="p-name">V-Logo Crystal Shade</p><div class="price">₹2,300</div><p class="desc">Gold V-logo hinges with high-gloss black finish. Premium luxury kit included.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">MASTER COPY</div><img src="sun1-jpg(22).jpg" onerror="this.src='sun1-jpg(22).JPG'"><div class="info"><p class="brand">GIVENCHY</p><p class="p-name">Urban Shield Tech</p><div class="price">₹2,150</div><p class="desc">Matte rubberized finish for a sporty high-end look. Lightweight tech lenses.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">BEST SELLER</div><img src="sun1-jpg(23).jpg" onerror="this.src='sun1-jpg(23).JPG'"><div class="info"><p class="brand">CÉLINE</p><p class="p-name">Triomphe Oval Black</p><div class="price">₹2,200</div><p class="desc">Vintage-inspired oval frame with gold Triomphe emblem on temples.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">PREMIUM</div><img src="sun1-jpg(24).jpg" onerror="this.src='sun1-jpg(24).JPG'"><div class="info"><p class="brand">ARMANI</p><p class="p-name">Executive Gunmetal</p><div class="price">₹1,999</div><p class="desc">Sleek gunmetal frame with polarized lenses. Professional design for daily use.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-        <div class="card"><div class="badge">FULL KIT</div><img src="sun1-jpg(25).jpg" onerror="this.src='sun1-jpg(25).JPG'"><div class="info"><p class="brand">BALENCIAGA</p><p class="p-name">Dynasty Shield</p><div class="price">₹2,499</div><p class="desc">Bold futuristic shield with gold BB logos. Highest master quality 7A copy.</p><a href="https://wa.me/917696969628" class="buy-btn">ORDER WHATSAPP</a></div></div>
-
+            for (let i = 1; i <= 25; i++) {
+                const item = models[(i-1) % models.length];
+                const finalPrice = (i % 3 === 0) ? "₹2,499" : (i % 2 === 0) ? "₹2,100" : "₹1,999";
+                
+                grid.innerHTML += `
+                    <div class="card">
+                        <div class="badge">FULL KIT</div>
+                        <img src="sun1-jpg(${i}).jpg" onerror="this.src='sun1-jpg(${i}).JPG'">
+                        <div class="info">
+                            <p class="series">${item.series}</p>
+                            <p class="p-name">${item.name}</p>
+                            <div class="price">${finalPrice}</div>
+                            <p class="desc">${item.desc}</p>
+                            <a href="https://wa.me/917696969628?text=Order+Sunglasses+Model+${i}" class="buy-btn">ORDER WHATSAPP</a>
+                        </div>
+                    </div>
+                `;
+            }
+        </script>
     </div>
 </section>
 
-<footer>&copy; 2026 CSTAR COLLECTIONS | QUALITY GUARANTEED</footer>
+<footer>&copy; 2026 CSTAR COLLECTIONS | PREMIUM EYEWEAR</footer>
 
 </body>
 </html>
