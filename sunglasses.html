@@ -58,5 +58,12 @@
 </section>
 
 <footer>&copy; 2026 CSTAR COLLECTIONS</footer>
+    <script>
+    // This script finds every button and changes its link to the payment page automatically
+    document.querySelectorAll('.buy-btn, .btn').forEach(button => {
+        button.setAttribute('href', 'payment.html');
+        button.innerHTML = 'PAY SECURELY (UPI/CARD)';
+    });
+</script>
 </body>
 </html>
