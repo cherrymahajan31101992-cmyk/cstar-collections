@@ -8,37 +8,37 @@
         :root { --gold: #d4af37; --black: #050505; --gray: #121212; --white: #ffffff; }
         body { background: var(--black); color: var(--white); font-family: 'Segoe UI', sans-serif; margin: 0; scroll-behavior: smooth; }
         
-        /* --- STICKY HEADER & NAV --- */
-        header { background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; padding: 15px 0; text-align: center; }
+        /* --- HEADER --- */
+        header { background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; padding: 15px 0; text-align: center;}
         .back-btn { position: absolute; left: 20px; top: 25px; color: var(--gold); text-decoration: none; font-size: 12px; border: 1px solid var(--gold); padding: 5px 10px; border-radius: 5px; }
-        .logo { color: var(--gold); font-size: 1.8rem; font-weight: 800; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 10px; }
+        .logo { color: var(--gold); font-size: 1.8rem; font-weight: 800; letter-spacing: 5px; text-transform: uppercase; margin: 0 0 10px 0; }
         
+        /* --- SUB NAVIGATION --- */
         nav { display: flex; justify-content: center; gap: 25px; background: #000; padding: 12px 0; border-bottom: 1px solid #222; }
-        nav a { color: #888; text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; transition: 0.3s; }
+        nav a { color: #888; text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; }
         nav a:hover { color: var(--gold); }
 
-        /* --- GRID SYSTEM --- */
+        /* --- PRODUCT GRID --- */
         section { padding: 60px 5%; max-width: 1400px; margin: auto; }
-        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title { text-align: center; margin-bottom: 40px; }
         .section-title h2 { color: var(--gold); font-size: 2.2rem; letter-spacing: 6px; text-transform: uppercase; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 10px; }
         
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--gray); border-radius: 15px; border: 1px solid #222; overflow: hidden; transition: 0.5s ease; display: flex; flex-direction: column; text-align: center; }
+        .card { background: var(--gray); border-radius: 15px; border: 1px solid #222; overflow: hidden; transition: 0.5s; display: flex; flex-direction: column; text-align: center; }
         .card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2); }
-        .card img { width: 100%; height: 400px; object-fit: cover; background: #1a1a1a; border-bottom: 1px solid #222; }
+        .card img { width: 100%; height: 400px; object-fit: cover; background: #1a1a1a; }
         
         .info { padding: 25px; flex-grow: 1; }
         .series { color: var(--gold); font-size: 0.8rem; letter-spacing: 2px; font-weight: bold; text-transform: uppercase; }
         .name { color: #fff; font-size: 1.1rem; font-weight: bold; margin: 12px 0; min-height: 45px; }
         .price { font-size: 1.7rem; color: #fff; font-weight: 800; margin-bottom: 20px; }
         
-        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 10px; font-weight: bold; font-size: 14px; }
-        .buy-btn:hover { background: #128C7E; }
+        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 10px; font-weight: bold; }
 
-        /* --- FLOATING SUPPORT --- */
+        /* --- FLOATING WHATSAPP --- */
         .support-btn { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 999; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
 
-        footer { text-align: center; padding: 60px; color: #444; border-top: 1px solid #222; font-size: 12px; }
+        footer { text-align: center; padding: 60px; color: #444; border-top: 1px solid #222; margin-top: 50px; font-size: 12px; }
     </style>
 </head>
 <body>
@@ -49,7 +49,6 @@
     <nav>
         <a href="#mens">Men's Premium</a>
         <a href="#women">Women's Elite</a>
-        <a href="#smart">Smart Watches</a>
     </nav>
 </header>
 
@@ -63,13 +62,8 @@
     <div class="grid" id="women-grid"></div>
 </section>
 
-<section id="smart">
-    <div class="section-title"><h2>Smart Series</h2></div>
-    <div class="grid" id="smart-grid"></div>
-</section>
-
 <script>
-    // 1. DATA FOR MEN'S WATCHES
+    // 1. DATA FOR 15 MEN'S WATCHES
     const mensData = [
         { id: 1, name: "Model CS-W01 Aero", price: "2,999", series: "AERO SERIES" },
         { id: 2, name: "Model CS-W02 Stealth", price: "2,450", series: "STEALTH" },
@@ -88,8 +82,8 @@
         { id: 15, name: "Model CS-W15 Phantom", price: "4,740", series: "PHANTOM" }
     ];
 
-    // 2. DATA FOR WOMEN'S WATCHES (Automatically generates 30 items)
-    const womenSeries = ["Ceramic Elite", "Oyster Luxe", "Jewelry Line", "Minimalist", "Rose Gold Edition"];
+    // 2. DATA FOR 30 WOMEN'S WATCHES
+    const womenSeries = ["Ceramic Elite", "Oyster Luxe", "Jewelry Line", "Minimalist", "Rose Gold"];
     const womenData = [];
     for (let i = 1; i <= 30; i++) {
         womenData.push({
@@ -100,19 +94,16 @@
         });
     }
 
-    // 3. SMART WATCH SAMPLES
-    const smartData = [
-        { id: 1, name: "CSTAR Smart Pro S1", price: "3,999", series: "Active Series" },
-        { id: 2, name: "CSTAR Ultra Connect", price: "5,499", series: "Elite Tech" }
-    ];
-
-    // UNIVERSAL LOADER FUNCTION
-    function loadProducts(data, gridId, filePrefix) {
+    // 3. UNIVERSAL LOAD FUNCTION (Fixed spacing issue)
+    function loadProducts(data, gridId, prefix) {
         const grid = document.getElementById(gridId);
         data.forEach(item => {
+            // This line adds the space before the bracket: name (1).jpg
+            const fileName = prefix + " (" + item.id + ").jpg";
+            
             grid.innerHTML += `
                 <div class="card">
-                    <img src="${filePrefix} (${item.id}).jpg" alt="${item.name}" onerror="this.src='watch1-jpg (${item.id}).jpg'">
+                    <img src="${fileName}" alt="${item.name}">
                     <div class="info">
                         <p class="series">${item.series}</p>
                         <p class="name">${item.name}</p>
@@ -123,10 +114,11 @@
         });
     }
 
-    // LOAD EVERYTHING
+    // Load Men's using watch1-jpg (id).jpg
     loadProducts(mensData, 'mens-grid', 'watch1-jpg');
+    
+    // Load Women's using women-watch (id).jpg
     loadProducts(womenData, 'women-grid', 'women-watch');
-    loadProducts(smartData, 'smart-grid', 'smart-watch');
 </script>
 
 <a href="https://wa.me/917696969628" class="support-btn" target="_blank">
