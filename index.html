@@ -3,66 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSTAR COLLECTIONS | Luxury Boutique</title>
+    <title>CSTAR COLLECTIONS | Elite Boutique</title>
     <style>
         :root { --gold: #d4af37; --black: #050505; --gray: #121212; --white: #ffffff; }
-        body { background: var(--black); color: var(--white); font-family: 'Segoe UI', Arial, sans-serif; margin: 0; }
+        body { background: var(--black); color: var(--white); font-family: 'Segoe UI', sans-serif; margin: 0; scroll-behavior: smooth; }
         
-        header { background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--gold); padding: 25px 0; text-align: center; position: sticky; top: 0; z-index: 1000; }
-        .logo-wrapper { display: inline-block; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4)); }
-
-        nav { display: flex; justify-content: center; gap: 40px; padding-top: 20px; }
-        nav a { color: var(--white); text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; transition: 0.3s; }
+        /* 1. FIXED HEADER & CATEGORIES */
+        header { background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; padding: 15px 0; }
+        .logo-wrapper { text-align: center; margin-bottom: 15px; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.3)); }
+        
+        nav { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        nav a { color: var(--white); text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; transition: 0.3s; }
         nav a:hover { color: var(--gold); }
 
-        /* Banner */
-        .hero { height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; border-bottom: 1px solid #222; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('watch1-jpg%20(7).jpg'); background-size: cover; background-position: center; }
-        .hero h1 { font-size: 3rem; letter-spacing: 10px; color: var(--gold); text-transform: uppercase; }
+        /* 2. PRODUCT GRID */
+        section { padding: 60px 5%; max-width: 1500px; margin: auto; }
+        .cat-title { text-align: center; margin-bottom: 40px; color: var(--gold); text-transform: uppercase; letter-spacing: 5px; border-bottom: 1px solid #222; padding-bottom: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--gray); border-radius: 15px; border: 1px solid #222; overflow: hidden; transition: 0.5s; text-align: center; }
+        .card:hover { border-color: var(--gold); transform: translateY(-10px); }
+        .card img { width: 100%; height: 380px; object-fit: cover; }
+        .info { padding: 20px; }
+        .price { font-size: 1.6rem; margin: 10px 0; font-weight: 800; color: #fff; }
+        .buy-btn { display: block; background: var(--gold); color: #000; padding: 15px; text-decoration: none; border-radius: 8px; font-weight: bold; }
 
-        /* Category Grid on Home */
-        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 60px 5%; }
-        .cat-card { background: var(--gray); border: 1px solid #222; border-radius: 15px; overflow: hidden; text-align: center; transition: 0.4s; text-decoration: none; }
-        .cat-card:hover { border-color: var(--gold); transform: translateY(-10px); }
-        .cat-card img { width: 100%; height: 400px; object-fit: cover; }
-        .cat-card h3 { color: var(--gold); padding: 20px; font-size: 1.5rem; margin: 0; text-transform: uppercase; letter-spacing: 4px; }
-
-        footer { text-align: center; padding: 50px; color: #444; border-top: 1px solid #222; }
+        /* 3. FLOATING SUPPORT BUTTON */
+        .support-btn { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 9999; }
+        
+        footer { text-align: center; padding: 40px; color: #444; font-size: 12px; }
     </style>
 </head>
 <body>
 
 <header>
     <div class="logo-wrapper">
-        <svg width="220" height="70" viewBox="0 0 220 70">
-            <text x="30" y="42" fill="#d4af37" font-family="Arial, sans-serif" font-size="28" font-weight="bold" letter-spacing="2">CSTAR</text>
-            <text x="30" y="60" fill="#888" font-family="Arial, sans-serif" font-size="10" letter-spacing="5">COLLECTIONS</text>
+        <svg width="200" height="60" viewBox="0 0 220 70">
+            <text x="30" y="45" fill="#d4af37" font-family="Arial" font-size="32" font-weight="bold">CSTAR</text>
         </svg>
     </div>
     <nav>
         <a href="watches.html">Watches</a>
         <a href="footwear.html">Footwear</a>
         <a href="sunglasses.html">Eyewear</a>
+        <a href="payment.html">Payments</a>
     </nav>
 </header>
 
-<div class="hero">
-    <h1>PRIVATE LUXURY</h1>
-</div>
+<section id="main-collection">
+    <h2 class="cat-title">Elite Collection</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="watch1-jpg%20(7).jpg">
+            <div class="info">
+                <h3>Model CS-W07</h3>
+                <div class="price">₹4,850</div>
+                <a href="payment.html" class="buy-btn">PAY SECURELY</a>
+            </div>
+        </div>
+        </div>
+</section>
 
-<div class="category-grid">
-    <a href="watches.html" class="cat-card">
-        <img src="watch1-jpg%20(1).jpg">
-        <h3>Timepieces</h3>
-    </a>
-    <a href="footwear.html" class="cat-card">
-        <img src="formal1-jpg%20(1).jpg">
-        <h3>Footwear</h3>
-    </a>
-    <a href="sunglasses.html" class="cat-card">
-        <img src="sun1-jpg(1).jpg">
-        <h3>Sunglasses</h3>
-    </a>
-</div>
+<a href="https://wa.me/917696969628" class="support-btn" target="_blank">
+    <svg width="35" height="35" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.237 3.483 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.499-5.688-1.447l-6.308 1.65zm6.357-3.963c1.577.933 3.136 1.392 4.696 1.393 5.403 0 9.807-4.405 9.81-9.81.002-2.618-1.02-5.08-2.879-6.941-1.857-1.86-4.321-2.88-6.939-2.881-5.404 0-9.81 4.404-9.813 9.81-.001 1.741.469 3.441 1.357 4.934l-.997 3.646 3.765-.988z"/></svg>
+</a>
 
 <footer>&copy; 2026 CSTAR COLLECTIONS</footer>
 
