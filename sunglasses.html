@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSTAR LUXURY EYEWEAR</title>
+    <title>EYEWEAR | CSTAR COLLECTIONS</title>
     <style>
+        /* Styles same as above for consistency */
         :root { --gold: #d4af37; --black: #050505; --gray: #121212; --white: #ffffff; }
         body { background: var(--black); color: var(--white); font-family: 'Segoe UI', Arial, sans-serif; margin: 0; scroll-behavior: smooth; }
         header { background: #000; border-bottom: 2px solid var(--gold); padding: 25px; text-align: center; position: sticky; top: 0; z-index: 1000; }
@@ -14,14 +15,13 @@
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
         .card { background: var(--gray); border-radius: 20px; border: 1px solid #222; overflow: hidden; transition: 0.5s ease; position: relative; display: flex; flex-direction: column; }
         .card:hover { border-color: var(--gold); transform: translateY(-12px); box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3); }
-        .badge { position: absolute; top: 15px; right: 15px; background: var(--gold); color: black; padding: 5px 12px; font-size: 10px; font-weight: bold; border-radius: 5px; z-index: 10; }
         .card img { width: 100%; height: 350px; object-fit: cover; border-bottom: 1px solid #222; background: #1a1a1a; }
         .info { padding: 25px; text-align: center; flex-grow: 1; }
-        .series { color: var(--gold); font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; font-weight: bold; }
-        .p-name { font-size: 1.2rem; margin-bottom: 10px; color: #eee; min-height: 40px; }
+        .series { color: var(--gold); font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; margin-bottom: 5px; }
+        .p-name { font-size: 1.2rem; margin-bottom: 10px; color: #eee; font-weight: bold; }
         .price { font-size: 1.8rem; margin: 15px 0; font-weight: 800; color: #fff; }
-        .desc { color: #777; font-size: 0.85rem; margin-bottom: 20px; line-height: 1.5; min-height: 60px; }
-        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 16px; text-decoration: none; border-radius: 10px; font-weight: bold; }
+        .pay-btn { display: block; background: var(--gold); color: #000; text-align: center; padding: 16px; text-decoration: none; border-radius: 10px; font-weight: bold; transition: 0.3s; }
+        .pay-btn:hover { background: #fff; transform: scale(1.02); }
         footer { text-align: center; padding: 40px; color: #444; border-top: 1px solid #222; margin-top: 50px; }
     </style>
 </head>
@@ -29,47 +29,34 @@
 
 <header>
     <a href="index.html" class="back-btn">← HOME</a>
-    <p class="logo">CSTAR EYEWEAR</p>
+    <p class="logo">PRIVATE EYEWEAR</p>
 </header>
 
 <section>
-    <div class="grid" id="sunglass-grid">
+    <div class="grid" id="sun-grid">
         <script>
-            const grid = document.getElementById('sunglass-grid');
+            const sunGrid = document.getElementById('sun-grid');
+            const sunModels = ["Phantom", "Aura", "Titan", "Elysian", "Urban", "Onyx"];
             
-            // Random Luxury Model Data
-            const models = [
-                { series: "Phantom Series", name: "Model CS-Alpha 01", desc: "Sleek aerodynamic frame with smoke-gradient lenses. Engineered for a lightweight premium feel." },
-                { series: "Aura Collection", name: "Model CS-Vogue 22", desc: "Bold geometric silhouette featuring polished gold accents and high-definition clarity lenses." },
-                { series: "Titan Edition", name: "Model CS-Force 99", desc: "Industrial-strength frame with matte finish. Impact-resistant glass designed for durability." },
-                { series: "Elysian Luxe", name: "Model CS-Royal 77", desc: "Rimless masterpiece with hand-crafted detailing. High-fashion aesthetics for exclusive events." },
-                { series: "Urban Shield", name: "Model CS-Matrix 05", desc: "Full-coverage wraparound design with polarized technology to eliminate glare in bright light." },
-                { series: "Onyx Black", name: "Model CS-Midnight 10", desc: "Deep black acetate finish with silver-tone hinges. The essential daily wear for any professional." }
-            ];
-
             for (let i = 1; i <= 25; i++) {
-                const item = models[(i-1) % models.length];
-                const finalPrice = (i % 3 === 0) ? "₹2,499" : (i % 2 === 0) ? "₹2,100" : "₹1,999";
+                const mod = sunModels[i % sunModels.length];
+                const price = (i % 2 === 0) ? "2,499" : "1,999";
                 
-                grid.innerHTML += `
+                sunGrid.innerHTML += `
                     <div class="card">
-                        <div class="badge">FULL KIT</div>
                         <img src="sun1-jpg(${i}).jpg" onerror="this.src='sun1-jpg(${i}).JPG'">
                         <div class="info">
-                            <p class="series">${item.series}</p>
-                            <p class="p-name">${item.name}</p>
-                            <div class="price">${finalPrice}</div>
-                            <p class="desc">${item.desc}</p>
-                            <a href="https://wa.me/917696969628?text=Order+Sunglasses+Model+${i}" class="buy-btn">ORDER WHATSAPP</a>
+                            <p class="series">${mod.toUpperCase()} SERIES</p>
+                            <p class="p-name">Model CS-S${i}</p>
+                            <div class="price">₹${price}</div>
+                            <a href="payment.html" class="pay-btn">PAY SECURELY</a>
                         </div>
-                    </div>
-                `;
+                    </div>`;
             }
         </script>
     </div>
 </section>
 
-<footer>&copy; 2026 CSTAR COLLECTIONS | PREMIUM EYEWEAR</footer>
-
+<footer>&copy; 2026 CSTAR COLLECTIONS</footer>
 </body>
 </html>
