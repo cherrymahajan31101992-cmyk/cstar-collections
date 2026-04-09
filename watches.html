@@ -8,25 +8,25 @@
         :root { --gold: #d4af37; --black: #050505; --gray: #121212; --white: #ffffff; }
         body { background: var(--black); color: var(--white); font-family: 'Segoe UI', sans-serif; margin: 0; scroll-behavior: smooth; }
         
-        /* --- HEADER --- */
+        /* --- PREMIUM HEADER --- */
         header { background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; padding: 15px 0; text-align: center;}
-        .back-btn { position: absolute; left: 20px; top: 25px; color: var(--gold); text-decoration: none; font-size: 12px; border: 1px solid var(--gold); padding: 5px 10px; border-radius: 5px; }
+        .back-btn { position: absolute; left: 20px; top: 25px; color: var(--gold); text-decoration: none; font-size: 12px; border: 1px solid var(--gold); padding: 5px 10px; border-radius: 5px; transition: 0.3s; }
+        .back-btn:hover { background: var(--gold); color: black; }
         .logo { color: var(--gold); font-size: 1.8rem; font-weight: 800; letter-spacing: 5px; text-transform: uppercase; margin: 0 0 10px 0; }
         
-        /* --- SUB NAVIGATION --- */
         nav { display: flex; justify-content: center; gap: 25px; background: #000; padding: 12px 0; border-bottom: 1px solid #222; }
         nav a { color: #888; text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; }
         nav a:hover { color: var(--gold); }
 
-        /* --- PRODUCT GRID --- */
-        section { padding: 60px 5%; max-width: 1400px; margin: auto; }
+        /* --- GRID SYSTEM --- */
+        section { padding: 60px 5%; max-width: 1440px; margin: auto; }
         .section-title { text-align: center; margin-bottom: 40px; }
         .section-title h2 { color: var(--gold); font-size: 2.2rem; letter-spacing: 6px; text-transform: uppercase; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 10px; }
         
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .card { background: var(--gray); border-radius: 15px; border: 1px solid #222; overflow: hidden; transition: 0.5s; display: flex; flex-direction: column; text-align: center; }
         .card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2); }
-        .card img { width: 100%; height: 400px; object-fit: cover; background: #1a1a1a; }
+        .card img { width: 100%; height: 400px; object-fit: cover; background: #1a1a1a; border-bottom: 1px solid #222; }
         
         .info { padding: 25px; flex-grow: 1; }
         .series { color: var(--gold); font-size: 0.8rem; letter-spacing: 2px; font-weight: bold; text-transform: uppercase; }
@@ -35,7 +35,6 @@
         
         .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 10px; font-weight: bold; }
 
-        /* --- FLOATING WHATSAPP --- */
         .support-btn { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 999; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
 
         footer { text-align: center; padding: 60px; color: #444; border-top: 1px solid #222; margin-top: 50px; font-size: 12px; }
@@ -53,57 +52,58 @@
 </header>
 
 <section id="mens">
-    <div class="section-title"><h2>Men's Premium</h2></div>
+    <div class="section-title"><h2>Men's Premium Collection</h2></div>
     <div class="grid" id="mens-grid"></div>
 </section>
 
 <section id="women">
-    <div class="section-title"><h2>Women's Elite</h2></div>
+    <div class="section-title"><h2>Women's Elite Collection</h2></div>
     <div class="grid" id="women-grid"></div>
 </section>
 
 <script>
-    // 1. DATA FOR 15 MEN'S WATCHES
+    // 1. FULL DATA FOR 15 MEN'S WATCHES
     const mensData = [
-        { id: 1, name: "Model CS-W01 Aero", price: "2,999", series: "AERO SERIES" },
-        { id: 2, name: "Model CS-W02 Stealth", price: "2,450", series: "STEALTH" },
-        { id: 3, name: "Model CS-W03 Neon", price: "2,450", series: "NEON LINE" },
-        { id: 4, name: "Model CS-W04 Ceramic", price: "3,490", series: "CERAMIC" },
-        { id: 5, name: "Model CS-W05 Pearl", price: "3,490", series: "PURE WHITE" },
-        { id: 6, name: "Model CS-W06 Dual-Tone", price: "4,400", series: "TWO-TONE" },
-        { id: 7, name: "Model CS-W07 Grand", price: "4,850", series: "GRAND TOURER" },
-        { id: 8, name: "Model CS-W08 Bone", price: "3,200", series: "SKELETON" },
-        { id: 9, name: "Model CS-W09 Diver", price: "4,500", series: "OCEAN PRO" },
-        { id: 10, name: "Model CS-W10 Classic", price: "3,895", series: "HERITAGE" },
-        { id: 11, name: "Model CS-W11 Executive", price: "2,999", series: "ELITE" },
-        { id: 12, name: "Model CS-W12 Royal", price: "3,890", series: "APEX" },
-        { id: 13, name: "Model CS-W13 Chrono", price: "2,800", series: "CHRONO LUX" },
-        { id: 14, name: "Model CS-W14 Antique", price: "4,900", series: "VINTAGE" },
-        { id: 15, name: "Model CS-W15 Phantom", price: "4,740", series: "PHANTOM" }
+        { id: 1, name: "CS-M01 Aero Sport", price: "2,999", series: "AERO SERIES" },
+        { id: 2, name: "CS-M02 Stealth Matte", price: "2,450", series: "STEALTH" },
+        { id: 3, name: "CS-M03 Neon Cyber", price: "2,450", series: "NEON LINE" },
+        { id: 4, name: "CS-M04 Black Ceramic", price: "3,490", series: "CERAMIC" },
+        { id: 5, name: "CS-M05 Pearl Arctic", price: "3,490", series: "PURE WHITE" },
+        { id: 6, name: "CS-M06 Dual Horizon", price: "4,400", series: "TWO-TONE" },
+        { id: 7, name: "CS-M07 Grand Tourer", price: "4,850", series: "GT LUXE" },
+        { id: 8, name: "CS-M08 Bone Skeleton", price: "3,200", series: "SKELETON" },
+        { id: 9, name: "CS-M09 Ocean Diver", price: "4,500", series: "DIVER PRO" },
+        { id: 10, name: "CS-M10 Heritage Gold", price: "3,895", series: "CLASSIC" },
+        { id: 11, name: "CS-M11 Executive Slim", price: "2,999", series: "ELITE" },
+        { id: 12, name: "CS-M12 Royal Apex", price: "3,890", series: "ROYAL" },
+        { id: 13, name: "CS-M13 Chrono Master", price: "2,800", series: "CHRONOGRAPH" },
+        { id: 14, name: "CS-M14 Vintage Soul", price: "4,900", series: "ANTIQUE" },
+        { id: 15, name: "CS-M15 Phantom Dark", price: "4,740", series: "PHANTOM" }
     ];
 
-    // 2. DATA FOR 30 WOMEN'S WATCHES
-    const womenSeries = ["Ceramic Elite", "Oyster Luxe", "Jewelry Line", "Minimalist", "Rose Gold"];
+    // 2. FULL DATA FOR 30 WOMEN'S WATCHES
     const womenData = [];
-    for (let i = 1; i <= 30; i++) {
+    const wSeries = ["Oyster Luxe", "Ceramic Elite", "Jewelry Line", "Rose Gold", "Minimalist"];
+    for(let i=1; i<=30; i++) {
         womenData.push({
             id: i,
-            name: "CS-Luxe Model " + (200 + i),
-            series: womenSeries[i % womenSeries.length],
-            price: (2500 + (i * 33)).toLocaleString() 
+            name: "CS-Luxe Model " + (300 + i),
+            series: wSeries[i % 5],
+            price: (2500 + (i * 33)).toLocaleString()
         });
     }
 
-    // 3. UNIVERSAL LOAD FUNCTION (Fixed spacing issue)
+    // 3. BULLETPROOF LOADER (Handles Spaces, Caps, and Fails)
     function loadProducts(data, gridId, prefix) {
         const grid = document.getElementById(gridId);
         data.forEach(item => {
-            // This line adds the space before the bracket: name (1).jpg
-            const fileName = prefix + " (" + item.id + ").jpg";
+            // This tries the name WITH a space: "watch1-jpg (1).jpg"
+            const imgPath = prefix + " (" + item.id + ").jpg";
             
             grid.innerHTML += `
                 <div class="card">
-                    <img src="${fileName}" alt="${item.name}">
+                    <img src="${imgPath}" alt="${item.name}" 
+                         onerror="this.onerror=null; this.src='${prefix}(${item.id}).jpg';">
                     <div class="info">
                         <p class="series">${item.series}</p>
                         <p class="name">${item.name}</p>
@@ -114,10 +114,8 @@
         });
     }
 
-    // Load Men's using watch1-jpg (id).jpg
+    // Execute Loads
     loadProducts(mensData, 'mens-grid', 'watch1-jpg');
-    
-    // Load Women's using women-watch (id).jpg
     loadProducts(womenData, 'women-grid', 'women-watch');
 </script>
 
