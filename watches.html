@@ -18,7 +18,7 @@
         nav a { color: #888; text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; }
         nav a:hover { color: var(--gold); }
 
-        /* --- GRID SYSTEM --- */
+        /* --- PRODUCT GRID --- */
         section { padding: 60px 5%; max-width: 1440px; margin: auto; }
         .section-title { text-align: center; margin-bottom: 40px; }
         .section-title h2 { color: var(--gold); font-size: 2.2rem; letter-spacing: 6px; text-transform: uppercase; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 10px; }
@@ -31,10 +31,11 @@
         .info { padding: 25px; flex-grow: 1; }
         .series { color: var(--gold); font-size: 0.8rem; letter-spacing: 2px; font-weight: bold; text-transform: uppercase; }
         .name { color: #fff; font-size: 1.1rem; font-weight: bold; margin: 12px 0; min-height: 45px; }
-        .desc { color: #888; font-size: 0.85rem; margin-bottom: 15px; min-height: 32px; }
+        .desc { color: #888; font-size: 0.85rem; margin-bottom: 15px; min-height: 32px; overflow: hidden; }
         .price { font-size: 1.7rem; color: #fff; font-weight: 800; margin-bottom: 20px; }
         
-        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 10px; font-weight: bold; }
+        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 10px; font-weight: bold; transition: 0.3s; }
+        .buy-btn:hover { background: #128C7E; transform: scale(1.02); }
 
         footer { text-align: center; padding: 60px; color: #444; border-top: 1px solid #222; margin-top: 50px; font-size: 12px; }
     </style>
@@ -61,7 +62,7 @@
 </section>
 
 <script>
-    // 1. DATA FOR ALL 15 MEN'S WATCHES
+    // --- 1. MEN'S COLLECTION (15 PRODUCTS) ---
     const mensData = [
         { id: 1, name: "CS-M01 Aero Sport", price: "2,999", series: "AERO SERIES", desc: "Aerodynamic design for an active lifestyle." },
         { id: 2, name: "CS-M02 Stealth Matte", price: "2,450", series: "STEALTH", desc: "Minimalist matte black executive finish." },
@@ -79,24 +80,36 @@
         { id: 14, name: "CS-M14 Vintage Soul", price: "4,900", series: "ANTIQUE", desc: "Retro charm with modern reliability." },
         { id: 15, name: "CS-M15 Phantom Dark", price: "4,740", series: "PHANTOM", desc: "Bold presence with all-black aesthetics." }
     ];
-   // --- WOMEN'S DATA (Updated with 21 Models) ---
+
+    // --- 2. WOMEN'S COLLECTION (21 PRODUCTS) ---
     const womenData = [
-        { id: 1, name: "CS-Luxe Pearl Ceramic", price: "3,450", series: "Elite Series", desc: "Pure white ceramic band with a rose-gold dial and diamond-cut bezel." },
-        { id: 2, name: "CS-Luxe Midnight Rose", price: "2,950", series: "Oyster Luxe", desc: "Bold rose-gold finish with a deep midnight green sunray dial." },
-        { id: 3, name: "CS-Luxe Champagne Duo", price: "2,850", series: "Oyster Luxe", desc: "Sophisticated two-tone silver and gold steel with a champagne face." },
-        { id: 4, name: "CS-Luxe Matte Minimal", price: "2,550", series: "Minimalist", desc: "Ultra-slim black mesh belt with a sleek square matte dial." },
-        { id: 5, name: "CS-Luxe Golden Mesh", price: "2,650", series: "Minimalist", desc: "Radiant gold mesh strap with a clean, square brushed-silver dial." },
-        { id: 6, name: "CS-Luxe Bracelet Charm", price: "3,150", series: "Jewelry Line", desc: "Unique T-bar chain link bracelet with a sophisticated rectangular face." },
-        { id: 7, name: "CS-Luxe Aqua Crystal", price: "3,250", series: "Jewelry Line", desc: "Gold chain-link band featuring a stunning turquoise crystal-cut dial." },
-        { id: 8, name: "CS-Luxe Silver Frost", price: "3,100", series: "Jewelry Line", desc: "Silver chain strap with a diamond-cut clear crystal face for icy elegance." },
-        { id: 9, name: "CS-Luxe Azure Spark", price: "3,200", series: "Jewelry Line", desc: "Silver-toned jewelry strap with a brilliant emerald-cut aqua dial." },
-        { id: 10, name: "CS-Luxe Jade Dream", price: "3,350", series: "Jewelry Line", desc: "Deep emerald crystal dial set in a premium silver chain-link design." },
-        { id: 11, name: "CS-Luxe Royal Lattice", price: "3,490", series: "Elite Series", desc: "Detailed lattice-pattern silver dial with rose-gold casing and link belt." },
+        { id: 1, name: "CS-Luxe Pearl Ceramic", price: "3,450", series: "Elite Series", desc: "White ceramic band with a diamond-cut bezel." },
+        { id: 2, name: "CS-Luxe Midnight Rose", price: "2,950", series: "Oyster Luxe", desc: "Rose-gold finish with a deep green sunray dial." },
+        { id: 3, name: "CS-Luxe Champagne Duo", price: "2,850", series: "Oyster Luxe", desc: "Two-tone silver and gold steel with champagne face." },
+        { id: 4, name: "CS-Luxe Matte Minimal", price: "2,550", series: "Minimalist", desc: "Ultra-slim black mesh belt with a sleek square dial." },
+        { id: 5, name: "CS-Luxe Golden Mesh", price: "2,650", series: "Minimalist", desc: "Radiant gold mesh strap with a clean square dial." },
+        { id: 6, name: "CS-Luxe Bracelet Charm", price: "3,150", series: "Jewelry Line", desc: "T-bar chain link bracelet with rectangular face." },
+        { id: 7, name: "CS-Luxe Aqua Crystal", price: "3,250", series: "Jewelry Line", desc: "Gold chain-link band with turquoise crystal dial." },
+        { id: 8, name: "CS-Luxe Silver Frost", price: "3,100", series: "Jewelry Line", desc: "Silver chain strap with diamond-cut crystal face." },
+        { id: 9, name: "CS-Luxe Azure Spark", price: "3,200", series: "Jewelry Line", desc: "Silver-toned strap with brilliant aqua dial." },
+        { id: 10, name: "CS-Luxe Jade Dream", price: "3,350", series: "Jewelry Line", desc: "Deep emerald crystal dial in premium silver link." },
+        { id: 11, name: "CS-Luxe Royal Lattice", price: "3,490", series: "Elite Series", desc: "Lattice-pattern silver dial with rose-gold casing." },
+        { id: 12, name: "CS-Luxe Rose Weave", price: "3,150", series: "Elite Series", desc: "Intricate woven-pattern dial with rose-gold strap." },
+        { id: 13, name: "CS-Luxe Mocha Sport", price: "2,750", series: "Active Luxe", desc: "Premium brown silicone strap with rose-gold dial." },
+        { id: 14, name: "CS-Luxe Slate Sport", price: "2,750", series: "Active Luxe", desc: "Durable grey silicone strap with gold accents." },
+        { id: 15, name: "CS-Luxe Chrono Rose", price: "3,850", series: "Multi-Dial", desc: "Triple chronograph dial with diamond-encrusted bezel." },
+        { id: 16, name: "CS-Luxe Sunburst Copper", price: "3,650", series: "Multi-Dial", desc: "Copper sunburst dial with detailed sub-dials." },
+        { id: 17, name: "CS-Luxe Nordic Duo", price: "3,450", series: "Multi-Dial", desc: "Silver and copper mix with white chronograph face." },
+        { id: 18, name: "CS-Luxe Emerald Night", price: "3,750", series: "Multi-Dial", desc: "Dark emerald textured dial with rose-gold build." },
+        { id: 19, name: "CS-Luxe Arctic Chrono", price: "3,550", series: "Multi-Dial", desc: "White textured dial with sparkling crystal rim." },
+        { id: 20, name: "CS-Luxe Dual Heritage", price: "3,450", series: "Multi-Dial", desc: "Classic gold and silver strap with multi-dial layout." },
+        { id: 21, name: "CS-Luxe Sunset Glow", price: "3,550", series: "Multi-Dial", desc: "Copper-toned dial with a sparkling crystal frame." }
     ];
+
     function loadProducts(data, gridId, prefix, hasSpace) {
         const grid = document.getElementById(gridId);
         data.forEach(item => {
-            // Logic to handle naming: "watch1-jpg (1).jpg" vs "new-women(1).jpg"
+            // Naming Fix: watch1-jpg (id) vs new-women(id)
             const imgPath = hasSpace ? `${prefix} (${item.id}).jpg` : `${prefix}(${item.id}).jpg`;
             
             grid.innerHTML += `
@@ -113,10 +126,8 @@
         });
     }
 
-    // Load Men's (uses space: watch1-jpg (1).jpg)
+    // Initialize the grids
     loadProducts(mensData, 'mens-grid', 'watch1-jpg', true);
-    
-    // Load Women's (no space: new-women(1).jpg)
     loadProducts(womenData, 'women-grid', 'new-women', false);
 </script>
 
