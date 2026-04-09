@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CROCS COLLECTION | CSTAR</title>
+    <title>CROCS ELITE | CSTAR COLLECTIONS</title>
     <style>
         :root { --gold: #d4af37; --black: #050505; --gray: #121212; --white: #ffffff; }
         body { background: var(--black); color: var(--white); font-family: 'Segoe UI', sans-serif; margin: 0; scroll-behavior: smooth; }
         
-        /* --- NAVIGATION --- */
         header { background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; padding: 15px 0; text-align: center;}
         .back-btn { position: absolute; left: 20px; top: 25px; color: var(--gold); text-decoration: none; font-size: 12px; border: 1px solid var(--gold); padding: 5px 10px; border-radius: 5px; }
         .logo { color: var(--gold); font-size: 1.8rem; font-weight: 800; letter-spacing: 5px; text-transform: uppercase; margin: 0; }
@@ -17,7 +16,6 @@
         .section-title { text-align: center; margin-bottom: 40px; }
         .section-title h2 { color: var(--gold); font-size: 2.2rem; letter-spacing: 6px; text-transform: uppercase; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 10px; }
         
-        /* --- PRODUCT GRID --- */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .card { background: var(--gray); border-radius: 15px; border: 1px solid #222; overflow: hidden; transition: 0.5s; text-align: center; display: flex; flex-direction: column; }
         .card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2); }
@@ -35,14 +33,13 @@
 <body>
 
 <header>
-    <a href="index.html" class="back-btn">← HOME</a>
+    <a href="footwear.html" class="back-btn">← FOOTWEAR</a>
     <div class="logo">CSTAR CROCS</div>
 </header>
 
-<section id="crocs-grid-section">
+<section id="crocs">
     <div class="section-title"><h2>Premium Crocs Collection</h2></div>
-    <div class="grid" id="crocs-container">
-        </div>
+    <div class="grid" id="crocs-container"></div>
 </section>
 
 <script>
@@ -60,14 +57,10 @@
     ];
 
     const grid = document.getElementById('crocs-container');
-
     crocsData.forEach(item => {
-        // Automatically looks for your files: crocs(1).jpg, etc.
-        const imgPath = `crocs(${item.id}).jpg`;
-        
         grid.innerHTML += `
             <div class="card">
-                <img src="${imgPath}" alt="${item.name}" onerror="this.src='placeholder.jpg'">
+                <img src="crocs(${item.id}).jpg" alt="${item.name}" onerror="this.src='placeholder.jpg'">
                 <div class="info">
                     <p class="series">${item.series}</p>
                     <h3 class="name">${item.name}</h3>
