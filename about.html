@@ -3,53 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE LEGACY | CSTAR COLLECTIONS</title>
+    <title>OUR STORY | CSTAR COLLECTIONS</title>
     <style>
         :root { --gold: #d4af37; --black: #050505; --gray: #121212; --white: #ffffff; }
-        body { background: var(--black); color: var(--white); font-family: 'Segoe UI', sans-serif; margin: 0; line-height: 1.8; overflow-x: hidden; }
+        body { background: var(--black); color: var(--white); font-family: 'Segoe UI', sans-serif; margin: 0; line-height: 1.6; }
         
-        header { background: rgba(0,0,0,0.95); border-bottom: 2px solid var(--gold); padding: 20px; text-align: center; position: sticky; top: 0; z-index: 1000; }
-        .back-btn { position: absolute; left: 20px; top: 25px; color: var(--gold); text-decoration: none; font-weight: bold; border: 1px solid var(--gold); padding: 5px 15px; border-radius: 5px; font-size: 12px; transition: 0.3s; }
-        .back-btn:hover { background: var(--gold); color: black; }
-        .logo { color: var(--gold); font-size: 1.8rem; font-weight: 800; letter-spacing: 8px; text-transform: uppercase; margin: 0; }
+        header { background: #000; border-bottom: 2px solid var(--gold); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; }
+        .back-btn { position: absolute; left: 15px; top: 18px; color: var(--gold); text-decoration: none; font-size: 11px; border: 1px solid var(--gold); padding: 4px 10px; border-radius: 4px; }
+        .logo { color: var(--gold); font-size: 1.4rem; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; margin: 0; }
 
-        .container { max-width: 1100px; margin: auto; padding: 60px 5%; }
+        .container { max-width: 900px; margin: auto; padding: 40px 5%; }
         
-        /* --- STORY SECTION --- */
-        .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; }
-        .story-text h2 { color: var(--gold); font-size: 2.5rem; letter-spacing: 3px; border-left: 4px solid var(--gold); padding-left: 20px; margin-bottom: 30px; }
-        .story-image img { width: 100%; border-radius: 20px; border: 1px solid #333; box-shadow: 15px 15px 0px var(--gold); }
+        /* --- SHORT STORY --- */
+        .short-story { text-align: center; margin-bottom: 50px; }
+        .short-story h2 { color: var(--gold); font-size: 1.8rem; letter-spacing: 2px; text-transform: uppercase; }
+        .short-story p { color: #bbb; max-width: 600px; margin: 10px auto; font-size: 0.95rem; }
 
-        /* --- TESTIMONIALS SECTION --- */
-        .reviews-title { text-align: center; margin-bottom: 50px; }
-        .reviews-title h2 { color: var(--gold); font-size: 2.2rem; letter-spacing: 5px; text-transform: uppercase; }
-        .reviews-title p { color: #888; letter-spacing: 2px; }
+        /* --- HORIZONTAL REVIEW SLIDER --- */
+        .review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #222; padding-bottom: 10px; }
+        .review-header h3 { color: var(--gold); font-size: 1rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        .swipe-hint { color: #555; font-size: 10px; letter-spacing: 1px; }
 
-        .screenshot-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-            gap: 20px; 
-            margin-bottom: 80px;
+        .review-slider { 
+            display: flex; 
+            overflow-x: auto; 
+            gap: 15px; 
+            padding-bottom: 20px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: thin;
+            scrollbar-color: var(--gold) #111;
         }
-        .screenshot-card { 
-            background: var(--gray); 
-            padding: 10px; 
-            border-radius: 15px; 
-            border: 1px solid #222; 
-            transition: 0.4s;
+        /* Custom Scrollbar for Chrome/Safari */
+        .review-slider::-webkit-scrollbar { height: 4px; }
+        .review-slider::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+
+        .review-card { 
+            flex: 0 0 250px; /* Width of each review card */
+            scroll-snap-align: start;
+            background: var(--gray);
+            border-radius: 10px;
+            border: 1px solid #222;
+            padding: 8px;
+            transition: 0.3s;
         }
-        .screenshot-card:hover { border-color: var(--gold); transform: scale(1.03); }
-        .screenshot-card img { 
+        .review-card img { 
             width: 100%; 
-            border-radius: 10px; 
+            border-radius: 8px; 
             display: block;
-            filter: grayscale(20%);
+            height: 350px; /* Fixed height for neatness */
+            object-fit: cover;
         }
-        .screenshot-card img:hover { filter: grayscale(0%); }
+        .review-card:hover { border-color: var(--gold); }
 
-        .label { text-align: center; color: var(--gold); font-size: 12px; margin-top: 10px; font-weight: bold; letter-spacing: 1px; }
-
-        footer { text-align: center; padding: 60px; color: #444; border-top: 1px solid #222; letter-spacing: 5px; font-size: 11px; }
+        footer { text-align: center; padding: 40px; color: #444; border-top: 1px solid #222; letter-spacing: 3px; font-size: 10px; }
     </style>
 </head>
 <body>
@@ -60,44 +66,33 @@
 </header>
 
 <div class="container">
-    <div class="story-grid">
-        <div class="story-text">
-            <h2>12 YEARS OF TRUST</h2>
-            <p>Since 2014, CSTAR COLLECTIONS has been the bridge between global luxury and Indian watch enthusiasts. We don't just sell timepieces; we deliver a legacy of quality.</p>
-            <p>Our commitment to 100% customer satisfaction is why thousands of clients stay loyal to us.</p>
-        </div>
-        <div class="story-image">
-            <img src="watch1-jpg (7).jpg" alt="Legacy">
-        </div>
+    <section class="short-story">
+        <h2>Established 2014</h2>
+        <p>12 years of delivering imported luxury across India. We specialize in premium timepieces and accessories, backed by 50,000+ happy customers.</p>
+    </section>
+
+    <div class="review-header">
+        <h3>Wall of Trust</h3>
+        <span class="swipe-hint">SWIPE LEFT →</span>
     </div>
 
-    <div class="reviews-title">
-        <h2>Customer Satisfaction</h2>
-        <p>Real Chats. Real People. Real Trust.</p>
+    <div class="review-slider">
+        <div class="review-card"><img src="review(1).jpg" alt="Review 1"></div>
+        <div class="review-card"><img src="review(2).jpg" alt="Review 2"></div>
+        <div class="review-card"><img src="review(3).jpg" alt="Review 3"></div>
+        <div class="review-card"><img src="review(4).jpg" alt="Review 4"></div>
+        <div class="review-card"><img src="review(5).jpg" alt="Review 5"></div>
+        <div class="review-card"><img src="review(6).jpg" alt="Review 6"></div>
+        <div class="review-card"><img src="review(7).jpg" alt="Review 7"></div>
+        <div class="review-card"><img src="review(8).jpg" alt="Review 8"></div>
     </div>
 
-    <div class="screenshot-grid">
-        <div class="screenshot-card">
-            <img src="review(1).jpg" alt="Customer Review 1">
-            <div class="label">HAPPY CLIENT @MUMBAI</div>
-        </div>
-        <div class="screenshot-card">
-            <img src="review(2).jpg" alt="Customer Review 2">
-            <div class="label">VERIFIED PURCHASE</div>
-        </div>
-        <div class="screenshot-card">
-            <img src="review(3).jpg" alt="Customer Review 3">
-            <div class="label">WHATSAPP FEEDBACK</div>
-        </div>
-        <div class="screenshot-card">
-            <img src="review(4).jpg" alt="Customer Review 4">
-            <div class="label">QUALITY CONFIRMED</div>
-        </div>
-    </div>
-
+    <p style="text-align: center; color: #666; font-size: 12px; margin-top: 20px;">
+        Follow us on WhatsApp for daily customer feedback updates.
+    </p>
 </div>
 
-<footer>&copy; 2026 CSTAR COLLECTIONS | THE PRIVATE BOUTIQUE</footer>
+<footer>&copy; 2026 CSTAR COLLECTIONS | QUALITY FIRST</footer>
 
 </body>
 </html>
