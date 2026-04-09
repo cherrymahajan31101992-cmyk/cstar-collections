@@ -8,33 +8,34 @@
         :root { --gold: #d4af37; --black: #050505; --gray: #121212; --white: #ffffff; }
         body { background: var(--black); color: var(--white); font-family: 'Segoe UI', sans-serif; margin: 0; scroll-behavior: smooth; }
         
-        /* --- MAIN HEADER --- */
+        /* --- NAVIGATION --- */
         header { background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; padding: 15px 0; text-align: center;}
         .back-btn { position: absolute; left: 20px; top: 25px; color: var(--gold); text-decoration: none; font-size: 12px; border: 1px solid var(--gold); padding: 5px 10px; border-radius: 5px; transition: 0.3s; }
         .back-btn:hover { background: var(--gold); color: #000; }
         .logo { color: var(--gold); font-size: 1.8rem; font-weight: 800; letter-spacing: 5px; text-transform: uppercase; margin: 0; }
         
-        /* --- SUB-NAV BAR --- */
-        .sub-nav { display: flex; justify-content: center; gap: 40px; background: #000; padding: 15px 0; border-bottom: 1px solid #222; position: sticky; top: 71px; z-index: 999; }
-        .sub-nav a { color: #888; text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; transition: 0.3s; }
-        .sub-nav a:hover { color: var(--gold); border-bottom: 1px solid var(--gold); }
+        .sub-nav { display: flex; justify-content: center; gap: 30px; background: #000; padding: 15px 0; border-bottom: 1px solid #222; position: sticky; top: 71px; z-index: 999; }
+        .sub-nav a { color: #888; text-decoration: none; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; transition: 0.3s; }
+        .sub-nav a:hover { color: var(--gold); }
+
+        /* --- SECTION STYLING --- */
+        section { padding: 60px 5%; max-width: 1440px; margin: auto; }
+        .section-intro { text-align: center; max-width: 850px; margin: 0 auto 50px auto; }
+        .section-intro h2 { color: var(--gold); font-size: 2.6rem; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 15px; }
+        .section-intro p { color: #bbb; line-height: 1.8; font-size: 1.1rem; }
 
         /* --- PRODUCT GRID --- */
-        section { padding: 60px 5%; max-width: 1440px; margin: auto; }
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { color: var(--gold); font-size: 2.2rem; letter-spacing: 6px; text-transform: uppercase; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 10px; }
-        
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .card { background: var(--gray); border-radius: 15px; border: 1px solid #222; overflow: hidden; transition: 0.5s; text-align: center; display: flex; flex-direction: column; }
-        .card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2); }
+        .card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25); }
         .card img { width: 100%; height: 400px; object-fit: cover; background: #1a1a1a; }
         
         .info { padding: 25px; flex-grow: 1; }
-        .series { color: var(--gold); font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
-        .name { color: #fff; font-size: 1.1rem; font-weight: bold; margin: 12px 0; min-height: 44px; display: flex; align-items: center; justify-content: center; }
-        .price { font-size: 1.7rem; color: #fff; font-weight: 800; margin-bottom: 20px; }
-        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 10px; font-weight: bold; transition: 0.3s; }
-        .buy-btn:hover { background: #128C7E; transform: scale(1.05); }
+        .series { color: var(--gold); font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
+        .name { color: #fff; font-size: 1.15rem; font-weight: bold; margin: 10px 0; min-height: 44px; display: flex; align-items: center; justify-content: center; line-height: 1.3; }
+        .price { font-size: 1.8rem; color: #fff; font-weight: 800; margin-bottom: 20px; letter-spacing: 1px; }
+        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 16px; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 1rem; transition: 0.3s; }
+        .buy-btn:hover { background: #128C7E; transform: scale(1.03); }
 
         footer { text-align: center; padding: 60px; color: #444; border-top: 1px solid #222; margin-top: 50px; font-size: 12px; }
     </style>
@@ -48,21 +49,27 @@
 
 <div class="sub-nav">
     <a href="#formal">Executive Formal</a>
-    <a href="#crocs">Premium Crocs</a>
+    <a href="#crocs">Premium Elite Crocs</a>
 </div>
 
 <section id="formal">
-    <div class="section-title"><h2>Executive Formal Collection</h2></div>
+    <div class="section-intro">
+        <h2>Executive Formal</h2>
+        <p>Command presence with our <span style="color:var(--gold)">Bespoke Italian-Finish</span> footwear. Meticulously designed for the modern visionary, each pair combines high-grade leather with architectural precision. The ultimate standard for professional elegance.</p>
+    </div>
     <div class="grid" id="formal-grid"></div>
 </section>
 
 <section id="crocs">
-    <div class="section-title"><h2>Premium Crocs Collection</h2></div>
+    <div class="section-intro">
+        <h2>Premium Elite Crocs</h2>
+        <p>Experience the peak of leisure luxury with our <span style="color:var(--gold)">Imported Designer Clogs</span>. Featuring the iconic Echo series and heavy-duty Platform editions, these are engineered for those who refuse to compromise on style or comfort. Elevate your everyday rotation.</p>
+    </div>
     <div class="grid" id="crocs-grid"></div>
 </section>
 
 <script>
-    // 1. DATA FOR FORMAL SHOES (Using formal1-jpg (id).jpg)
+    // 1. FORMAL DATA (Price Range: 2200 - 2700)
     const formalData = [
         { id: 1, name: "CS-Executive Tan Loafer", price: "2,450", series: "Heritage Line" },
         { id: 2, name: "CS-Stealth Onyx Loafer", price: "2,600", series: "Executive Series" },
@@ -75,25 +82,25 @@
         { id: 9, name: "CS-Imperial Chestnut Lace", price: "2,650", series: "Signature Series" }
     ];
 
-    // 2. DATA FOR CROCS (crocs(id).jpg)
+    // 2. CROCS DATA (Updated Premium Pricing: 2850 - 3650)
     const crocsData = [
-        { id: 1, name: "CS-Echo Bone Clog", price: "2,450", series: "Echo Collection" },
-        { id: 2, name: "CS-Echo Duo Pack", price: "2,450", series: "Echo Collection" },
-        { id: 3, name: "CS-Echo Shadow Black", price: "2,550", series: "Echo Collection" },
-        { id: 4, name: "CS-Marble Volt Green", price: "1,950", series: "Marble Edition" },
-        { id: 5, name: "CS-Classic Marble Khaki", price: "1,850", series: "Marble Edition" },
-        { id: 6, name: "CS-Classic Marble Tan", price: "1,850", series: "Marble Edition" },
-        { id: 7, name: "CS-Platform Onyx Clog", price: "2,650", series: "Platform Elite" },
-        { id: 8, name: "CS-Platform Ruby Red", price: "2,650", series: "Platform Elite" },
-        { id: 9, name: "CS-Cloud Walk White", price: "2,100", series: "Comfort Series" },
-        { id: 10, name: "CS-Cloud Walk Grey", price: "2,100", series: "Comfort Series" }
+        { id: 1, name: "CS-Echo Bone Sport Clog", price: "3,450", series: "Echo Elite" },
+        { id: 2, name: "CS-Echo Bone Duo Pack", price: "3,450", series: "Echo Elite" },
+        { id: 3, name: "CS-Echo Shadow Stealth", price: "3,650", series: "Echo Elite" },
+        { id: 4, name: "CS-Marble Volt Neon Edition", price: "2,850", series: "Marble Luxe" },
+        { id: 5, name: "CS-Marble Sand Drift Clog", price: "2,850", series: "Marble Luxe" },
+        { id: 6, name: "CS-Marble Earth Tone Clog", price: "2,850", series: "Marble Luxe" },
+        { id: 7, name: "CS-Platform Onyx Mega Clog", price: "3,250", series: "Platform Elite" },
+        { id: 8, name: "CS-Platform Ruby High Clog", price: "3,250", series: "Platform Elite" },
+        { id: 9, name: "CS-Cloud Walk Arctic White", price: "2,950", series: "Comfort Luxe" },
+        { id: 10, name: "CS-Cloud Walk Storm Grey", price: "2,950", series: "Comfort Luxe" }
     ];
 
-    function loadGrid(data, gridId, prefix, format) {
+    function loadGrid(data, gridId, prefix, type) {
         const grid = document.getElementById(gridId);
         data.forEach(item => {
-            // Format 1: formal1-jpg (id).jpg | Format 2: crocs(id).jpg
-            const imgPath = format === 'formal' ? `${prefix} (${item.id}).jpg` : `${prefix}(${item.id}).jpg`;
+            // Handles 'formal1-jpg (1).jpg' vs 'crocs(1).jpg'
+            const imgPath = type === 'formal' ? `${prefix} (${item.id}).jpg` : `${prefix}(${item.id}).jpg`;
             
             grid.innerHTML += `
                 <div class="card">
@@ -102,18 +109,16 @@
                         <p class="series">${item.series}</p>
                         <h3 class="name">${item.name}</h3>
                         <div class="price">₹${item.price}</div>
-                        <a href="payment.html" class="buy-btn">PAY SECURELY</a>
+                        <a href="payment.html" class="buy-btn">ORDER VIA WHATSAPP</a>
                     </div>
                 </div>`;
         });
     }
 
-    // Launch both collections
     loadGrid(formalData, 'formal-grid', 'formal1-jpg', 'formal');
     loadGrid(crocsData, 'crocs-grid', 'crocs', 'crocs');
-
 </script>
 
-<footer>&copy; 2026 CSTAR COLLECTIONS | QUALITY SINCE 2014</footer>
+<footer>&copy; 2026 CSTAR COLLECTIONS | PREMIUM IMPORTS SINCE 2014</footer>
 </body>
 </html>
