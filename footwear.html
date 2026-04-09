@@ -3,141 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELITE FOOTWEAR | CSTAR COLLECTIONS</title>
+    <title>FOOTWEAR COLLECTION | CSTAR</title>
     <style>
         :root { --gold: #d4af37; --black: #050505; --gray: #121212; --white: #ffffff; }
-        body { background: var(--black); color: var(--white); font-family: 'Segoe UI', Arial, sans-serif; margin: 0; scroll-behavior: smooth; }
+        body { background: var(--black); color: var(--white); font-family: 'Segoe UI', sans-serif; margin: 0; scroll-behavior: smooth; }
         
-        /* Premium Header */
-        header { background: #000; border-bottom: 2px solid var(--gold); padding: 25px; text-align: center; position: sticky; top: 0; z-index: 1000; }
-        .back-btn { position: absolute; left: 25px; top: 30px; color: var(--gold); text-decoration: none; font-weight: bold; border: 1px solid var(--gold); padding: 5px 15px; border-radius: 5px; font-size: 12px; }
+        header { background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; padding: 15px 0; text-align: center;}
+        .back-btn { position: absolute; left: 20px; top: 25px; color: var(--gold); text-decoration: none; font-size: 12px; border: 1px solid var(--gold); padding: 5px 10px; border-radius: 5px; }
         .logo { color: var(--gold); font-size: 1.8rem; font-weight: 800; letter-spacing: 5px; text-transform: uppercase; margin: 0; }
+        
+        .sub-nav { display: flex; justify-content: center; gap: 30px; background: #000; padding: 15px 0; border-bottom: 1px solid #222; position: sticky; top: 71px; z-index: 999; }
+        .sub-nav a { color: #888; text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; }
+        .sub-nav a:hover { color: var(--gold); }
 
-        section { padding: 60px 5%; max-width: 1400px; margin: auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        section { padding: 60px 5%; max-width: 1440px; margin: auto; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { color: var(--gold); font-size: 2.2rem; letter-spacing: 6px; text-transform: uppercase; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 10px; }
         
-        /* Product Card */
-        .card { background: var(--gray); border-radius: 20px; border: 1px solid #222; overflow: hidden; transition: 0.5s ease; position: relative; display: flex; flex-direction: column; }
-        .card:hover { border-color: var(--gold); transform: translateY(-12px); box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--gray); border-radius: 15px; border: 1px solid #222; overflow: hidden; transition: 0.5s; text-align: center; display: flex; flex-direction: column; }
+        .card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2); }
+        .card img { width: 100%; height: 400px; object-fit: cover; background: #1a1a1a; }
         
-        .card img { width: 100%; height: 380px; object-fit: cover; border-bottom: 1px solid #222; background: #1a1a1a; }
-        
-        .info { padding: 25px; text-align: center; flex-grow: 1; }
-        .series { color: var(--gold); font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; margin-bottom: 5px; }
-        .p-name { font-size: 1.2rem; margin-bottom: 10px; color: #eee; font-weight: bold; }
-        .price { font-size: 1.8rem; margin: 15px 0; font-weight: 800; color: #fff; }
-        
-        /* Payment Button */
-        .pay-btn { display: block; background: var(--gold); color: #000; text-align: center; padding: 16px; text-decoration: none; border-radius: 10px; font-weight: bold; transition: 0.3s; }
-        .pay-btn:hover { background: #fff; transform: scale(1.02); }
+        .info { padding: 25px; flex-grow: 1; }
+        .series { color: var(--gold); font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+        .name { color: #fff; font-size: 1.1rem; font-weight: bold; margin: 10px 0; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+        .price { font-size: 1.7rem; color: #fff; font-weight: 800; margin-bottom: 20px; }
+        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 10px; font-weight: bold; }
 
-        footer { text-align: center; padding: 40px; color: #444; border-top: 1px solid #222; margin-top: 50px; }
+        footer { text-align: center; padding: 60px; color: #444; border-top: 1px solid #222; margin-top: 50px; font-size: 12px; }
     </style>
 </head>
 <body>
 
 <header>
     <a href="index.html" class="back-btn">← HOME</a>
-    <p class="logo">ELITE FOOTWEAR</p>
+    <div class="logo">CSTAR FOOTWEAR</div>
 </header>
 
-<section>
-    <div class="grid">
-        
-        <div class="card">
-            <img src="formal1-jpg%20(1).jpg">
-            <div class="info">
-                <p class="series">EXECUTIVE SOLE</p>
-                <p class="p-name">Model CS-F01</p>
-                <div class="price">₹2,450</div>
-                <a href="payment.html" class="pay-btn">PAY SECURELY</a>
-            </div>
-        </div>
+<div class="sub-nav">
+    <a href="#formal">Formal Shoes</a>
+    <a href="#crocs">Premium Crocs</a>
+</div>
 
-        <div class="card">
-            <img src="formal1-jpg%20(2).jpg">
-            <div class="info">
-                <p class="series">ONYX SERIES</p>
-                <p class="p-name">Model CS-F02</p>
-                <div class="price">₹2,650</div>
-                <a href="payment.html" class="pay-btn">PAY SECURELY</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="formal1-jpg%20(3).jpg">
-            <div class="info">
-                <p class="series">MONARCH BROGUE</p>
-                <p class="p-name">Model CS-F03</p>
-                <div class="price">₹2,700</div>
-                <a href="payment.html" class="pay-btn">PAY SECURELY</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="formal1-jpg%20(4).jpg">
-            <div class="info">
-                <p class="series">LEGACY COLLECTION</p>
-                <p class="p-name">Model CS-F04</p>
-                <div class="price">₹2,400</div>
-                <a href="payment.html" class="pay-btn">PAY SECURELY</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="formal1-jpg%20(5).jpg">
-            <div class="info">
-                <p class="series">WINE LUXE</p>
-                <p class="p-name">Model CS-F05</p>
-                <div class="price">₹2,550</div>
-                <a href="payment.html" class="pay-btn">PAY SECURELY</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="formal1-jpg%20(6).jpg">
-            <div class="info">
-                <p class="series">WINGTIP MASTER</p>
-                <p class="p-name">Model CS-F06</p>
-                <div class="price">₹2,300</div>
-                <a href="payment.html" class="pay-btn">PAY SECURELY</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="formal1-jpg%20(7).jpg">
-            <div class="info">
-                <p class="series">OXFORD CLASSIC</p>
-                <p class="p-name">Model CS-F07</p>
-                <div class="price">₹2,300</div>
-                <a href="payment.html" class="pay-btn">PAY SECURELY</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="formal1-jpg%20(8).jpg">
-            <div class="info">
-                <p class="series">ELITE CLASSIC</p>
-                <p class="p-name">Model CS-F08</p>
-                <div class="price">₹2,200</div>
-                <a href="payment.html" class="pay-btn">PAY SECURELY</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="formal1-jpg%20(9).jpg">
-            <div class="info">
-                <p class="series">EMBROIDERED LUX</p>
-                <p class="p-name">Model CS-F09</p>
-                <div class="price">₹2,500</div>
-                <a href="payment.html" class="pay-btn">PAY SECURELY</a>
-            </div>
-        </div>
-
-    </div>
+<section id="formal">
+    <div class="section-title"><h2>Formal Executive Collection</h2></div>
+    <div class="grid" id="formal-grid"></div>
 </section>
 
-<footer>&copy; 2026 CSTAR COLLECTIONS | QUALITY ASSURED</footer>
+<section id="crocs">
+    <div class="section-title"><h2>Premium Crocs Collection</h2></div>
+    <div class="grid" id="crocs-grid"></div>
+</section>
 
+<script>
+    // 1. FULL FORMAL DATA (10 ITEMS)
+    const formalData = [
+        { id: 1, name: "CS-Executive Oxford Black", price: "4,500", series: "Italian Leather" },
+        { id: 2, name: "CS-Heritage Tan Brogue", price: "4,200", series: "Premium Finish" },
+        { id: 3, name: "CS-Midnight Patent Loafer", price: "3,850", series: "Classic Elite" },
+        { id: 4, name: "CS-Royal Monk Strap", price: "4,650", series: "Italian Leather" },
+        { id: 5, name: "CS-Business Derby Walnut", price: "3,999", series: "Executive Series" },
+        { id: 6, name: "CS-Suede Tassel Loafer", price: "3,400", series: "Luxury Casual" },
+        { id: 7, name: "CS-Chelsea Leather Boot", price: "5,200", series: "Signature Series" },
+        { id: 8, name: "CS-Formal Cap Toe", price: "4,100", series: "Elite Business" },
+        { id: 9, name: "CS-Penny Loafer Classic", price: "3,750", series: "Premium Handcrafted" },
+        { id: 10, name: "CS-Dress Wingtip Dark Brown", price: "4,350", series: "Italian Leather" }
+    ];
+
+    // 2. FULL CROCS DATA (10 ITEMS)
+    const crocsData = [
+        { id: 1, name: "CS-Echo Bone Clog", price: "2,450", series: "Echo Collection" },
+        { id: 2, name: "CS-Echo Duo Pack", price: "2,450", series: "Echo Collection" },
+        { id: 3, name: "CS-Echo Shadow Black", price: "2,550", series: "Echo Collection" },
+        { id: 4, name: "CS-Marble Volt Green", price: "1,950", series: "Marble Edition" },
+        { id: 5, name: "CS-Classic Marble Khaki", price: "1,850", series: "Marble Edition" },
+        { id: 6, name: "CS-Classic Marble Tan", price: "1,850", series: "Marble Edition" },
+        { id: 7, name: "CS-Platform Onyx Clog", price: "2,650", series: "Platform Elite" },
+        { id: 8, name: "CS-Platform Ruby Red", price: "2,650", series: "Platform Elite" },
+        { id: 9, name: "CS-Cloud Walk White", price: "2,100", series: "Comfort Series" },
+        { id: 10, name: "CS-Cloud Walk Grey", price: "2,100", series: "Comfort Series" }
+    ];
+
+    function loadGrid(data, gridId, prefix) {
+        const grid = document.getElementById(gridId);
+        data.forEach(item => {
+            const imgPath = `${prefix}(${item.id}).jpg`;
+            grid.innerHTML += `
+                <div class="card">
+                    <img src="${imgPath}" alt="${item.name}" onerror="this.src='placeholder.jpg'">
+                    <div class="info">
+                        <p class="series">${item.series}</p>
+                        <h3 class="name">${item.name}</h3>
+                        <div class="price">₹${item.price}</div>
+                        <a href="payment.html" class="buy-btn">PAY SECURELY</a>
+                    </div>
+                </div>`;
+        });
+    }
+
+    // Launch both collections
+    loadGrid(formalData, 'formal-grid', 'formal');
+    loadGrid(crocsData, 'crocs-grid', 'crocs');
+
+</script>
+
+<footer>&copy; 2026 CSTAR COLLECTIONS | QUALITY SINCE 2014</footer>
 </body>
 </html>
