@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CROCS COLLECTION | CSTAR</title>
+    <style>
+        :root { --gold: #d4af37; --black: #050505; --gray: #121212; --white: #ffffff; }
+        body { background: var(--black); color: var(--white); font-family: 'Segoe UI', sans-serif; margin: 0; scroll-behavior: smooth; }
+        
+        /* --- NAVIGATION --- */
+        header { background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; padding: 15px 0; text-align: center;}
+        .back-btn { position: absolute; left: 20px; top: 25px; color: var(--gold); text-decoration: none; font-size: 12px; border: 1px solid var(--gold); padding: 5px 10px; border-radius: 5px; }
+        .logo { color: var(--gold); font-size: 1.8rem; font-weight: 800; letter-spacing: 5px; text-transform: uppercase; margin: 0; }
+
+        section { padding: 60px 5%; max-width: 1440px; margin: auto; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { color: var(--gold); font-size: 2.2rem; letter-spacing: 6px; text-transform: uppercase; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 10px; }
+        
+        /* --- PRODUCT GRID --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--gray); border-radius: 15px; border: 1px solid #222; overflow: hidden; transition: 0.5s; text-align: center; display: flex; flex-direction: column; }
+        .card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2); }
+        .card img { width: 100%; height: 400px; object-fit: cover; background: #1a1a1a; }
+        
+        .info { padding: 25px; flex-grow: 1; }
+        .series { color: var(--gold); font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+        .name { color: #fff; font-size: 1.1rem; font-weight: bold; margin: 10px 0; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+        .price { font-size: 1.7rem; color: #fff; font-weight: 800; margin-bottom: 20px; }
+        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 10px; font-weight: bold; }
+
+        footer { text-align: center; padding: 60px; color: #444; border-top: 1px solid #222; margin-top: 50px; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="back-btn">← HOME</a>
+    <div class="logo">CSTAR CROCS</div>
+</header>
+
+<section id="crocs-grid-section">
+    <div class="section-title"><h2>Premium Crocs Collection</h2></div>
+    <div class="grid" id="crocs-container">
+        </div>
+</section>
+
+<script>
+    const crocsData = [
+        { id: 1, name: "CS-Echo Bone Clog", price: "2,450", series: "Echo Collection" },
+        { id: 2, name: "CS-Echo Duo Pack", price: "2,450", series: "Echo Collection" },
+        { id: 3, name: "CS-Echo Shadow Black", price: "2,550", series: "Echo Collection" },
+        { id: 4, name: "CS-Marble Volt Green", price: "1,950", series: "Marble Edition" },
+        { id: 5, name: "CS-Classic Marble Khaki", price: "1,850", series: "Marble Edition" },
+        { id: 6, name: "CS-Classic Marble Tan", price: "1,850", series: "Marble Edition" },
+        { id: 7, name: "CS-Platform Onyx Clog", price: "2,650", series: "Platform Elite" },
+        { id: 8, name: "CS-Platform Ruby Red", price: "2,650", series: "Platform Elite" },
+        { id: 9, name: "CS-Cloud Walk White", price: "2,100", series: "Comfort Series" },
+        { id: 10, name: "CS-Cloud Walk Grey", price: "2,100", series: "Comfort Series" }
+    ];
+
+    const grid = document.getElementById('crocs-container');
+
+    crocsData.forEach(item => {
+        // Automatically looks for your files: crocs(1).jpg, etc.
+        const imgPath = `crocs(${item.id}).jpg`;
+        
+        grid.innerHTML += `
+            <div class="card">
+                <img src="${imgPath}" alt="${item.name}" onerror="this.src='placeholder.jpg'">
+                <div class="info">
+                    <p class="series">${item.series}</p>
+                    <h3 class="name">${item.name}</h3>
+                    <div class="price">₹${item.price}</div>
+                    <a href="payment.html" class="buy-btn">PAY SECURELY</a>
+                </div>
+            </div>`;
+    });
+</script>
+
+<footer>&copy; 2026 CSTAR COLLECTIONS | QUALITY SINCE 2014</footer>
+</body>
+</html>
