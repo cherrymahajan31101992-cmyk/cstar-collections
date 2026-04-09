@@ -33,7 +33,7 @@
 <body>
 
 <header>
-    <a href="footwear.html" class="back-btn">← FOOTWEAR</a>
+    <a href="index.html" class="back-btn">← HOME</a>
     <div class="logo">CSTAR CROCS</div>
 </header>
 
@@ -43,6 +43,7 @@
 </section>
 
 <script>
+    // These match your 10 uploaded photos exactly
     const crocsData = [
         { id: 1, name: "CS-Echo Bone Clog", price: "2,450", series: "Echo Collection" },
         { id: 2, name: "CS-Echo Duo Pack", price: "2,450", series: "Echo Collection" },
@@ -58,9 +59,12 @@
 
     const grid = document.getElementById('crocs-container');
     crocsData.forEach(item => {
+        // Loads crocs(1).jpg, crocs(2).jpg, etc.
+        const imgPath = `crocs(${item.id}).jpg`;
+        
         grid.innerHTML += `
             <div class="card">
-                <img src="crocs(${item.id}).jpg" alt="${item.name}" onerror="this.src='placeholder.jpg'">
+                <img src="${imgPath}" alt="${item.name}" onerror="this.src='placeholder.jpg'">
                 <div class="info">
                     <p class="series">${item.series}</p>
                     <h3 class="name">${item.name}</h3>
