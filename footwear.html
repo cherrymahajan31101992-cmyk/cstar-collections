@@ -14,7 +14,7 @@
         .back-btn:hover { background: var(--gold); color: #000; }
         .logo { color: var(--gold); font-size: 1.8rem; font-weight: 800; letter-spacing: 5px; text-transform: uppercase; margin: 0; }
         
-        /* --- SUB-NAV BAR (Stays under header) --- */
+        /* --- SUB-NAV BAR --- */
         .sub-nav { display: flex; justify-content: center; gap: 40px; background: #000; padding: 15px 0; border-bottom: 1px solid #222; position: sticky; top: 71px; z-index: 999; }
         .sub-nav a { color: #888; text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; transition: 0.3s; }
         .sub-nav a:hover { color: var(--gold); border-bottom: 1px solid var(--gold); }
@@ -52,31 +52,30 @@
 </div>
 
 <section id="formal">
-    <div class="section-title"><h2>Formal Collection</h2></div>
+    <div class="section-title"><h2>Executive Formal Collection</h2></div>
     <div class="grid" id="formal-grid"></div>
 </section>
 
 <section id="crocs">
-    <div class="section-title"><h2>Crocs & Clogs</h2></div>
+    <div class="section-title"><h2>Premium Crocs Collection</h2></div>
     <div class="grid" id="crocs-grid"></div>
 </section>
 
 <script>
-    // 1. DATA FOR FORMAL SHOES (formal(1).jpg to formal(10).jpg)
+    // 1. DATA FOR FORMAL SHOES (Using formal1-jpg (id).jpg)
     const formalData = [
-        { id: 1, name: "CS-Executive Oxford Black", price: "4,500", series: "Italian Leather" },
-        { id: 2, name: "CS-Heritage Tan Brogue", price: "4,200", series: "Premium Finish" },
-        { id: 3, name: "CS-Midnight Patent Loafer", price: "3,850", series: "Classic Elite" },
-        { id: 4, name: "CS-Royal Monk Strap", price: "4,650", series: "Italian Leather" },
-        { id: 5, name: "CS-Business Derby Walnut", price: "3,999", series: "Executive Series" },
-        { id: 6, name: "CS-Suede Tassel Loafer", price: "3,400", series: "Luxury Casual" },
-        { id: 7, name: "CS-Chelsea Leather Boot", price: "5,200", series: "Signature Series" },
-        { id: 8, name: "CS-Formal Cap Toe", price: "4,100", series: "Elite Business" },
-        { id: 9, name: "CS-Penny Loafer Classic", price: "3,750", series: "Premium Handcrafted" },
-        { id: 10, name: "CS-Dress Wingtip Dark Brown", price: "4,350", series: "Italian Leather" }
+        { id: 1, name: "CS-Executive Tan Loafer", price: "2,450", series: "Heritage Line" },
+        { id: 2, name: "CS-Stealth Onyx Loafer", price: "2,600", series: "Executive Series" },
+        { id: 3, name: "CS-Croco Texture Bee", price: "2,700", series: "Limited Edition" },
+        { id: 4, name: "CS-Midnight Penny Loafer", price: "2,400", series: "Classic Elite" },
+        { id: 5, name: "CS-Bordeaux Wine Derby", price: "2,550", series: "Hand-Crafted" },
+        { id: 6, name: "CS-Aura Tan Wingtip", price: "2,350", series: "Brogue Master" },
+        { id: 7, name: "CS-Royal Mahogany Lace", price: "2,350", series: "Premium Finish" },
+        { id: 8, name: "CS-Carbon Black Wingtip", price: "2,350", series: "Brogue Master" },
+        { id: 9, name: "CS-Imperial Chestnut Lace", price: "2,650", series: "Signature Series" }
     ];
 
-    // 2. DATA FOR CROCS (crocs(1).jpg to crocs(10).jpg)
+    // 2. DATA FOR CROCS (crocs(id).jpg)
     const crocsData = [
         { id: 1, name: "CS-Echo Bone Clog", price: "2,450", series: "Echo Collection" },
         { id: 2, name: "CS-Echo Duo Pack", price: "2,450", series: "Echo Collection" },
@@ -90,11 +89,12 @@
         { id: 10, name: "CS-Cloud Walk Grey", price: "2,100", series: "Comfort Series" }
     ];
 
-    // UNIVERSAL LOADER FUNCTION
-    function loadGrid(data, gridId, prefix) {
+    function loadGrid(data, gridId, prefix, format) {
         const grid = document.getElementById(gridId);
         data.forEach(item => {
-            const imgPath = `${prefix}(${item.id}).jpg`;
+            // Format 1: formal1-jpg (id).jpg | Format 2: crocs(id).jpg
+            const imgPath = format === 'formal' ? `${prefix} (${item.id}).jpg` : `${prefix}(${item.id}).jpg`;
+            
             grid.innerHTML += `
                 <div class="card">
                     <img src="${imgPath}" alt="${item.name}" onerror="this.src='placeholder.jpg'">
@@ -108,9 +108,9 @@
         });
     }
 
-    // Initialize both sections on load
-    loadGrid(formalData, 'formal-grid', 'formal');
-    loadGrid(crocsData, 'crocs-grid', 'crocs');
+    // Launch both collections
+    loadGrid(formalData, 'formal-grid', 'formal1-jpg', 'formal');
+    loadGrid(crocsData, 'crocs-grid', 'crocs', 'crocs');
 
 </script>
 
