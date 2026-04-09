@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COLLECTIONS | CSTAR TIMEPIECES</title>
+    <title>TIMEPIECES | CSTAR COLLECTIONS</title>
     <style>
         :root { --gold: #d4af37; --black: #050505; --gray: #121212; --white: #ffffff; }
         body { background: var(--black); color: var(--white); font-family: 'Segoe UI', sans-serif; margin: 0; scroll-behavior: smooth; }
@@ -13,7 +13,7 @@
         .logo { color: var(--gold); font-size: 1.8rem; font-weight: 800; letter-spacing: 5px; text-transform: uppercase; margin: 0; }
         
         nav { display: flex; justify-content: center; gap: 20px; background: #000; padding: 12px 0; border-bottom: 1px solid #222; }
-        nav a { color: #888; text-decoration: none; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; transition: 0.3s; }
+        nav a { color: #888; text-decoration: none; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; }
         nav a:hover { color: var(--gold); }
 
         section { padding: 60px 5%; max-width: 1440px; margin: auto; }
@@ -27,7 +27,7 @@
         
         .info { padding: 25px; flex-grow: 1; }
         .series { color: var(--gold); font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
-        .name { color: #fff; font-size: 1.1rem; font-weight: bold; margin: 10px 0; }
+        .name { color: #fff; font-size: 1.1rem; font-weight: bold; margin: 10px 0; min-height: 44px; display: flex; align-items: center; justify-content: center; }
         .price { font-size: 1.7rem; color: #fff; font-weight: 800; margin-bottom: 20px; }
         .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 10px; font-weight: bold; }
 
@@ -42,64 +42,60 @@
     <nav>
         <a href="#mens">Men's Premium</a>
         <a href="#women">Women's Elite</a>
-        <a href="#footwear">Footwear</a>
     </nav>
 </header>
 
 <section id="mens">
-    <div class="section-title"><h2>Men's Premium</h2></div>
+    <div class="section-title"><h2>Men's Premium Collection</h2></div>
     <div class="grid" id="mens-grid"></div>
 </section>
 
 <section id="women">
-    <div class="section-title"><h2>Women's Elite</h2></div>
+    <div class="section-title"><h2>Women's Elite Collection</h2></div>
     <div class="grid" id="women-grid"></div>
 </section>
 
-<section id="footwear">
-    <div class="section-title"><h2>Footwear Collection</h2></div>
-    <div class="grid" id="footwear-grid"></div>
-</section>
-
 <script>
-    // 1. MEN'S DATA (Full 15)
+    // 1. MEN'S COLLECTION (15 PRODUCTS)
     const mensData = [
-        { id: 1, name: "CS-M01 Aero", price: "2,999", series: "AERO SERIES" },
-        { id: 2, name: "CS-M02 Stealth", price: "2,450", series: "STEALTH" },
-        { id: 3, name: "CS-M03 Neon", price: "2,450", series: "NEON LINE" },
-        { id: 4, name: "CS-M04 Ceramic", price: "3,490", series: "CERAMIC" },
-        { id: 5, name: "CS-M05 Pearl", price: "3,490", series: "PURE WHITE" },
-        { id: 6, name: "CS-M06 Dual", price: "4,400", series: "TWO-TONE" },
-        { id: 7, name: "CS-M07 Grand", price: "4,850", series: "GT LUXE" },
-        { id: 8, name: "CS-M08 Bone", price: "3,200", series: "SKELETON" },
-        { id: 9, name: "CS-M09 Diver", price: "4,500", series: "DIVER PRO" },
-        { id: 10, name: "CS-M10 Gold", price: "3,895", series: "CLASSIC" },
-        { id: 11, name: "CS-M11 Slim", price: "2,999", series: "ELITE" },
-        { id: 12, name: "CS-M12 Royal", price: "3,890", series: "ROYAL" },
-        { id: 13, name: "CS-M13 Chrono", price: "2,800", series: "CHRONO master" },
-        { id: 14, name: "CS-M14 Antique", price: "4,900", series: "VINTAGE" },
-        { id: 15, name: "CS-M15 Phantom", price: "4,740", series: "PHANTOM" }
+        { id: 1, name: "CS-M01 Aero Sport", price: "2,999", series: "AERO SERIES" },
+        { id: 2, name: "CS-M02 Stealth Matte", price: "2,450", series: "STEALTH" },
+        { id: 3, name: "CS-M03 Neon Cyber", price: "2,450", series: "NEON LINE" },
+        { id: 4, name: "CS-M04 Black Ceramic", price: "3,490", series: "CERAMIC" },
+        { id: 5, name: "CS-M05 Pearl Arctic", price: "3,490", series: "PURE WHITE" },
+        { id: 6, name: "CS-M06 Dual Horizon", price: "4,400", series: "TWO-TONE" },
+        { id: 7, name: "CS-M07 Grand Tourer", price: "4,850", series: "GT LUXE" },
+        { id: 8, name: "CS-M08 Bone Skeleton", price: "3,200", series: "SKELETON" },
+        { id: 9, name: "CS-M09 Ocean Diver", price: "4,500", series: "DIVER PRO" },
+        { id: 10, name: "CS-M10 Heritage Gold", price: "3,895", series: "CLASSIC" },
+        { id: 11, name: "CS-M11 Executive Slim", price: "2,999", series: "ELITE" },
+        { id: 12, name: "CS-M12 Royal Apex", price: "3,890", series: "ROYAL" },
+        { id: 13, name: "CS-M13 Chrono Master", price: "2,800", series: "CHRONOGRAPH" },
+        { id: 14, name: "CS-M14 Vintage Soul", price: "4,900", series: "ANTIQUE" },
+        { id: 15, name: "CS-M15 Phantom Dark", price: "4,740", series: "PHANTOM" }
     ];
 
-    // 2. WOMEN'S DATA (Full 30)
+    // 2. WOMEN'S COLLECTION (30 PRODUCTS)
+    // Using a loop to keep the code short and complete
     const womenData = [];
-    for(let i=1; i<=30; i++) {
-        womenData.push({ id: i, name: "CS-Luxe Model " + (300+i), price: (2500 + (i*30)).toLocaleString(), series: "Elite Women" });
+    const womenPrices = ["3,450", "2,950", "2,850", "2,550", "2,650", "3,150", "3,250", "3,100", "3,200", "3,350", "3,490", "3,150", "2,750", "2,750", "3,850", "3,650", "3,450", "3,750", "3,550", "3,450", "3,550", "3,400", "3,650", "3,550", "2,900", "2,900", "2,900", "2,900", "3,100", "3,450"];
+    
+    for(let i = 1; i <= 30; i++) {
+        womenData.push({
+            id: i,
+            name: "CS-Luxe Model W-" + (100 + i),
+            price: womenPrices[i-1] || "2,999",
+            series: i > 24 ? "STARLIGHT SERIES" : (i > 14 ? "MULTI-DIAL LUXE" : "ELITE SERIES")
+        });
     }
 
-    // 3. FOOTWEAR DATA (Crocs)
-    const footwearData = [
-        { id: 1, name: "Classic Comfort Clog", price: "1,850", series: "Imported Footwear" },
-        { id: 2, name: "Sport All-Terrain Clog", price: "2,200", series: "Imported Footwear" },
-        { id: 3, name: "Marble Edition Clog", price: "2,450", series: "Imported Footwear" },
-        { id: 4, name: "Luxe Platform Clog", price: "2,600", series: "Imported Footwear" }
-    ];
-
-    // UNIVERSAL LOADER
-    function loadGrid(data, containerId, prefix, hasSpace) {
-        const grid = document.getElementById(containerId);
+    // 3. UNIVERSAL LOADER FUNCTION
+    function loadProducts(data, gridId, prefix, hasSpace) {
+        const grid = document.getElementById(gridId);
         data.forEach(item => {
+            // Fix: Men use "watch1-jpg (1).jpg", Women use "new-women(1).jpg"
             const imgPath = hasSpace ? `${prefix} (${item.id}).jpg` : `${prefix}(${item.id}).jpg`;
+            
             grid.innerHTML += `
                 <div class="card">
                     <img src="${imgPath}" alt="${item.name}" onerror="this.src='placeholder.jpg'">
@@ -113,12 +109,14 @@
         });
     }
 
-    // Initialize all 3 sections
-    loadGrid(mensData, 'mens-grid', 'watch1-jpg', true);    // Men: Space before bracket
-    loadGrid(womenData, 'women-grid', 'new-women', false);  // Women: No space
-    loadGrid(footwearData, 'footwear-grid', 'crocs', false); // Crocs: No space
+    // Load Men's Watches (Space in name)
+    loadProducts(mensData, 'mens-grid', 'watch1-jpg', true);
+    
+    // Load Women's Watches (No space in name)
+    loadProducts(womenData, 'women-grid', 'new-women', false);
+
 </script>
 
-<footer>&copy; 2026 CSTAR COLLECTIONS | QUALITY SINCE 2014</footer>
+<footer>&copy; 2026 CSTAR COLLECTIONS | DEFINING LUXURY SINCE 2014</footer>
 </body>
 </html>
