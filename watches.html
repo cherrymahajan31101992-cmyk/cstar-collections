@@ -33,7 +33,10 @@
         .name { color: #fff; font-size: 1.1rem; font-weight: bold; margin: 10px 0; min-height: 44px; display: flex; align-items: center; justify-content: center; }
         .desc { color: #888; font-size: 13px; margin-bottom: 15px; min-height: 40px; line-height: 1.4; }
         .price { font-size: 1.7rem; color: #fff; font-weight: 800; margin-bottom: 20px; }
-        .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 10px; font-weight: bold; }
+        
+        /* --- BUTTONS --- */
+        .buy-btn { display: block; background: var(--gold); color: #000; text-align: center; padding: 15px; text-decoration: none; border-radius: 10px; font-weight: bold; transition: 0.3s; }
+        .buy-btn:hover { background: #fff; transform: scale(1.05); }
 
         /* --- FLOATING CHAT SUPPORT --- */
         .whatsapp-chat { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 10000; text-decoration: none; }
@@ -45,7 +48,7 @@
 <body>
 
 <div class="chat-bubble">Support Online</div>
-<a href="https://wa.me/YOURNUMBERHERE" class="whatsapp-chat" target="_blank">💬</a>
+<a href="https://wa.me/917696969628" class="whatsapp-chat" target="_blank">💬</a>
 
 <header>
     <a href="index.html" class="back-btn">← HOME</a>
@@ -68,7 +71,8 @@
 </section>
 
 <script>
-    // 1. ALL WATCH DATA INCLUDED
+    const myWhatsApp = "917696969628"; 
+
     const mensData = [
         { id: 1, name: "CS-M01 Aero Sport", price: "2,999", series: "AERO SERIES", desc: "Premium sporty aesthetics." },
         { id: 2, name: "CS-M02 Stealth Matte", price: "2,450", series: "STEALTH", desc: "Minimalist matte black." },
@@ -90,7 +94,6 @@
     const womenData = [];
     const womenPrices = ["3,450", "2,950", "2,850", "2,550", "2,650", "3,150", "3,250", "3,100", "3,200", "3,350", "3,490", "3,150", "2,750", "2,750", "3,850", "3,650", "3,450", "3,750", "3,550", "3,450", "3,550", "3,400", "3,650", "3,550", "2,900", "2,900", "2,900", "2,900", "3,100", "3,450"];
     
-    // First 30
     for(let i = 1; i <= 30; i++) {
         womenData.push({
             id: i,
@@ -101,7 +104,6 @@
         });
     }
 
-    // New Premium 31-40
     const premiumWomen = [
         { id: 31, name: "CS-Elite Malachite", price: "2,699", series: "Signature", desc: "Emerald-patterned dial." },
         { id: 32, name: "CS-Royal Wine Heart", price: "3,620", series: "Mechanical", desc: "Open-heart wine dial." },
@@ -120,6 +122,9 @@
         const grid = document.getElementById(gridId);
         data.forEach(item => {
             const imgPath = hasSpace ? `${prefix} (${item.id}).jpg` : `${prefix}(${item.id}).jpg`;
+            const message = encodeURIComponent(`I want to pay for this item:\nProduct: ${item.name}\nPrice: ₹${item.price}\nPlease send payment details.`);
+            const waLink = `https://wa.me/${myWhatsApp}?text=${message}`;
+
             grid.innerHTML += `
                 <div class="card">
                     <img src="${imgPath}" alt="${item.name}" onerror="this.src='placeholder.jpg'">
@@ -128,7 +133,7 @@
                         <h3 class="name">${item.name}</h3>
                         <p class="desc">${item.desc}</p>
                         <div class="price">₹${item.price}</div>
-                        <a href="payment.html" class="buy-btn">ORDER VIA WHATSAPP</a>
+                        <a href="${waLink}" target="_blank" class="buy-btn">PAY SECURELY</a>
                     </div>
                 </div>`;
         });
