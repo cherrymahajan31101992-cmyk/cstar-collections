@@ -8,15 +8,17 @@
         :root { --gold: #d4af37; --black: #050505; --gray: #121212; --white: #ffffff; }
         body { background: var(--black); color: var(--white); font-family: 'Segoe UI', sans-serif; margin: 0; scroll-behavior: smooth; }
         
+        /* --- BRANDED HEADER --- */
         header { background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; padding: 10px 0; text-align: center;}
         .back-btn { position: absolute; left: 20px; top: 25px; color: var(--gold); text-decoration: none; font-size: 12px; border: 1px solid var(--gold); padding: 5px 10px; border-radius: 5px; }
-        .logo-img { height: 60px; width: auto; display: block; margin: 0 auto; }
-        .tagline { color: var(--gold); font-size: 10px; margin-top: 5px; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; }
+        .logo-img { height: 65px; width: auto; display: block; margin: 0 auto; }
+        .tagline { color: #fff; font-size: 10px; margin-top: 2px; letter-spacing: 1px; text-transform: lowercase; opacity: 0.8; }
         
         nav { display: flex; justify-content: center; gap: 20px; background: #000; padding: 12px 0; border-bottom: 1px solid #222; }
         nav a { color: #888; text-decoration: none; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; }
         nav a:hover { color: var(--gold); }
 
+        /* --- PRODUCT GRID --- */
         section { padding: 60px 5%; max-width: 1440px; margin: auto; }
         .section-title { text-align: center; margin-bottom: 40px; }
         .section-title h2 { color: var(--gold); font-size: 2.2rem; letter-spacing: 6px; text-transform: uppercase; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 10px; }
@@ -33,10 +35,17 @@
         .price { font-size: 1.7rem; color: #fff; font-weight: 800; margin-bottom: 20px; }
         .buy-btn { display: block; background: #25D366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 10px; font-weight: bold; }
 
+        /* --- FLOATING CHAT SUPPORT --- */
+        .whatsapp-chat { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 10000; text-decoration: none; }
+        .chat-bubble { position: fixed; bottom: 100px; right: 30px; background: white; color: black; padding: 10px 15px; border-radius: 10px; font-size: 12px; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 10000; }
+
         footer { text-align: center; padding: 60px; color: #444; border-top: 1px solid #222; margin-top: 50px; font-size: 12px; }
     </style>
 </head>
 <body>
+
+<div class="chat-bubble">Support Online</div>
+<a href="https://wa.me/YOURNUMBERHERE" class="whatsapp-chat" target="_blank">💬</a>
 
 <header>
     <a href="index.html" class="back-btn">← HOME</a>
@@ -59,61 +68,58 @@
 </section>
 
 <script>
-    // 1. MEN'S COLLECTION (15 PRODUCTS)
+    // 1. ALL WATCH DATA INCLUDED
     const mensData = [
-        { id: 1, name: "CS-M01 Aero Sport", price: "2,999", series: "AERO SERIES", desc: "Premium sporty aesthetics with a durable build." },
-        { id: 2, name: "CS-M02 Stealth Matte", price: "2,450", series: "STEALTH", desc: "Minimalist matte black finish for a bold look." },
-        { id: 3, name: "CS-M03 Neon Cyber", price: "2,450", series: "NEON LINE", desc: "Vibrant accents paired with modern digital styling." },
-        { id: 4, name: "CS-M04 Black Ceramic", price: "3,490", series: "CERAMIC", desc: "High-gloss ceramic finish for maximum elegance." },
-        { id: 5, name: "CS-M05 Pearl Arctic", price: "3,490", series: "PURE WHITE", desc: "Pristine white dial with a luxurious metallic band." },
-        { id: 6, name: "CS-M06 Dual Horizon", price: "4,400", series: "TWO-TONE", desc: "Sophisticated blend of gold and silver tones." },
-        { id: 7, name: "CS-M07 Grand Tourer", price: "4,850", series: "GT LUXE", desc: "Luxury chronograph designed for the traveler." },
-        { id: 8, name: "CS-M08 Bone Skeleton", price: "3,200", series: "SKELETON", desc: "See the heartbeat of your watch through the dial." },
-        { id: 9, name: "CS-M09 Ocean Diver", price: "4,500", series: "DIVER PRO", desc: "Water-resistant design with a rotating bezel." },
-        { id: 10, name: "CS-M10 Heritage Gold", price: "3,895", series: "CLASSIC", desc: "Timeless gold plating with a vintage soul." },
-        { id: 11, name: "CS-M11 Executive Slim", price: "2,999", series: "ELITE", desc: "Thin profile design for professional executive wear." },
-        { id: 12, name: "CS-M12 Royal Apex", price: "3,890", series: "ROYAL", desc: "The peak of luxury craftsmanship and design." },
-        { id: 13, name: "CS-M13 Chrono Master", price: "2,800", series: "CHRONOGRAPH", desc: "Multi-functional dials for precision timing." },
-        { id: 14, name: "CS-M14 Vintage Soul", price: "4,900", series: "ANTIQUE", desc: "Classical numbering with a rich leather-style band." },
-        { id: 15, name: "CS-M15 Phantom Dark", price: "4,740", series: "PHANTOM", desc: "Deep charcoal finish with luminous markings." }
+        { id: 1, name: "CS-M01 Aero Sport", price: "2,999", series: "AERO SERIES", desc: "Premium sporty aesthetics." },
+        { id: 2, name: "CS-M02 Stealth Matte", price: "2,450", series: "STEALTH", desc: "Minimalist matte black." },
+        { id: 3, name: "CS-M03 Neon Cyber", price: "2,450", series: "NEON LINE", desc: "Modern digital styling." },
+        { id: 4, name: "CS-M04 Black Ceramic", price: "3,490", series: "CERAMIC", desc: "High-gloss elegance." },
+        { id: 5, name: "CS-M05 Pearl Arctic", price: "3,490", series: "PURE WHITE", desc: "Pristine white dial." },
+        { id: 6, name: "CS-M06 Dual Horizon", price: "4,400", series: "TWO-TONE", desc: "Gold and silver blend." },
+        { id: 7, name: "CS-M07 Grand Tourer", price: "4,850", series: "GT LUXE", desc: "Luxury chronograph." },
+        { id: 8, name: "CS-M08 Bone Skeleton", price: "3,200", series: "SKELETON", desc: "Visible mechanical heart." },
+        { id: 9, name: "CS-M09 Ocean Diver", price: "4,500", series: "DIVER PRO", desc: "Water-resistant design." },
+        { id: 10, name: "CS-M10 Heritage Gold", price: "3,895", series: "CLASSIC", desc: "Timeless gold plating." },
+        { id: 11, name: "CS-M11 Executive Slim", price: "2,999", series: "ELITE", desc: "Professional thin profile." },
+        { id: 12, name: "CS-M12 Royal Apex", price: "3,890", series: "ROYAL", desc: "Peak craftsmanship." },
+        { id: 13, name: "CS-M13 Chrono Master", price: "2,800", series: "CHRONO", desc: "Precision timing." },
+        { id: 14, name: "CS-M14 Vintage Soul", price: "4,900", series: "ANTIQUE", desc: "Classical numbering." },
+        { id: 15, name: "CS-M15 Phantom Dark", price: "4,740", series: "PHANTOM", desc: "Luminous dark finish." }
     ];
 
-    // 2. WOMEN'S COLLECTION (40 PRODUCTS)
     const womenData = [];
     const womenPrices = ["3,450", "2,950", "2,850", "2,550", "2,650", "3,150", "3,250", "3,100", "3,200", "3,350", "3,490", "3,150", "2,750", "2,750", "3,850", "3,650", "3,450", "3,750", "3,550", "3,450", "3,550", "3,400", "3,650", "3,550", "2,900", "2,900", "2,900", "2,900", "3,100", "3,450"];
     
-    // Auto-load first 30
+    // First 30
     for(let i = 1; i <= 30; i++) {
         womenData.push({
             id: i,
             name: "CS-Elite Model W-" + (100 + i),
             price: womenPrices[i-1] || "2,999",
-            series: i > 24 ? "STARLIGHT SERIES" : (i > 14 ? "MULTI-DIAL LUXE" : "ELITE SERIES"),
-            desc: "Elegant craftsmanship for the modern woman."
+            series: "ELITE SERIES",
+            desc: "Elegant design for the modern woman."
         });
     }
 
-    // Manual Add for New Premium Models (31-40)
+    // New Premium 31-40
     const premiumWomen = [
-        { id: 31, name: "CS-Elite Malachite", price: "2,699", series: "Signature Series", desc: "Emerald-patterned dial in a dual-tone rose gold frame." },
-        { id: 32, name: "CS-Royal Wine Heart", price: "3,620", series: "Mechanical Elite", desc: "Open-heart mechanical movement with a deep wine sunray finish." },
-        { id: 33, name: "CS-Royal Onyx Heart", price: "3,620", series: "Mechanical Elite", desc: "Black skeleton dial surrounded by a premium crystal bezel." },
-        { id: 34, name: "CS-Royal Rose Heart", price: "3,620", series: "Mechanical Elite", desc: "Classic rose-gold link strap with exposed gear display." },
-        { id: 35, name: "CS-Minimalist Ash Black", price: "3,299", series: "Sleek Series", desc: "Ultra-slim matte black profile for a modern minimalist look." },
-        { id: 36, name: "CS-Minimalist Mint Silver", price: "3,299", series: "Sleek Series", desc: "Fresh mint green dial paired with a signature silver link belt." },
-        { id: 37, name: "CS-Minimalist Rose Copper", price: "3,299", series: "Sleek Series", desc: "Rose-gold aesthetic with a sunray copper dial." },
-        { id: 38, name: "CS-Minimalist Pure Gold", price: "3,299", series: "Sleek Series", desc: "Full high-polish gold-tone finish with a clean professional face." },
-        { id: 39, name: "CS-Elite Golden Aura", price: "2,699", series: "Signature Series", desc: "Oval-textured dial with a premium rose-gold link bracelet." },
-        { id: 40, name: "CS-Elite Night Velvet", price: "2,699", series: "Signature Series", desc: "Deep black luxury oval dial featuring dual-tone craftsmanship." }
+        { id: 31, name: "CS-Elite Malachite", price: "2,699", series: "Signature", desc: "Emerald-patterned dial." },
+        { id: 32, name: "CS-Royal Wine Heart", price: "3,620", series: "Mechanical", desc: "Open-heart wine dial." },
+        { id: 33, name: "CS-Royal Onyx Heart", price: "3,620", series: "Mechanical", desc: "Black skeleton dial." },
+        { id: 34, name: "CS-Royal Rose Heart", price: "3,620", series: "Mechanical", desc: "Classic rose-gold link." },
+        { id: 35, name: "CS-Minimalist Ash Black", price: "3,299", series: "Sleek", desc: "Ultra-slim matte black." },
+        { id: 36, name: "CS-Minimalist Mint Silver", price: "3,299", series: "Sleek", desc: "Fresh mint green dial." },
+        { id: 37, name: "CS-Minimalist Rose Copper", price: "3,299", series: "Sleek", desc: "Rose-gold sunray dial." },
+        { id: 38, name: "CS-Minimalist Pure Gold", price: "3,299", series: "Sleek", desc: "Full gold-tone finish." },
+        { id: 39, name: "CS-Elite Golden Aura", price: "2,699", series: "Signature", desc: "Oval-textured rose-gold." },
+        { id: 40, name: "CS-Elite Night Velvet", price: "2,699", series: "Signature", desc: "Deep black oval dial." }
     ];
     womenData.push(...premiumWomen);
 
-    // 3. UNIVERSAL LOADER FUNCTION
     function loadProducts(data, gridId, prefix, hasSpace) {
         const grid = document.getElementById(gridId);
         data.forEach(item => {
             const imgPath = hasSpace ? `${prefix} (${item.id}).jpg` : `${prefix}(${item.id}).jpg`;
-            
             grid.innerHTML += `
                 <div class="card">
                     <img src="${imgPath}" alt="${item.name}" onerror="this.src='placeholder.jpg'">
@@ -122,7 +128,7 @@
                         <h3 class="name">${item.name}</h3>
                         <p class="desc">${item.desc}</p>
                         <div class="price">₹${item.price}</div>
-                        <a href="payment.html" class="buy-btn">PAY SECURELY</a>
+                        <a href="payment.html" class="buy-btn">ORDER VIA WHATSAPP</a>
                     </div>
                 </div>`;
         });
@@ -133,6 +139,6 @@
 
 </script>
 
-<footer>&copy; 2026 CSTAR COLLECTIONS | DEFINING LUXURY SINCE 2014</footer>
+<footer>&copy; 2026 C STAR COLLECTIONS | KEEP SMILING AND KEEP SHOPPING</footer>
 </body>
 </html>
